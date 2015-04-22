@@ -1,6 +1,6 @@
 \chapter{Evoluindo uma plataforma de rede social}
 \label{evol-rede-social}
-
+%
 \section{Noosfero}
 \label{evol-rede-social}
 
@@ -78,11 +78,13 @@ A figura \ref{issue-tracker} evidencia o \textit{Issue Treacker} do Noosfero ond
     \centering
     \includegraphics[keepaspectratio=true,scale=0.4]
       {figuras/issueTrackerNoosfero.eps}
-    \caption{Issue Tracker do Noosfero}
+    \caption{Issue Tracker no site do Noosfero}
     \label{issue-tracker}
 \end{figure}
 
 A implementação é realizada pelo desenvolvedor que tem a responsabilidade de manter a qualidade do código produzido bem como todos os testes relacionados à funcionalidade implementada. Uma vez que este primeiro passo esteja concluído o código é submetido a um \textit{merge-request} onde algum dos desenvolvedores do \textit{core} revisa para verificar se está de acordo com os padrões esperados, e aprova ou não, a inclusão do código na \textit{branch} principal do Noosfero.
+
+A comunidade Noosfero adota e recomenda práticas de desenvolvimento como o TDD, \textit{Test Driven Development} ou Desenvolvimento orientado a testes), combinado com o BDD \footnote{\url{https://cukes.info/}} (\textit{Behavior Driven Development}ou Desenvolvimento Guiado por Comportamento, que possibilita o desenvolviemnto de um código tenha uma maior coesão e um menor acoplamento.
 
 Para realizar o controle de versão e gerenciamento do código fonte é utilizado o Git, uma ferramenta livre de versionamento distribuído de código fonte. O repositório oficial do Noosfero encontra-se no software livre Gitlab\footnote{\url{https://gitlab.com/noosfero/noosfero}} com um espelho no Github\footnote{\url{https://github.com/noosfero/noosfero}}. Na página de desenvolvimento da comunidade existe uma série de recomendações sobre como enviar patches para o Noosfero, desde como versionar seu patches, até como realizar a solicitação de inclusão do seu patch, ou \textit{merge-request}, na plataforma.
 
@@ -90,6 +92,14 @@ Para realizar o controle de versão e gerenciamento do código fonte é utilizad
 \label{arquitetura}
 
 - plugins
+
+Como um software está em constante evolução a arquitetura do Noosfero foi criada para ser altamente expansível fazendo-se o uso de \textit{plugins}. Essa arquitetura permite que em cada ambiente fique a critério do usuário quais os \textit{plugins}, novas funcionalidades, serão habilitadas o que torna o sistema flexível e modular.
+
+Essa arquitetura extensível adotada pelo Noosfero auxilia no controle da qualidade de código das novas funcionalidades. Os mesmos são mantidos em uma pasta \textit{plugins} fora do escopo do código  do núcleo do software, ou seja, o desenvolvedor cria novas funcionalidades sem modificar o \textit{core} do Noosfero.
+
+Um programa que utiliza o paradigma orientado a eventos não controla a sequência na qual ocorrem os eventos de entrada ele apenas reagem a uma sequência razoável de eventos \cite{tucker2009linguagens}. O funcionamento dos plugins do Noosfero é baseado neste paradigma, onde o o núcleo do Noosfero dispara um evento durante a execução de alguma funcionalidade, e os \textit{plugins} interessados nesse evento são capazes de executar suas ações tratando o evento de acordo com sua implementação. No Noosfero os eventos são conhecidos como "\textit{hotspots}".
+
+Como mencionado na seção \ref{proc-desenvol-comunidade} o Noosfero faz uso de testes para manter a integridade de seu cógido, dessa maneira também é necessário que os \textit{plugins} contenham seus respectivos testes para evitar a inserção de \textit{bugs} e mudanças inesperadas no comportamento do sistema.
 
 \subsection{Comunidade UnB}
 \label{comunidade-unb}
@@ -101,4 +111,20 @@ Para realizar o controle de versão e gerenciamento do código fonte é utilizad
 -- funcionalidades adaptadas/melhoras
 -- novas funcionalidades
 
--- ciclos de desenvolvimento
+-Atualizar pro rails 3
+
+-Utilização do LDAP
+	-realizar melhorias
+		-cadastro de matricula dos usuários já existentes
+		-
+
+-Evolução do workassigment
+	-permitir atribuição de notas para a atividade
+	-**timer (plugin de tolerância e tempo)
+
+-*Calendário de atividades
+	-Arquivos do work assigment
+
+-Definir template de disciplina
+
+-Sistema de notas
