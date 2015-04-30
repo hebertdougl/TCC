@@ -4,7 +4,7 @@
 \section{Noosfero}
 \label{evol-rede-social}
 
-O Noosfero \footnote{\url{http://www.noosfero.org}} é uma plataforma de criação de redes sociais livre desenvolvida em 2007 pela Cooperativa de Tecnologias Livres - Colivre \footnote{\url{http://www.colivre.coop.br}}, sob a licença AGPL\footnote{Licença de software GNU Affero General Public License} V3, com a proposta de facilitar a criação de redes sociais personalizadas, livres e autônomas e a geração de conteúdo colaborativo.
+O Noosfero \footnote{Disponível em: \url{http://www.noosfero.org}} é uma plataforma de criação de redes sociais livre desenvolvida em 2007 pela Cooperativa de Tecnologias Livres - Colivre \footnote{\url{http://www.colivre.coop.br}}, sob a licença AGPL\footnote{Licença de software GNU Affero General Public License} V3, com a proposta de facilitar a criação de redes sociais personalizadas, livres e autônomas e a geração de conteúdo colaborativo.
 
 A Colivre é uma cooperativa sediada em Salvador/BA e trabalha contribuindo  com a difusão e o desenvolvimento de tecnologias livres. Atualmente os desenvolvedores da Colivre realizam a manutenção e evolução do Noosfero além de manter seu repositório, ou seja, são responsáveis por revisar os códigos que são enviados pela comunidade e integrar ao código do Noosfero.
 
@@ -58,27 +58,26 @@ O GNU quis dar aos utilizadores a liberdade, não só para ser popular. Contudo 
 % - commiters/revisao
 % - testes
 
-Para que novos desenvolvedores colaborem com o Noosfero a comunidade utiliza em seu próprio \textit{site} uma seção para o desenvolvimento. Nesta seção tem-se manuais com os passos para instalação do ambiente, descrição dos \textit{plugins} disponíveis, instruções para a personalização da plataforma através de temas além de informações arquiteturais para os colaboradores com a plataforma. Para realizar o controle de itens a fazer como a implementação de novas funcionalidaes ou correção de bugs é utilizado um \textit{Issue Tracker}.
+Para que novos desenvolvedores colaborem com o Noosfero a comunidade utiliza em seu próprio \textit{site} uma seção para o desenvolvimento. Nesta seção tem-se manuais com os passos para instalação do ambiente, descrição dos \textit{plugins} disponíveis, instruções para a personalização da plataforma através de temas além de informações arquiteturais para os colaboradores com a plataforma. Para realizar o controle de itens a fazer como a implementação de novas funcionalidaes ou correção de bugs é utilizado um \textit{Issue Tracker} do repositório oficial que encontra-se no GitLab.
 
-Uma vez que o desenvolvedor tenha registro no site da comunidade é possível utilizar o \textit{Issue Tracker} para cadastrar novas funcionalidades \textit{new features} ou \textit{bugs} de maneira simples conforme os seguintes passos:
+Uma vez que o desenvolvedor tenha registro no GitLab da comunidade é possível utilizar o \textit{Issue Tracker} para cadastrar novas funcionalidades ou \textit{bugs} de maneira simples conforme os seguintes passos:
 
 \begin{enumerate}
 \item Preencher o campo título;
-\item Definir a quais categorias o item pertence (e.g. Chat, RSSFeeds);
-\item Definir a descrição do item;
-\item Especificar com qual \textit{plugin} o item está relacionado (se existir);
-\item Especificar qual a versão do Noosfero o item afeta.
+\item Definir a descrição do item, se existir, é necessário especificar com qual \textit{plugin} o item está relacionado;
+\item Associar um desenvolvedor responsável pela sua implementação \textit{issue};
+\item Definir as \textit{labels} da funcionalidade, onde é especificado ao que está relacionado a nova \textit{issue}.
 \end{enumerate}
 
-Com algumas ressalvas que para funcionalidades, coloca-se a versão em que essa está prevista para ser lançada, enquanto que para bugs, coloca-se também a versão em que este foi identificado. Com o item criado, outros usuários podem adicionar comentários e associar um desenvolvedor responsável pela sua implementação.
+Após a criação da \textit{issue} todos os membros da comunidade podem visualizar os dados e especificações e discutir sobre os própositos e formas de implementação da funcionalidade.
 
-A figura \ref{issue-tracker} evidencia o \textit{Issue Treacker} do Noosfero onde é possível verificar os itens que foram mapeados e seus respectivos \textit{status} (concluído, pendente, rejeitado, trabalhando, esperando FeedBack). Dessa forma, é possível priorizar os itens identificados como sendo de maior importância para os usuários e desenvolvedores
+A figura \ref{issue-tracker} evidencia o \textit{Issue Tracker} do Noosfero onde é possível verificar os itens que foram mapeados e seus respectivos \textit{status}, se ainda estão abertas ou fechadas, alpem de um filtro para os autores eos marcadores envolvidos à cada uma delas. Dessa forma, é possível priorizar os itens identificados como sendo de maior importância para os usuários e desenvolvedores.
 
 \begin{figure}[h]
     \centering
     \includegraphics[keepaspectratio=true,scale=0.4]
-      {figuras/issueTrackerNoosfero.eps}
-    \caption{Issue Tracker no site do Noosfero}
+      {figuras/issueTrackerGitLab.eps}
+    \caption{Issue Tracker no GitLab}
     \label{issue-tracker}
 \end{figure}
 
@@ -90,12 +89,105 @@ Para realizar o controle de versão e gerenciamento do código fonte é utilizad
 
 \subsection{Arquitetura}
 \label{arquitetura}
+ % Falar porque é importante conhecer a arquitetura do noosfero
+Para a evolução de um software de forma adequada é importante o conhecimento da arquitetura do sistema, para não comprometer todo o planejamento realizado na concepção do projeto. Deste modo conhecer e entender a arquitetura de funcionamento do Noosfero, é uma etapa fundamental para o densevolvimento de novas funcionalidades para a plataforma.
 
-- plugins
+ % Conceitos sobre o que é arquitetura
+Arquitetura de software são as estruturas do sistema, que abrange os componentes de software, as propriedades externamente visíveis desses componentes e as relações entre elas \cite{pressman2011engenharia}. De acordo com \citeonline{garlan1995introduction} a arquitetura é a estrutura dos componentes de um programa/sistema, suas inter-relações e princípios e diretrizes que regem sua concepção expondo as dimensões através das quais um sistema deve evoluir.
+
+Apesar da existência de variações quanto a definição de arquitetura de software, entende-se que ela está ligada aos módulos do sistema e como eles se relacionam, dessa maneira todos os sistemas possuem alguma tipo de arquitetura.
+
+%Introduzir a figura
+Na figura 13, é apresentado a arquitetura básica de funcionamento do Noosfero.
+Nessa figura, o solicitante através do seu navegador web (browser) envia uma requisição ao
+Noosfero. Essa requisição é tratada pelo Varnish 6 , que repassa ao Apache 7 , que funciona
+como um redirecionador para o servidor web do Rails, chamado de Thin 8 . Após isso o
+Action Dispacher trata a requisição e envia ela para a controladora responsável.
+
+Na figura \ref{arquitetura-noosfero}, é apresentado uma visão alto nível da arquitetura do Noofero. Basicamente tem-se uma arquitetura cliente-servidor onde o cliente via \textbf{\textit{Browser}} solicita um conteúdo ou uma função para o servidor Noosfero, que aguardam requisições de entrada para processá-las e compartilhar recursos com o cliente.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.4]
+      {figuras/DiagramaDeArquitetura.eps}
+    \caption{Arquitetura do Noosfero}
+    \label{arquitetura-noosfero}
+\end{figure}
+
+Do lado do servidor temos basicamente três camadas de abstração: \textit{Web-Server}, \textit{aplicação} e \textit{Banco de dados}. Na primeira camada temos dois componentes responsáveis por processar e acelerar todas as requisições de entrada e saída, os componenentes são:
+\begin{itemize}
+\item Varnish: é um acelerador para sites web dinâmicos com alto volume de conteúdo que utiliza proxy HTTP Reverso. Sua efiência deve-se ao fato dele armazenar o conteúdo HTTP requisitado na memória RAM, fazendo com que o servidor não consulte e processe diversas vezes o mesmo conteúdo solicitado.
+\item Servidor Proxy HTTP: pode ser utilizado o Apache ou Nginx \footnote{\url{http://nginx.org}} que ajudam a melhorar o desempenho funcionando como um servidor proxy HTTP reverso que processa as requisições de entrada e saída e as encaminha para a aplicação executá-las.
+\end{itemize}
+
+Na camada da aplicação foi considerada uma camada responsável pelo controle de requisições, que é efetuada pelo componente \textbf{\textit{Action Dispatch}}, que lida com o mapeamento de todas as requisições, \textit{cookies} e sessão para suas respectivas \textit{controllers}.
+
+Na aplicação utiliza-se o padrão de arquitetura de software MVC\footnote{Model-view-controller} onde a \textbf{\textit{controller}} controla o fluxo da aplicação. Relacionando as entidades de \textit{model} e de \textit{view} através de chamadas de métodos.A \textbf{\textit{model}} representa as entidades do domínio da aplicação, onde a lógica do sistema são implementadas. A \textbf{\textit{view}} é a interface de comunicação com o usuário, ou seja as páginas HTML apresentadas no navegador.
+
+Ainda na camada da aplicação tem-se o \textbf{\textit{Active Record}} que é um ORM \footnote{object-relational mapping}, ou seja, um mapeador entre objetos e registros de uma tabela, onde cada classe de modelo possui uma tabela correspondente à ela no banco de dados.
+
+E por fim temos a camada de banco de dados que recebe requisições da camada de persistência de dados e por meio de um sistema gerenciador de banco de dados (SGBD) realizam operações na base de dados.
+
+\subsection{Modelo de domínio}
+
+% Falar sobre o modelo de domínio
+
+%Domínio ambiente, domínio e perfis
+O Noosfero é uma plataforma que tem suporte a vários ambientes de rede social dentro de uma mesma instalação. Na Figura \ref{domain_main} mostra-se o funcionamento geral do Noosfero com suas quatro principais classes Domain, Environment, Profile e Article (Em português: Domínio, Ambiente, Perfil e Artigo respectivamente). Analisando o modelo verifica-se que na implementação é necessário que exista pelo um domínio e partir disso é possível criar várias instâncias de Ambiente na aplicação.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.65]
+      {figuras/domain_main.eps}
+    \caption{Relações entre entidades de domínio ambiente, domínio e perfis. Extraído de: \cite{bucher2014rede}}
+    \label{domain_main}
+\end{figure}
+
+A entidade Profile é uma generalização das entidades Person (Pessoa) e Organization (Organização), como pode ser visto na Figura \ref{domain_profiles}. Nesse mesmo modelo percebe-se que Organization é especializada nas entidades concretas Community (Comunidade e Enterprise (Empreendimento). A herança é um mecanismo pelo qual qual uma classe sub-classe pode estender uma super-classe, onde basicamente isola-se métodos ou atributos em comum dentro de uma classe pai (super-classe), enquanto as especialidades são responsabilidade das classes filhas (sub-classe).
+%Procurar fonte para herança
+Por questões de design do código da aplicação foi criada uma entidade User, ou Usuário, que é mantida separada da entidade Pessoa, que é quem implementa a lógica de autenticação da aplicação. Desta forma a lógica de autenticação fica separada da lógica de visualização e personalização do perfil.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.6]
+      {figuras/domain_profiles.eps}
+    \caption{Entidades de domínio: tipos de perfis. Extraído de: \cite{bucher2014rede}}
+    \label{domain_profiles}
+\end{figure}
+
+Por fim, as entidades mostradas na Figura \ref{domain_articles} representam os principais tipos de conteúdos disponíveis no Noosfero, onde a classe Article, ou Artigo, é uma especialização de todos os conteúdos disponíveis como: artigos de texto, pastas, blogs, galerias de imagens, fórum, arquivos e feeds de notícias.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.55]
+      {figuras/domain_articles.eps}
+    \caption{Entidades de domínio: tipos de artigos. Extraído de: \cite{bucher2014rede}}
+    \label{domain_articles}
+\end{figure}
+
+Mesmo com as vantagens do ponto de vista arquitetural e a constante evolução do
+Noosfero, essa plataforma ainda necessita de algumas melhorias e novas funcionalidades,
+que foram atendidas, em parte, neste trabalho com a implementação e/ou evolução de
+plugins, na maioria dos casos de nossas colaborações. Também, para avaliarmos a implan-
+tação do Noosfero na UnB, prototipamos um plugin para autenticação na base de dados
+da UnB, de acordo, até o momento, com as autorizações cedidas pelos departamentos res-
+ponsáveis 15 e interações com o Centro de Processamento de Dados (CPD) da instituição.
+Esses plugins e as demais colaborações, atendendo os requisitos levantados e descritos,
+serão apresentados na Seção 4.3, do próximo capítulo.
+\subsection{Plugins}
 
 Como um software está em constante evolução a arquitetura do Noosfero foi criada para ser altamente expansível fazendo-se o uso de \textit{plugins}. Essa arquitetura permite que em cada ambiente fique a critério do usuário quais os \textit{plugins}, novas funcionalidades, serão habilitadas o que torna o sistema flexível e modular.
 
 Essa arquitetura extensível adotada pelo Noosfero auxilia no controle da qualidade de código das novas funcionalidades. Os mesmos são mantidos em uma pasta \textit{plugins} fora do escopo do código  do núcleo do software, ou seja, o desenvolvedor cria novas funcionalidades sem modificar o \textit{core} do Noosfero.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.4]
+      {figuras/estruturaDePlugins.eps}
+    \caption{Estrutura de Plugins}
+    \label{issue-tracker}
+\end{figure}
+
 
 Um programa que utiliza o paradigma orientado a eventos não controla a sequência na qual ocorrem os eventos de entrada ele apenas reagem a uma sequência razoável de eventos \cite{tucker2009linguagens}. O funcionamento dos plugins do Noosfero é baseado neste paradigma, onde o o núcleo do Noosfero dispara um evento durante a execução de alguma funcionalidade, e os \textit{plugins} interessados nesse evento são capazes de executar suas ações tratando o evento de acordo com sua implementação. No Noosfero os eventos são conhecidos como "\textit{hotspots}".
 
