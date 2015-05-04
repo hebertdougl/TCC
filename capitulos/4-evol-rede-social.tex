@@ -2,14 +2,14 @@
 \label{evol-rede-social}
 %
 \section{Noosfero}
-\label{evol-rede-social}
+\label{noosfero}
 
 O Noosfero \footnote{Disponível em: \url{http://www.noosfero.org}} é uma plataforma de criação de redes sociais livre desenvolvida em 2007 pela Cooperativa de Tecnologias Livres - Colivre \footnote{\url{http://www.colivre.coop.br}}, sob a licença AGPL\footnote{Licença de software GNU Affero General Public License} V3, com a proposta de facilitar a criação de redes sociais personalizadas, livres e autônomas e a geração de conteúdo colaborativo.
 
 A Colivre é uma cooperativa sediada em Salvador/BA e trabalha contribuindo  com a difusão e o desenvolvimento de tecnologias livres. Atualmente os desenvolvedores da Colivre realizam a manutenção e evolução do Noosfero além de manter seu repositório, ou seja, são responsáveis por revisar os códigos que são enviados pela comunidade e integrar ao código do Noosfero.
 
 Além das funcionalidades de rede social, com foco na produção e compartilhamento de
-conteúdo, o Noosfero permite que dentro da rede cada usuário e comunidade tenha o seu espaço com total flexibilidade de personalização visual e gerenciamento de conteúdo. A exemplo de portais que atualmente utilizam o Noosfero temos o Participa BR \footnote{\url{https://www.participa.br/}}, o Stoa\footnote{\url{http://stoa.usp.br/}} e o Portal da FGA\footnote{\url{http://fga.unb.br/}}.
+conteúdo, o Noosfero permite que dentro da rede cada usuário e comunidade tenha o seu espaço com total flexibilidade de personalização visual e gerenciamento de conteúdo. A exemplo de portais que atualmente utilizam o Noosfero temos o Participa BR \footnote{\url{https://www.participa.br/}}, o Stoa\footnote{\url{http://stoa.usp.br/}}, o Portal da FGA\footnote{\url{http://fga.unb.br/}} e o mais novo Portal do Software público Brasileiro \footnote{\url{Disponível em: https://beta.softwarepublico.gov.br/}}(até então em fase \textit{beta}).
 
 O Noosfero foi desenvolvido na linguagem de programação Ruby, atualmente na versão 2.2.0, e utiliza o \textit{framework} aplicações web \textit{Ruby on Rails} \footnote{\url{http://rubyonrails.org/}}, versão 3.2.21. E utiliza também padrões arquiteturais de software Model-View-Controller (MVC), e o padrão de plugins que serão apresentados na seção \ref{arquitetura}.
 
@@ -133,72 +133,95 @@ E por fim temos a camada de banco de dados que recebe requisições da camada de
 % Falar sobre o modelo de domínio
 
 %Domínio ambiente, domínio e perfis
-O Noosfero é uma plataforma que tem suporte a vários ambientes de rede social dentro de uma mesma instalação. Na Figura \ref{domain_main} mostra-se o funcionamento geral do Noosfero com suas quatro principais classes Domain, Environment, Profile e Article (Em português: Domínio, Ambiente, Perfil e Artigo respectivamente). Analisando o modelo verifica-se que na implementação é necessário que exista pelo um domínio e partir disso é possível criar várias instâncias de Ambiente na aplicação.
+O Noosfero é uma plataforma que tem suporte a vários ambientes de rede social dentro de uma mesma instalação. Na Figura \ref{domain_main} mostra-se o funcionamento geral do Noosfero com suas quatro principais classes \textbf{\textit{Domain}}, \textbf{\textit{Environment}}, \textbf{\textit{Profile}} e \textbf{\textit{Article}} (Em português: Domínio, Ambiente, Perfil e Artigo respectivamente). Analisando o modelo verifica-se que na implementação é necessário que exista pelo um domínio e partir disso é possível criar várias instâncias de Ambiente na aplicação.
 
 \begin{figure}[h]
     \centering
     \includegraphics[keepaspectratio=true,scale=0.65]
       {figuras/domain_main.eps}
-    \caption{Relações entre entidades de domínio ambiente, domínio e perfis. Extraído de: \cite{bucher2014rede}}
+    \caption{Relações entre entidades de domínio ambiente, domínio e perfis. Extraído de: \cite{bucher2013rede}}
     \label{domain_main}
 \end{figure}
 
-A entidade Profile é uma generalização das entidades Person (Pessoa) e Organization (Organização), como pode ser visto na Figura \ref{domain_profiles}. Nesse mesmo modelo percebe-se que Organization é especializada nas entidades concretas Community (Comunidade e Enterprise (Empreendimento). A herança é um mecanismo pelo qual qual uma classe sub-classe pode estender uma super-classe, onde basicamente isola-se métodos ou atributos em comum dentro de uma classe pai (super-classe), enquanto as especialidades são responsabilidade das classes filhas (sub-classe).
+A entidade Profile é uma generalização das entidades \textbf{\textit{Person}} (Pessoa) e \textbf{\textit{Organization}} (Organização), como pode ser visto na Figura \ref{domain_profiles}. Nesse mesmo modelo percebe-se que Organization é especializada nas entidades concretas \textbf{\textit{Community}} (Comunidade e Enterprise (Empreendimento). A herança é um mecanismo pelo qual qual uma classe sub-classe pode estender uma super-classe, onde basicamente isola-se métodos ou atributos em comum dentro de uma classe pai (super-classe), enquanto as especialidades são responsabilidade das classes filhas (sub-classe).
 %Procurar fonte para herança
-Por questões de design do código da aplicação foi criada uma entidade User, ou Usuário, que é mantida separada da entidade Pessoa, que é quem implementa a lógica de autenticação da aplicação. Desta forma a lógica de autenticação fica separada da lógica de visualização e personalização do perfil.
+Por questões de design do código da aplicação foi criada uma entidade \textbf{\textit{User}}, ou Usuário, que é mantida separada da entidade Pessoa, que é quem implementa a lógica de autenticação da aplicação. Desta forma a lógica de autenticação fica separada da lógica de visualização e personalização do perfil.
 
 \begin{figure}[h]
     \centering
     \includegraphics[keepaspectratio=true,scale=0.6]
       {figuras/domain_profiles.eps}
-    \caption{Entidades de domínio: tipos de perfis. Extraído de: \cite{bucher2014rede}}
+    \caption{Entidades de domínio: tipos de perfis. Extraído de: \cite{bucher2013rede}}
     \label{domain_profiles}
 \end{figure}
 
-Por fim, as entidades mostradas na Figura \ref{domain_articles} representam os principais tipos de conteúdos disponíveis no Noosfero, onde a classe Article, ou Artigo, é uma especialização de todos os conteúdos disponíveis como: artigos de texto, pastas, blogs, galerias de imagens, fórum, arquivos e feeds de notícias.
+Por fim, as entidades mostradas na Figura \ref{domain_articles} representam os principais tipos de conteúdos disponíveis no Noosfero, onde a classe \textbf{\textit{Article}}, ou Artigo, é uma especialização de todos os conteúdos disponíveis como: artigos de texto, pastas, blogs, galerias de imagens, fórum, arquivos e feeds de notícias.
 
 \begin{figure}[h]
     \centering
     \includegraphics[keepaspectratio=true,scale=0.55]
       {figuras/domain_articles.eps}
-    \caption{Entidades de domínio: tipos de artigos. Extraído de: \cite{bucher2014rede}}
+    \caption{Entidades de domínio: tipos de artigos. Extraído de: \cite{bucher2013rede}}
     \label{domain_articles}
 \end{figure}
 
-Mesmo com as vantagens do ponto de vista arquitetural e a constante evolução do
-Noosfero, essa plataforma ainda necessita de algumas melhorias e novas funcionalidades,
-que foram atendidas, em parte, neste trabalho com a implementação e/ou evolução de
-plugins, na maioria dos casos de nossas colaborações. Também, para avaliarmos a implan-
-tação do Noosfero na UnB, prototipamos um plugin para autenticação na base de dados
-da UnB, de acordo, até o momento, com as autorizações cedidas pelos departamentos res-
-ponsáveis 15 e interações com o Centro de Processamento de Dados (CPD) da instituição.
-Esses plugins e as demais colaborações, atendendo os requisitos levantados e descritos,
-serão apresentados na Seção 4.3, do próximo capítulo.
+% Mesmo com as vantagens do ponto de vista arquitetural e a constante evolução do Noosfero, essa plataforma ainda necessita de algumas melhorias e novas funcionalidades, que foram atendidas, em parte, neste trabalho com a implementação e/ou evolução de plugins, na maioria dos casos de nossas colaborações.
+
 \subsection{Plugins}
 
 Como um software está em constante evolução a arquitetura do Noosfero foi criada para ser altamente expansível fazendo-se o uso de \textit{plugins}. Essa arquitetura permite que em cada ambiente fique a critério do usuário quais os \textit{plugins}, novas funcionalidades, serão habilitadas o que torna o sistema flexível e modular.
-
-Essa arquitetura extensível adotada pelo Noosfero auxilia no controle da qualidade de código das novas funcionalidades. Os mesmos são mantidos em uma pasta \textit{plugins} fora do escopo do código  do núcleo do software, ou seja, o desenvolvedor cria novas funcionalidades sem modificar o \textit{core} do Noosfero.
 
 \begin{figure}[h]
     \centering
     \includegraphics[keepaspectratio=true,scale=0.4]
       {figuras/estruturaDePlugins.eps}
     \caption{Estrutura de Plugins}
-    \label{issue-tracker}
+    \label{estrutura-plugins}
 \end{figure}
 
+A figura \ref{estrutura-plugins} é uma abstração alto nível do funcionamento interno dos plugins no Noosfero. No \textit{core} do Noosfero temos os \textit{hotspots}, que são pontos de flexibilidade o qual permitem associar diferentes comportamentos na execução do sistema, permitindo a inserção de trechos de código e ou alteração de um determinado método sem comprometer as funcionalidades básicas do sistema.
 
-Um programa que utiliza o paradigma orientado a eventos não controla a sequência na qual ocorrem os eventos de entrada ele apenas reagem a uma sequência razoável de eventos \cite{tucker2009linguagens}. O funcionamento dos plugins do Noosfero é baseado neste paradigma, onde o o núcleo do Noosfero dispara um evento durante a execução de alguma funcionalidade, e os \textit{plugins} interessados nesse evento são capazes de executar suas ações tratando o evento de acordo com sua implementação. No Noosfero os eventos são conhecidos como "\textit{hotspots}".
+Os \textit{hotspots} são gerenciados por uma camada de abstração denominada \textit{Plugin Manager}, ou Gerenciador de \textit{Plugins}, que são chamadas pelo \textit{core} através de um metódo principal conhecido como \textit{dispatch}. Basicamente o ciclo de execução pode ser descrito da seginte maneira, durante a execução de alguma funcionalidade o método \textit{dispatch} é invocado por alguma funcionalildade do core, deste modo o gerenciador de plugins verifica todos os \textit{Plugins} que fazem uso daquele \textit{hotspot} e encaminha para cada um deles a execução de suas ações de acordo com sua implementação.
+
+Essa arquitetura extensível adotada pelo Noosfero auxilia no controle da qualidade de código das novas funcionalidades. A camada de \textit{Plugins} para o Noosfero é uma que fica o código do seu núcleo, localiza-se em uma pasta denominada \textit{plugins} em que desenvolvedor cria novas funcionalidades sem modificar o \textit{core} do Noosfero.
 
 Como mencionado na seção \ref{proc-desenvol-comunidade} o Noosfero faz uso de testes para manter a integridade de seu cógido, dessa maneira também é necessário que os \textit{plugins} contenham seus respectivos testes para evitar a inserção de \textit{bugs} e mudanças inesperadas no comportamento do sistema.
 
 \subsection{Comunidade UnB}
 \label{comunidade-unb}
-- funcionalidades
 
+O Comunidade.UnB é uma rede colaboração livre desenvolvida para que alunos, professores e servidores técnico-administrativos tenham um ambiente virtual de criação e compartilhamento de conhecimento colaborativo. É um ambiente virtual para o compartilhamento de ideias, produção de conteúdo colaborativo de modo que possam publicá-los para que possa ser de utilidade para outras pessoas ou parcelas da sociedade, uma vez que acredita-se que ete é um dos papéis de uma Universidade \cite{bucher2013rede}.
+
+Inspirada na rede social de colaboração Stoa \footnote{Disponível em: \url{https://social.stoa.usp.br/}}, da Universidade de São Paulo (USP), a Comunidade.UnB foi criada em 2013 a partir de um trabalho de conclusão de curso de Daniel Costa Bucher e até então está disponibilizada em ambiente de testes. O Comunidade.Unb permite ao usuário a criação de seu espaço pessoal e a liberdade de publicar suas ideias, ou o conteúdo que desejar, por exemplo, na forma de blogs pessoais, blogs de disciplinas, pesquisas em andamento, dentre outras, além de compartilhar esse conteúdo para ser acessível para outros usuários dentro e fora da rede.
+
+O Noosfero, descrito na seção \ref{noosfero}, foi a plataforma utilizada para o desenvolvimento do Comunidade.UnB, por dispor de um grande potencial devido as suas funcionalidades avançadas, que permitem a criação e o compartilhamento de conteúdo de forma satisfatória. Além de dispor de uma comunidade ativa e de posição geográfica favorável em relação ao seu núcle de desenvolvimento que se encontra no Brasil, facilitando a comunicação com os seus principais desenvolvedores.
+
+Apesar da Comunidade.UnB estar disponibilizada como um ambiente de testes e não possuir uma vasta divulgação pela Univerdade de Brasília, no seu primeiro ano de criação contava com 153 usuários e 14 comunidades, analisando os novos números contabilizados até o presente momento, 370 usuários e 30 comunidades, nota-se que houve uma duplicação dos números o que indica que o seu uso, mesmo que discretamente, está em crescimento.
+
+Alguns professores adotaram o Comunidade.UnB como um ambiente de apoio ao Moodle, AVA oficial adotado pela UnB, na figura \ref{comunidade-mes} é apresentado um exemplo de seu uso na disciplina de Manutenção e Evolução de Software (MES) ministrada pelo professor Paulo Roberto Miranda Meirelles.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.4]
+      {figuras/comunidade-mes.eps}
+    \caption{Exemplo do uso do Comunidade.UnB na disciplina de MES.}
+    \label{comunidade-mes}
+\end{figure}
+
+Este é um exemplo de comunidade criada dentro do Comunidade.UnB, que possui características que se assemelham ao ambiente Moodle, como evidenciado na seção \ref{comparacao-ava}, carecendo de alguns funcionalidades importantes mas com a vantagem da possibilidade de acesso do público ao conteúdo, e a continuidade do conteúdo desenvolvido por outras pessoas que eventualmente se juntem ao longo do tempo. E vale lembrar que em uma publicação de conteúddo os níveis de privacidade podem ser alterados basicamente entre públicos e privados.
+
+Sabendo das limitações apresentadas pela plataforma e a proposta de uso da Comunidade.UnB por professores para a criação de disciplinas, é um fator que estimula o desenvolvimento de funcionalidades que levam à plataforma Noosfero de assemelhar-se a um ambiente virtual de aprendizagem. Desta maneira na seção \ref{desen-noosferAVA} busca-se a proposta de estudo desse trabalho no desenvolvimento de funcionalidade para minimizar as diferenças do Noosfero com os ambientes virtuais de aprendizegem.
+%
 \section{Desenvolvimento do NoosferAVA}
 \label{desen-noosferAVA}
+
+Nesse capítulo apresentaremos as funcionalidades desenvolvidas para contribuir
+para a adequação do Noosfero como uma rede de colaboração para universidades, os re-
+quisitos não-funcionais levantados para que esta possa suprir as necessidades de segurança
+e confiabilidade e o processo de colaboração com o Noosfero. O capítulo 6, na seção de
+trabalhos futuros, apresenta outras funcionalidades que foram levantadas por nós mas não
+foram desenvolvidas ao longo deste trabalho.
+
 - requisitos
 -- funcionalidades adaptadas/melhoras
 -- novas funcionalidades
