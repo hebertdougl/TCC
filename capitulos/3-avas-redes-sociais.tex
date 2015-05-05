@@ -72,118 +72,164 @@ O Moodle \footnote{Disponível em: \textit{ \url{https://moodle.org/}}}, \textit
 O projeto Sakai\footnote{Disponível em: https://sakaiproject.org/ } ou a comunidade Sakai desenvolve e distribui o software livre Sakai como ambiente virtual de aprendizagem para colaboração e ensino para educadores, por educadores. A plataforma foi desenvolvido em linguagem Java e pode ser executado em várias plataformas diferentes como Linux, Unix, Windows e MAC, suporta banco de dados MySQL e Oracle. As instituições que utilizam esta plataforma é bastante abrangente e pode ser obtida no site da comunidade \footnote{Disponível em: https://www.sakaiproject.org/community}.
 % Solar
 % Amadeus
+% Colocar repositórios das comunidades?
 
 E a última ferramenta escolhida, mas não menos importante, foi o \textbf{TelEduc}\footnote{Disponível em: \url{http://www.teleduc.org.br/}} é um ambiente virtual de aprendizagem que teve o início de seu desenvolvimento em 1997, a partir de uma dissertação de mestrado de Alessandra de Dutra e Cerceau do Instituto de Computação da Universidade Estadual de Campinas\footnote{IC/UNICAMP. Disponível em: \url{http://www.ic.unicamp.br/}}, sendo objeto de pesquisa e desenvolvimento de um projeto coordenado pela Profa Bra Heloísa Vieira da Rocha\footnote{\url{http://lattes.cnpq.br/6985892121344767}} até 2012. Desde de então, o projeto vem sendo evoluído afim de implementar ajustes e novas funcionalidades segundo \cite{rocha2002ambiente}, visando as necessidades relatadas por seus usuário. O projeto é mantido pelo Núcleo de Informática Aplicada à Educação \footnote{NIED/UNICAMP. Disponível em:\url{http://www.nied.unicamp.br/}} da UNICAMP.
 
 O TelEduc é um software livre desenvolvido na linguagem de programção PHP \footnote{Disponível em: \url{http://php.net/}} e JavaScript com banco de dados o MySQL \footnote{Disponível em: \url{https://www.mysql.com/}} para ambientes Linux. Em seu lançamento tornou-se um dos softwares mais utilizados para apoiar a educação a distância nas mais diversas áreas, sendo que seus principais usuários são as universidades públicas e privadas, que utilizam para atividades educacionais, disponibilizando materiais, dando suporte a comunicação e interação entre os participantes.
 
-A partir das ferramentas escolhidas criou-se uma tabela comparativa entre elas e a plataforma Noosfero, desse modo fica mais evidente de quais funcionalidades a plataforma Noosfero carece. Lembrando que não é objetivo deste trabalho esclarecer ou afirmar qual  é a melhor ferramenta, mas verificar todas a principais funcionalidades de um AVA que é utilizado e aceito pelas universidades afim de comparar com o Noosfero.
-% Colocar repositórios das comunidades?
+A partir das ferramentas escolhidas criou-se uma tabela comparativa entre elas e a plataforma Noosfero, desse modo fica mais evidente de quais funcionalidades a plataforma Noosfero carece. Lembrando que não é objetivo deste trabalho esclarecer ou afirmar qual é a melhor ferramenta, mas verificar todas a principais funcionalidades de um AVA que são utilizados e aceitos pelas universidades afim de compará-las com o Noosfero.
 
-\begin{table}[!htb]
-\center
-\begin{tabular}{@{}p{5cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}|p{4cm}@{}}
+Baseado na literatura apresentada na seção \ref{ava}, as funcionalidades das ferramentas escolhidas foram obtidas através de seu uso em ambientes onlines de demonstração, contando ainda, com o auxílio de mecanismos de ajuda fornecidos pelos mesmos. Assim sendo uma série de funcionalidades foram consideradas e para uma melhor apresentação desses dados foram divididas em oito categorias:
+\begin{itemize}
+\item \textbf{Conteúdo:} funcionalidades relacionadas à criação e manutenção de conteúdos publicados pelos usuários.
+\item \textbf{Atribuição:} permitem que os usários carreguem arquivos do seu computador local para a plataforma.
+\item \textbf{Ferramentas:} mecanismos de apoio ao gerenciamento do conteúdo e ambiente;
+\item \textbf{Teste/Quiz:} permitem a realização de avaliações e acompanhamento de resultados dos alunos;
+\item \textbf{Comunicação:} são ferramentas que possibilitam a comunicação síncrona e assíncrona entre os participantes de um curso;
+\item \textbf{Curso:} são as funcionalidades fundamentais para organização dos cursos;
+\item \textbf{Permissão e papéis:} funcionalidades de administração utilizadas para gerenciar o ambiente, definindo papéis e permissões ao ambiente;
+\item \textbf{Página principal:} são as principais funcionalidades evidenciadas na página inicial de cada usuário.
+\end{itemize}
+
+% conteudo atribuição
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{@{}p{5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|p{2.5cm}|p{3.5cm}@{}}
 \toprule
-Funcionalidades\textbackslash Sistema & BlackBoard 9.1 & Moodle & Solar & TelEduc & Amadeus & Sakai & Noosfero &  \\ \midrule
-\textbf{Conteúdo} &  &  &  &  &  &  &  &  \\
-Diretórios/Pastas & Sim & Sim &  & Sim &  & Sim & Sim &  \\
-Criar/Extrair arquivos de pastas & Sim & Sim &  & Sim &  & Sim & Sim &  \\
-Editor HTML & Sim & Sim &  & Sim &  & Sim & Sim &  \\
-Filtro de vários idiomas & Não & Sim & Não & Não & Sim & Não & Não &  \\
-Audio & Sim (incorporado no plugin do QuickTime) & Sim &  & Não &  & Sim &  &  \\
-Vídeo & Sim & Sim & Não & Não & Sim & Sim & Sim &  \\
-SCORM & Sim & Sim &  & Não & Sim & Sim & Não &  \\
-IMS-Content-Package & Sim & Sim &  &  &  &  & Não &  \\
- &  &  &  &  &  &  &  &  \\
-\textbf{Atribuição} &  &  &  &  &  &  &  &  \\
-Upload de um arquivo & Sim & Sim & Não & Sim & Sim & Sim & Sim &  \\
-Upload de vários arquivos & Sim & Sim &  & Não &  & Sim & Sim &  \\
-Texto online & Sim(quiz) & Sim &  & Sim &  & Sim & Sim &  \\
- &  &  &  &  &  &  &  &  \\
-\textbf{Ferramentas} &  &  &  &  &  &  &  &  \\
-Glossário & Sim(Editável pelo instrutor) & Sim (Os participantes também podem adicionar entradas) + bloco para glossário &  & Não &  & Sim &  &  \\
-RSS Feeds & Não & Sim (Banco de dados, Fórum, Glossário) & Não & Não & Não & Sim & Não &  \\
-Blogs & Sim & Sim &  & Sim &  & Sim & Sim &  \\
-Lista de contatos & Sim & Sim &  & Sim &  & Não & Sim (lista de participantes) &  \\
-Calendário (Curso) & Sim & Sim & Sim & Sim & Não & Sim & Sim &  \\
-Permissões de acesso & Sim (programada, dependendo de grau, dependendo do nível total do curso, depende do acesso a conteúdo definido, definir suas próprias regras) & Sim (programada, dependendo de grau, dependendo do nível total do curso, depende do acesso a conteúdo definidos / atividades) & Sim & Sim & Sim & Sim & Sim &  \\
-Verificação de plágio & Sim (integrado) & Não(Não integrado, mas existem APIs) &  & Não & Não & Não & Não &  \\
-Busca de arquivos (curso) & Sim (adicionando um bloco correspondente) & Não &  & Sim &  & Sim & Sim &  \\
-Jornal & Sim & Não &  & Não &  &  & Não &  \\
-Atividade concluída & Sim & Sim &  & Sim & Sim & Sim & Sim (não totalmente implementado) &  \\
-Ferramentas de voz & Não (é necessário a ferramenta Wimba instalada) & Não &  & Não &  & Sim & Não &  \\
-Permite o uso de módulos e plugins & Sim & Sim & Não & Não & Não & Sim (permite a seleção de ferramentas & Sim &  \\
- &  &  &  &  &  &  &  &  \\
-\textbf{Teste/Quiz} &  &  &  &  &  &  &  &  \\
-Banco de questões & Sim & Sim &  & Sim &  & Sim & Não &  \\
-Exportar resultados & Sim & Sim &  & Sim &  & Não & Não &  \\
-Exportar respostas & Sim & Não &  & Não &  & Sim & Não &  \\
-Tipo de questões &  &  &  &  &  &  &  &  \\
-resposta com arquivo & Sim & Sim &  & Não &  & Sim & Sim &  \\
-resposta por escala & Sim & Sim (múltipla escolha) &  & Não &  & Não & Não &  \\
-preencher espaço vazio & Sim & Sim (difícil de lidar) &  & Não & Sim & Sim & Não &  \\
-múltipla escolha & Sim & Sim &  & Sim & Sim & Sim & Não &  \\
-resposta múltipla & Sim & Sim &  & Sim & Não & Sim & Sim(permite o envio de várias versões de um arquivo) &  \\
-Verdadeiro/Falso & Sim & Sim &  & Sim & Sim & Sim & Não &  \\
-Calculos & Sim & Sim &  & Não & Não & Sim & Não &  \\
-Resposta dissertativa & Sim & Sim &  & Sim & Sim & Sim & Sim (com a creiação de um artigo) &  \\
-Calculo numérico & Sim & Sim &  & Não & Não & Sim & Não &  \\
- &  &  &  &  &  &  &  &  \\
-\textbf{Comunicação} &  &  &  &  &  &  &  &  \\
-Enviar e-mail & Sim & Sim & Sim & Sim & Sim & Sim & Sim &  \\
-Enviar mensagens & Sim & Sim & Sim & Sim & Sim & Sim & Sim (mural) &  \\
-Bate papo & Sim & Sim & Sim & Sim & Sim & Sim & Não &  \\
-Fórum de discussão & Sim & Sim & Sim & Sim & Sim & Sim & Sim &  \\
-Alterar tipo de fórum & Sim & Sim &  & Sim & Sim & Sim & Sim (O tema do fórum é definido pelo usuário) &  \\
-Fórum: & Sim & Sim & Sim & Sim & Sim & Sim & Sim &  \\
--postagem anônima & Sim & Não &  & Não & Não & Não & Não &  \\
--anexar um arquivo & Sim & Sim &  & Não & Não & Sim & Não &  \\
--os participantes podem criar tópicos & Sim & Sim &  & Não & Não & Sim & Sim &  \\
--inscrever-se em um fórum & Sim & Sim &  & Não & Não & Sim & Não &  \\
--assinar tópicos & Sim & Não &  & Não & Não & Sim & Não &  \\
--moderar fórum & Sim & Não &  & Sim & Não & Sim & Não &  \\
-Pesquisar fóruns & Sim & Sim &  & Sim &  & Sim & Sim (busca geral) &  \\
- &  &  &  &  &  &  &  &  \\
-\textbf{Curso} &  &  &  &  &  &  &  &  \\
-Criar cursos & Sim & Sim & Sim & Sim, (Com autorização) & Sim & Sim & Sim &  \\
-Criar novos papéis & Sim & Sim &  & Não &  & Não & Sim (merge request) &  \\
-Ferramentas de grupos & Sim & Sim &  & Sim & Sim & Sim & Sim &  \\
-Relatórios do curso & Sim & Sim &  & Sim &  & Sim & Não &  \\
-Sistema de alerta & Sim & Não &  & Não &  & Não & Sim (apenas para solicitação de amizade) &  \\
-Personalização ou configuração (nome, duração, inscrição, idioma) & Sim & Sim &  & Sim & Sim & Sim & Sim &  \\
-Formato de curso(fórum, formato dos tópicos, semanal) & Não & Sim & Não & Não & Não &  & Não &  \\
-Gerenciar campo menu & Sim & O menu é personalizado de acordo com conteúdo o curso &  & Não &  & Sim & Sim &  \\
-Customizar estilo de curso & Sim (menu, tema) & Sim (tema) & Não & Não & Não &  & Sim (tema, blocos personalizados) &  \\
-Estrutura de pastas & Sim & Sim &  & Não &  & Sim & Sim &  \\
-Gerenciar ferramentas & Sim & Sim &  & Sim &  & Sim & Sim &  \\
-Backup do curso / exportação & Sim & Sim & Não & Não & Não & Sim & Sim (apenas backup da plataforma) &  \\
-Importar curso & Sim & Sim &  & Não &  & Não & Não (backup de toda plataforma) &  \\
-Restaurar curso & Sim & Sim &  & Não &  & Não & Não &  \\
-Importar conteúdo/características de outros cursos & Sim & Sim &  & Sim(importar atividades) &  & Sim & Sim &  \\
-Gerenciador de arquivos & Sim & Sim &  & Não &  & Sim & Sim &  \\
- &  &  &  &  &  &  &  &  \\
-\textbf{Permissões e papéis} &  &  &  &  &  &  &  &  \\
-Papéis pré-definidos & instrutor, assistente de ensino, construtor curso, nivelador, estudante, convidado & Administrador do site, gerente, criador do curso, professor editor, professor, estudante, convidado, usuário &  & Coordenadores, formadores, alunos, visitantes, colaboradores & Professor, aluno & Sim (instrutores, assistente de professor, estudante) & Administrador do sistema, moderador, membro, administrador de perfil &  \\
-Editar papéis existentes & Sim & Sim &  & Não &  & Não & Sim (apenas com permissão) &  \\
-Criar novos papéis & Sim & Sim &  & Não &  & Não & Sim &  \\
- &  &  &  &  &  &  &  &  \\
-\textbf{My Home} &  &  &  &  &  &  &  &  \\
-RSS Feeds & Não & Sim & Não & Não & Não & Sim & Não &  \\
-Avisos/ Novos fóruns & Sim & Sim & Sim & Sim & Sim & Sim & Não &  \\
-Lista de afazeres/ Próximos eventos & Sim & Sim &  & Sim(Agenda) &  & Sim & Sim (Calendário) &  \\
-Mensagens & Não & Sim &  & Sim &  & Sim & Sim &  \\
-Boletim/ Resultados de questionários & Sim & Sim & Não & Sim & Sim & Sim & Não & Gerenciador de notas \\
-Usuários online & Sim & Sim & Não & Sim & Sim & Sim(chat) & Não &  \\
-Meu calendário & Sim & Sim & Sim & Sim & Não & Sim & Sim &  \\
-Baixar o conteúdo completo do curso & Não & Não &  & Sim(todos os arquivos) &  & Sim & Não &  \\
-Informação pessoal/ Perfil de usuários & Sim & Sim & Sim & Sim & Sim & Sim & Sim &  \\
-Cancelar a inscrição de um curso & Sim & Sim &  & Não &  &  &  &  \\
-Software livre - GPL license & Não & Sim & Não & Sim & Sim & Sim & Sim &  \\
-Extensão a plataformas móveis & Sim & Não & Não & Não & Sim & Não & Não &  \\
- &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  & https://testdrivesakai.com/portal/help/main &  &  \\ \bottomrule
+\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \midrule
+\textbf{Conteúdo} &  &  &  &  &  \\
+Diretórios/Pastas & Sim & Sim & Sim & Sim & Sim \\
+Criar/Extrair arquivos de pastas & Sim & Sim & Sim & Sim & Sim \\
+Editor HTML & Sim & Sim & Sim & Sim & Sim \\
+Filtro de vários idiomas & Não & Sim & Não & Não & Sim \\
+Audio & Sim (incorporado no plugin do QuickTime) & Sim & Não & Sim &  \\
+Vídeo & Sim & Sim & Não & Sim & Sim \\
+SCORM & Sim & Sim & Não & Sim & Não \\
+IMS-Content-Package & Sim & Sim &  &  & Não \\
+\textbf{Atribuição} &  &  &  &  &  \\
+Upload de um arquivo & Sim & Sim & Sim & Sim & Sim \\
+Upload de vários arquivos & Sim & Sim & Não & Sim & Sim \\
+Texto online & Sim(quiz) & Sim & Sim & Sim & Sim
 \end{tabular}
+\caption{Tabela de comparação categorias: Conteúdo e Atribuição}
+\label{tab:conteudo-atribuicao}
+\end{center}
 \end{table}
 
+Das categorias da tabela \ref{tab:conteudo-atibuicao} podemos destacar que o Noosfero carece do SCORM \footnote{Um modelo de referência seja, conjunto unificado de especificações para a disponibilização de conteúdos e serviços de e-learning \cite{de2006objetos}.} e IMS-Content-Package \footnote{Padrão que permite exportar o conteúdo de um sistema de gerenciamento de conteúdo de aprendizagem ou repositório digital.} que são funcionalidades importantes para os AVAs, pois permitem a maior flexibilização dos conteúdos gerenciados.
+
+% Curso e comunicação
+\begin{table}[h]
+\begin{landscape}
+\begin{tabular}{@{}p{5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|p{2.5cm}|p{3.5cm}@{}}
+\toprule
+\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \midrule
+\textbf{Comunicação} & & & & & \\
+Enviar e-mail & Sim & Sim & Sim& Sim   & Sim    \\
+Enviar mensagens& Sim & Sim & Sim& Sim   & Sim (mural)\\
+Bate papo& Sim & Sim & Sim& Sim   & Não    \\
+Fórum de discussão& Sim & Sim & Sim& Sim   & Sim    \\
+Alterar tipo de fórum & Sim & Sim & Sim& Sim   & Sim \\
+Fórum:   & Sim & Sim & Sim& Sim   & Sim    \\
+-postagem anônima & Sim & Não & Não& Não   & Não    \\
+-anexar um arquivo& Sim & Sim & Não& Sim   & Não    \\
+-os participantes podem criar tópicos   & Sim & Sim & Não& Sim   & Sim    \\
+-inscrever-se em um fórum  & Sim & Sim & Não& Sim   & Não    \\
+-assinar tópicos& Sim & Não & Não& Sim   & Não    \\
+-moderar fórum& Sim & Não & Sim& Sim   & Não    \\
+Pesquisar fóruns& Sim & Sim & Sim& Sim   & Sim (busca geral)   \\
+ & & & & & \\
+\textbf{Curso}&&   &&  &   \\
+Criar cursos  & Sim & Sim & Sim  & Sim   & Sim    \\
+Criar novos papéis& Sim & Sim & Não& Não   & Sim \\
+Ferramentas de grupos & Sim & Sim & Sim& Sim   & Sim \\
+Relatórios do curso   & Sim & Sim & Sim& Sim   & Não \\
+Sistema de alerta & Sim & Não & Não& Não   & Não \\
+Personalização ou configuração (nome, duração, inscrição, idioma) & Sim & Sim & Sim& Sim   & Sim    \\
+Formato de curso(fórum, formato dos tópicos, semanal)& Não & Sim & Não&  & Não    \\
+Gerenciar campo menu  & Sim & O menu é personalizado de acordo com conteúdo o curso & Não& Sim   & Sim    \\
+Customizar estilo de curso & Sim (menu, tema) & Sim (tema)& Não&  & Sim\\
+Estrutura de pastas   & Sim & Sim & Não& Sim   & Sim    \\
+Gerenciar ferramentas & Sim & Sim & Sim& Sim   & Sim    \\
+Backup do curso / exportação & Sim & Sim & Não& Sim   & Sim\\
+Importar curso& Sim & Sim & Não& Não   & Não \\
+Restaurar curso & Sim & Sim & Não& Não   & Não    \\
+Importar conteúdo/características de outros cursos   & Sim & Sim & Sim & Sim   & Sim    \\
+Gerenciador de arquivos    & Sim & Sim & Não& Sim   & Sim
+\end{tabular}
+\end{landscape}
+\caption{Tabela de comparação categorias: Comunicação e Curso}
+\label{tab:comunicacao-curso}
+\end{table}
+
+Realizando uma análise da tabela \ref{tab:comunicacao-curso} verifica-se que o Noosfero possui funcionalidades básicas de comunicação, não possibilitando apenas a comunicação síncrona (Bate-papo). O Noosfero possui fórums, que normalmente são utilizados para a divulgação de notícias e dúvidas, mas não permite a assinatura de tópicos para o recebimento de notificações.
+
+Como o Noosfero não é um ambiente virtual de aprendizagem é possível verificar na tabela \ref{tab:ferramenta-teste} que ele não possibilita a criação de questões para obter a resposta de usuários. Da mesma forma que a plataforma não conta com um sistema de notas, permitindo ao professor atribuir as notas e acompanhar a situação de cada aluno. O Noosfero permite que os usuários enviem arquivos para o servidor mas não permite que o moderador pontue esses documentos.
+
+% Ferramentas teste/quiz
+\begin{table}[h]
+\begin{tabular}{@{}p{5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|p{2.5cm}|p{3.5cm}@{}}
+\toprule
+\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \midrule
+\textbf{Ferramentas} &  &  &  &  &  \\
+Glossário & Sim(Editável pelo instrutor) & Sim (Os participantes também podem adicionar entradas) + bloco para glossário & Não & Sim &  \\
+RSS Feeds & Não & Sim (Banco de dados, Fórum, Glossário) & Não & Sim & Não \\
+Blogs & Sim & Sim & Sim & Sim & Sim \\
+Lista de contatos & Sim & Sim & Sim & Não & Sim (lista de participantes) \\
+Calendário (Curso) & Sim & Sim & Sim & Sim & Sim \\
+Permissões de acesso & Sim (programada, dependendo de grau, dependendo do nível total do curso, depende do acesso a conteúdo definido, definir suas próprias regras) & Sim (programada, dependendo de grau, dependendo do nível total do curso, depende do acesso a conteúdo definidos / atividades) & Sim & Sim & Sim \\
+Verificação de plágio & Sim (integrado) & Não(Não integrado, mas existem APIs) & Não & Não & Não \\
+Busca de arquivos (curso) & Sim (adicionando um bloco correspondente) & Não & Sim & Sim & Sim \\
+Jornal & Sim & Não & Não &  & Não \\
+Atividade concluída & Sim & Sim & Sim & Sim & Sim (não totalmente implementado) \\
+Ferramentas de voz & Não (é necessário a ferramenta Wimba instalada) & Não & Não & Sim & Não \\
+Permite o uso de módulos e plugins & Sim & Sim & Não & Sim (permite a seleção de ferramentas & Sim \\
+\textbf{Teste/Quiz} &  &  &  &  &  \\
+Banco de questões & Sim & Sim & Sim & Sim & Não \\
+Exportar resultados & Sim & Sim & Sim & Não & Não \\
+Exportar respostas & Sim & Não & Não & Sim & Não \\
+\textbf{Tipo de questões} &  &  &  &  &  \\
+resposta com arquivo & Sim & Sim & Não & Sim & Sim \\
+resposta por escala & Sim & Sim (múltipla escolha) & Não & Não & Não \\
+preencher espaço vazio & Sim & Sim (difícil de lidar) & Não & Sim & Não \\
+múltipla escolha & Sim & Sim & Sim & Sim & Não \\
+resposta múltipla & Sim & Sim & Sim & Sim & Sim(permite o envio de várias versões de um arquivo) \\
+Verdadeiro/Falso & Sim & Sim & Sim & Sim & Não \\
+Calculos & Sim & Sim & Não & Sim & Não \\
+Resposta dissertativa & Sim & Sim & Sim & Sim & Sim (com a creiação de um artigo) \\
+Calculo numérico & Sim & Sim & Não & Sim & Não
+\end{tabular}
+\caption{Tabela de comparação categorias: Ferramentas e Teste/Quiz}
+\label{tab:ferramenta-teste}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{@{}p{5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|p{2.5cm}|p{3.5cm}@{}}
+\toprule
+\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \midrule
+\textbf{Permissões e papéis} &  &  &  &  &  \\
+Papéis pré-definidos & Sim & Sim & Sim & Sim & Sim \\
+Editar papéis existentes & Sim & Sim & Não & Não & Sim (apenas com permissão) \\
+Criar novos papéis & Sim & Sim & Não & Não & Sim \\
+\textbf{Página principal} &  &  &  &  &  \\
+RSS Feeds & Não & Sim & Não & Sim & Não \\
+Avisos/ Novos fóruns & Sim & Sim & Sim & Sim & Não \\
+Lista de afazeres/ Próximos eventos & Sim & Sim & Sim(Agenda) & Sim & Sim (Calendário) \\
+Mensagens & Não & Sim & Sim & Sim & Sim \\
+Boletim/ Resultados de questionários & Sim & Sim & Sim & Sim & Não \\
+Usuários online & Sim & Sim & Sim & Sim(chat) & Não \\
+Meu calendário & Sim & Sim & Sim & Sim & Sim \\
+Baixar o conteúdo completo do curso & Não & Não & Sim(todos os arquivos) & Sim & Não \\
+Informação pessoal/ Perfil de usuários & Sim & Sim & Sim & Sim & Sim \\
+Cancelar a inscrição de um curso & Sim & Sim & Não &  &  \\
+Software livre - GPL license & Não & Sim & Sim & Sim & Sim \\
+Extensão a plataformas móveis & Sim & Não & Não & Não & Não
+\end{tabular}
+\caption{Tabela de comparação categorias: Permissões e papéis, página principal}
+\label{tab:ferramentea-teste}
+\end{table}
+
+Os AVAs mencionados possuem papéis de usuários pré-estabelecidos: BlackBoard: instrutor, assistente de ensino, construtor curso, nivelador, estudante, convidado; Moodle: Administrador do site, gerente, criador do curso, professor editor, professor, estudante, convidado, usuário; TelEduc: Coordenadores, formadores, alunos, visitantes, colaboradores; Sakai: instrutores, assistente de professor, estudante; Noosfero: Administrador do sistema, moderador, membro, administrador de perfil. Apesar do Noosfero possuir estes papéis recentemente uma novo funcionalidade foi desenvolvida permitindo a criação de papéis customizados, onde o administrador define quais as permissões para cada um deles.
 
 % Não é objetivo deste trabalho dizer qual ferramenta é melhor que a ooutra, mas sim verificar todas a principais funcionalidades de um ava pelo brasile  pelo mundo e comparar com o nooosfero pra ver oq falta.
