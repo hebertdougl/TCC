@@ -92,42 +92,46 @@ Baseado na literatura apresentada na seção \ref{ava}, as funcionalidades das f
 \item \textbf{Página principal:} são as principais funcionalidades evidenciadas na página inicial de cada usuário.
 \end{itemize}
 
+Das categorias da tabela \ref{tab:conteudo-atribuicao} podemos destacar que o Noosfero carece do SCORM \footnote{Um modelo de referência seja, conjunto unificado de especificações para a disponibilização de conteúdos e serviços de e-learning \cite{de2006objetos}.} e IMS-Content-Package \footnote{Padrão que permite exportar o conteúdo de um sistema de gerenciamento de conteúdo de aprendizagem ou repositório digital.} que são funcionalidades importantes para os AVAs, pois permitem a importação de conteúdos de outras ferramentas proporcionando flexibilidade para o usuário.
+
+Realizando uma análise da tabela \ref{tab:comunicacao} verifica-se que o Noosfero possui funcionalidades básicas de comunicação, não possibilitando apenas a comunicação síncrona (Bate-papo). O Noosfero possui fórums, que normalmente são utilizados para a divulgação de notícias e dúvidas, mas não permite a assinatura de tópicos para o recebimento de notificações.
+
+Como o Noosfero não é um ambiente virtual de aprendizagem é possível verificar na tabela \ref{tab:teste} que ele não possibilita a criação de questões para obter a resposta de usuários. Da mesma forma que a plataforma não conta com um sistema de notas, permitindo ao professor atribuir as notas e acompanhar a situação de cada aluno. O Noosfero possui um \textit{plugin} denominado \textit{Work Assignment} que permite aos usuários enviarem arquivos para o servidor mas não possibilita que o moderador estabeleça uma pontuação para os mesmos.
+
+\begin{landscape}
 % conteudo atribuição
-\begin{table}[h]
+\begin{table}[H]
 \begin{center}
-\begin{tabular}{@{}p{5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|p{2.5cm}|p{3.5cm}@{}}
-\toprule
-\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \midrule
+\begin{tabular}{|@{}p{5.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}@{}|}
+\hline
+\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \hline
 \textbf{Conteúdo} &  &  &  &  &  \\
 Diretórios/Pastas & Sim & Sim & Sim & Sim & Sim \\
 Criar/Extrair arquivos de pastas & Sim & Sim & Sim & Sim & Sim \\
 Editor HTML & Sim & Sim & Sim & Sim & Sim \\
 Filtro de vários idiomas & Não & Sim & Não & Não & Sim \\
-Audio & Sim (incorporado no plugin do QuickTime) & Sim & Não & Sim &  \\
+Audio & Sim {\tiny (incorporado no plugin do QuickTime)} & Sim & Não & Sim &  \\
 Vídeo & Sim & Sim & Não & Sim & Sim \\
 SCORM & Sim & Sim & Não & Sim & Não \\
 IMS-Content-Package & Sim & Sim &  &  & Não \\
 \textbf{Atribuição} &  &  &  &  &  \\
 Upload de um arquivo & Sim & Sim & Sim & Sim & Sim \\
 Upload de vários arquivos & Sim & Sim & Não & Sim & Sim \\
-Texto online & Sim(quiz) & Sim & Sim & Sim & Sim
+Texto online & Sim(quiz) & Sim & Sim & Sim & Sim \\ \hline
 \end{tabular}
 \caption{Tabela de comparação categorias: Conteúdo e Atribuição}
 \label{tab:conteudo-atribuicao}
 \end{center}
 \end{table}
 
-Das categorias da tabela \ref{tab:conteudo-atibuicao} podemos destacar que o Noosfero carece do SCORM \footnote{Um modelo de referência seja, conjunto unificado de especificações para a disponibilização de conteúdos e serviços de e-learning \cite{de2006objetos}.} e IMS-Content-Package \footnote{Padrão que permite exportar o conteúdo de um sistema de gerenciamento de conteúdo de aprendizagem ou repositório digital.} que são funcionalidades importantes para os AVAs, pois permitem a maior flexibilização dos conteúdos gerenciados.
-
 % Curso e comunicação
-\begin{table}[h]
-\begin{landscape}
-\begin{tabular}{@{}p{5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|p{2.5cm}|p{3.5cm}@{}}
-\toprule
-\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \midrule
+\begin{table}[H]
+\begin{tabular}{|@{}p{5.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}@{}|}
+\hline
+\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \hline
 \textbf{Comunicação} & & & & & \\
 Enviar e-mail & Sim & Sim & Sim& Sim   & Sim    \\
-Enviar mensagens& Sim & Sim & Sim& Sim   & Sim (mural)\\
+Enviar mensagens& Sim & Sim & Sim& Sim   & Sim {\tiny(mural)}\\
 Bate papo& Sim & Sim & Sim& Sim   & Não    \\
 Fórum de discussão& Sim & Sim & Sim& Sim   & Sim    \\
 Alterar tipo de fórum & Sim & Sim & Sim& Sim   & Sim \\
@@ -138,8 +142,17 @@ Fórum:   & Sim & Sim & Sim& Sim   & Sim    \\
 -inscrever-se em um fórum  & Sim & Sim & Não& Sim   & Não    \\
 -assinar tópicos& Sim & Não & Não& Sim   & Não    \\
 -moderar fórum& Sim & Não & Sim& Sim   & Não    \\
-Pesquisar fóruns& Sim & Sim & Sim& Sim   & Sim (busca geral)   \\
- & & & & & \\
+Pesquisar fóruns& Sim & Sim & Sim& Sim   & Sim {\tiny (busca geral)} \\
+ & & & & & \\ \hline
+\end{tabular}
+\caption{Tabela de comparação categoria Comunicação}
+\label{tab:comunicacao}
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{|@{}p{5.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}@{}|}
+\hline
+\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \hline
 \textbf{Curso}&&   &&  &   \\
 Criar cursos  & Sim & Sim & Sim  & Sim   & Sim    \\
 Criar novos papéis& Sim & Sim & Não& Não   & Sim \\
@@ -148,88 +161,98 @@ Relatórios do curso   & Sim & Sim & Sim& Sim   & Não \\
 Sistema de alerta & Sim & Não & Não& Não   & Não \\
 Personalização ou configuração (nome, duração, inscrição, idioma) & Sim & Sim & Sim& Sim   & Sim    \\
 Formato de curso(fórum, formato dos tópicos, semanal)& Não & Sim & Não&  & Não    \\
-Gerenciar campo menu  & Sim & O menu é personalizado de acordo com conteúdo o curso & Não& Sim   & Sim    \\
-Customizar estilo de curso & Sim (menu, tema) & Sim (tema)& Não&  & Sim\\
+Gerenciar campo menu  & Sim & Sim {\tiny O menu é personalizado de acordo com conteúdo o curso} & Não& Sim   & Sim    \\
+Customizar estilo de curso & Sim {\tiny (menu, tema)} & Sim {\tiny(tema) }& Não&  & Sim\\
 Estrutura de pastas   & Sim & Sim & Não& Sim   & Sim    \\
 Gerenciar ferramentas & Sim & Sim & Sim& Sim   & Sim    \\
 Backup do curso / exportação & Sim & Sim & Não& Sim   & Sim\\
 Importar curso& Sim & Sim & Não& Não   & Não \\
 Restaurar curso & Sim & Sim & Não& Não   & Não    \\
 Importar conteúdo/características de outros cursos   & Sim & Sim & Sim & Sim   & Sim    \\
-Gerenciador de arquivos    & Sim & Sim & Não& Sim   & Sim
+Gerenciador de arquivos    & Sim & Sim & Não& Sim   & Sim \\ \hline
 \end{tabular}
-\end{landscape}
-\caption{Tabela de comparação categorias: Comunicação e Curso}
-\label{tab:comunicacao-curso}
+\caption{Tabela de comparação categoria Curso}
+\label{tab:curso}
 \end{table}
 
-Realizando uma análise da tabela \ref{tab:comunicacao-curso} verifica-se que o Noosfero possui funcionalidades básicas de comunicação, não possibilitando apenas a comunicação síncrona (Bate-papo). O Noosfero possui fórums, que normalmente são utilizados para a divulgação de notícias e dúvidas, mas não permite a assinatura de tópicos para o recebimento de notificações.
-
-Como o Noosfero não é um ambiente virtual de aprendizagem é possível verificar na tabela \ref{tab:ferramenta-teste} que ele não possibilita a criação de questões para obter a resposta de usuários. Da mesma forma que a plataforma não conta com um sistema de notas, permitindo ao professor atribuir as notas e acompanhar a situação de cada aluno. O Noosfero permite que os usuários enviem arquivos para o servidor mas não permite que o moderador pontue esses documentos.
-
 % Ferramentas teste/quiz
-\begin{table}[h]
-\begin{tabular}{@{}p{5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|p{2.5cm}|p{3.5cm}@{}}
-\toprule
-\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \midrule
+\begin{table}[H]
+\begin{tabular}{|@{}p{5.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}@{}|}
+\hline
+\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \hline
 \textbf{Ferramentas} &  &  &  &  &  \\
-Glossário & Sim(Editável pelo instrutor) & Sim (Os participantes também podem adicionar entradas) + bloco para glossário & Não & Sim &  \\
-RSS Feeds & Não & Sim (Banco de dados, Fórum, Glossário) & Não & Sim & Não \\
+Glossário & Sim(Editável pelo instrutor) & Sim {\tiny (Os participantes também podem adicionar entradas) + bloco para glossário} & Não & Sim &  \\
+RSS Feeds & Não & Sim {\tiny (Banco de dados, Fórum, Glossário)} & Não & Sim & Não \\
 Blogs & Sim & Sim & Sim & Sim & Sim \\
-Lista de contatos & Sim & Sim & Sim & Não & Sim (lista de participantes) \\
-Calendário (Curso) & Sim & Sim & Sim & Sim & Sim \\
-Permissões de acesso & Sim (programada, dependendo de grau, dependendo do nível total do curso, depende do acesso a conteúdo definido, definir suas próprias regras) & Sim (programada, dependendo de grau, dependendo do nível total do curso, depende do acesso a conteúdo definidos / atividades) & Sim & Sim & Sim \\
-Verificação de plágio & Sim (integrado) & Não(Não integrado, mas existem APIs) & Não & Não & Não \\
-Busca de arquivos (curso) & Sim (adicionando um bloco correspondente) & Não & Sim & Sim & Sim \\
+Lista de contatos & Sim & Sim & Sim & Não & Sim {\tiny (lista de participantes)}\\
+Calendário (Curso) & Sim & Sim & Sim & Sim & {\tiny Apenas de eventos} \\
+Permissões de acesso & Sim {\tiny (programada, dependendo de grau, dependendo do nível total do curso, depende do acesso a conteúdo definido, definir suas próprias regras)} & Sim \tiny{(programada, dependendo de grau, dependendo do nível total do curso, depende do acesso a conteúdo definidos / atividades)} & Sim & Sim & Sim \\
+Verificação de plágio & Sim {\tiny (integrado)} & Não {\tiny (Não integrado, mas existem APIs)} & Não & Não & Não \\
+Busca de arquivos (curso) & Sim {\tiny (adicionando um bloco correspondente)} & Não & Sim & Sim & Sim \\
 Jornal & Sim & Não & Não &  & Não \\
-Atividade concluída & Sim & Sim & Sim & Sim & Sim (não totalmente implementado) \\
+Atividade concluída & Sim & Sim & Sim & Sim & Sim {\tiny (não totalmente implementado)} \\
 Ferramentas de voz & Não (é necessário a ferramenta Wimba instalada) & Não & Não & Sim & Não \\
-Permite o uso de módulos e plugins & Sim & Sim & Não & Sim (permite a seleção de ferramentas & Sim \\
+Permite o uso de módulos e plugins & Sim & Sim & Não & Sim {\tiny (permite a seleção de ferramentas} & Sim \\ \hline
+\end{tabular}
+\caption{Tabela de comparação categoria Ferramentas}
+\label{tab:ferramentas}
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{|@{}p{5.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}@{}|}
+\hline
+\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \hline
 \textbf{Teste/Quiz} &  &  &  &  &  \\
 Banco de questões & Sim & Sim & Sim & Sim & Não \\
 Exportar resultados & Sim & Sim & Sim & Não & Não \\
 Exportar respostas & Sim & Não & Não & Sim & Não \\
-\textbf{Tipo de questões} &  &  &  &  &  \\
+\textit{\textbf{Tipo de questões}} &  &  &  &  &  \\
 resposta com arquivo & Sim & Sim & Não & Sim & Sim \\
-resposta por escala & Sim & Sim (múltipla escolha) & Não & Não & Não \\
-preencher espaço vazio & Sim & Sim (difícil de lidar) & Não & Sim & Não \\
+resposta por escala & Sim & Sim {\tiny (múltipla escolha)} & Não & Não & Não \\
+preencher espaço vazio & Sim & Sim {\tiny (difícil de lidar)} & Não & Sim & Não \\
 múltipla escolha & Sim & Sim & Sim & Sim & Não \\
-resposta múltipla & Sim & Sim & Sim & Sim & Sim(permite o envio de várias versões de um arquivo) \\
+resposta múltipla & Sim & Sim & Sim & Sim & Sim {\tiny(permite o envio de várias versões de um arquivo)} \\
 Verdadeiro/Falso & Sim & Sim & Sim & Sim & Não \\
 Calculos & Sim & Sim & Não & Sim & Não \\
-Resposta dissertativa & Sim & Sim & Sim & Sim & Sim (com a creiação de um artigo) \\
-Calculo numérico & Sim & Sim & Não & Sim & Não
+Resposta dissertativa & Sim & Sim & Sim & Sim & Sim {\tiny (com a creiação de um artigo)} \\
+Calculo numérico & Sim & Sim & Não & Sim & Não \\ \hline
 \end{tabular}
-\caption{Tabela de comparação categorias: Ferramentas e Teste/Quiz}
-\label{tab:ferramenta-teste}
+\caption{Tabela de comparação categoria Teste/Quiz}
+\label{tab:teste}
 \end{table}
 
-\begin{table}[h]
-\begin{tabular}{@{}p{5cm}|p{3.5cm}|p{3.5cm}|p{2.5cm}|p{2.5cm}|p{3.5cm}@{}}
-\toprule
-\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \midrule
+\begin{table}[H]
+\begin{tabular}{|@{}p{5.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}@{}|}
+\hline
+\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\ \hline
 \textbf{Permissões e papéis} &  &  &  &  &  \\
 Papéis pré-definidos & Sim & Sim & Sim & Sim & Sim \\
-Editar papéis existentes & Sim & Sim & Não & Não & Sim (apenas com permissão) \\
-Criar novos papéis & Sim & Sim & Não & Não & Sim \\
+Editar papéis existentes & Sim & Sim & Não & Não & Sim {\tiny(apenas com permissão)} \\
+Criar novos papéis & Sim & Sim & Não & Não & Sim \\ \hline
 \textbf{Página principal} &  &  &  &  &  \\
 RSS Feeds & Não & Sim & Não & Sim & Não \\
 Avisos/ Novos fóruns & Sim & Sim & Sim & Sim & Não \\
-Lista de afazeres/ Próximos eventos & Sim & Sim & Sim(Agenda) & Sim & Sim (Calendário) \\
+Lista de afazeres/ Próximos eventos & Sim & Sim & Sim {\tiny(Agenda)} & Sim & Sim {\tiny(Calendário)} \\
 Mensagens & Não & Sim & Sim & Sim & Sim \\
 Boletim/ Resultados de questionários & Sim & Sim & Sim & Sim & Não \\
-Usuários online & Sim & Sim & Sim & Sim(chat) & Não \\
+Usuários online & Sim & Sim & Sim & Sim {\tiny(chat)} & Não \\
 Meu calendário & Sim & Sim & Sim & Sim & Sim \\
-Baixar o conteúdo completo do curso & Não & Não & Sim(todos os arquivos) & Sim & Não \\
+Baixar o conteúdo completo do curso & Não & Não & Sim {\tiny(todos os arquivos)} & Sim & Não \\
 Informação pessoal/ Perfil de usuários & Sim & Sim & Sim & Sim & Sim \\
 Cancelar a inscrição de um curso & Sim & Sim & Não &  &  \\
 Software livre - GPL license & Não & Sim & Sim & Sim & Sim \\
-Extensão a plataformas móveis & Sim & Não & Não & Não & Não
+Extensão a plataformas móveis & Sim & Não & Não & Não & Não \\ \hline
 \end{tabular}
 \caption{Tabela de comparação categorias: Permissões e papéis, página principal}
-\label{tab:ferramentea-teste}
+\label{tab:permissoes-principal}
 \end{table}
 
-Os AVAs mencionados possuem papéis de usuários pré-estabelecidos: BlackBoard: instrutor, assistente de ensino, construtor curso, nivelador, estudante, convidado; Moodle: Administrador do site, gerente, criador do curso, professor editor, professor, estudante, convidado, usuário; TelEduc: Coordenadores, formadores, alunos, visitantes, colaboradores; Sakai: instrutores, assistente de professor, estudante; Noosfero: Administrador do sistema, moderador, membro, administrador de perfil. Apesar do Noosfero possuir estes papéis recentemente uma novo funcionalidade foi desenvolvida permitindo a criação de papéis customizados, onde o administrador define quais as permissões para cada um deles.
+\end{landscape}
 
-% Não é objetivo deste trabalho dizer qual ferramenta é melhor que a ooutra, mas sim verificar todas a principais funcionalidades de um ava pelo brasile  pelo mundo e comparar com o nooosfero pra ver oq falta.
+Os AVAs mencionados possuem papéis de usuários pré-estabelecidos (Tabela \ref{tab:permissoes-principal}): BlackBoard: instrutor, assistente de ensino, construtor curso, nivelador, estudante, convidado; Moodle: Administrador do site, gerente, criador do curso, professor editor, professor, estudante, convidado, usuário; TelEduc: Coordenadores, formadores, alunos, visitantes, colaboradores; Sakai: instrutores, assistente de professor, estudante; Noosfero: Administrador do sistema, moderador, membro, administrador de perfil. Apesar do Noosfero possuir estes papéis pré estabelecidos possui a vantagem de criação de criação de papéis customizados, onde o administrador define quais as permissões para cada um deles. Esta funcionalidade foi desenvolvida recentemente e se encontra em aprovação do \textit{merge request}.
+
+O Noosfero carece de uma melhor estruturação dos conteúdos para o gerenciamento de um curso, como evidenciado na tabela \ref{tab:curso}, a plataforma não permite tratar os conteúdos na forma de cursos e tampouco a personalização de seus formatos (formato dos tópicos, duração). Além disso a ferramenta de calendário disponível mostra apenas as datas dos eventos criados, não disponibilizando aos alunos todas as atividades e duração do curso de forma limpa e organizada.
+
+Quando analisado os itens da categoria de página principal (Tabela \ref{tab:permissoes-principal}) é verificado que o Noosfero necessita de um template próprio para cursos que reúne as informações principais ao alunos. Algumas dessas informações necessitam apenas de uma melhor disposição pela interface como o calendário e mensagens, e outras como avisos, usuários online, boletim etc. requerem a implementação.
+
+Neste capitulo vimos o conceito de ambientes virtuais de aprendizagem, bem como suas funcionalidades além de uma comparação com o Noosfero. Este estudo é importante, uma vez que considerando a análise dessas funcionalidades algumas serão implementadas no desenvolvimento prático deste trabalho, como proposto na seção \ref{desen-noosferAVA}. No entanto é necessário explorar o Noosfero (Capítulo \ref{evol-rede-social}) assim como os processos e desenvolvimento da comunidade, essa compreensão é importante, uma vez que o Comunidade.UnB utiliza esta plataforma que será o foco principal desse trabalho.
