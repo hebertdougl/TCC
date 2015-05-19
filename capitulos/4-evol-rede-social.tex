@@ -83,7 +83,7 @@ A figura \ref{issue-tracker} evidencia o \textit{Issue Tracker} do Noosfero onde
 
 A implementação é realizada pelo desenvolvedor que tem a responsabilidade de manter a qualidade do código produzido bem como todos os testes relacionados à funcionalidade implementada. Uma vez que este primeiro passo esteja concluído o código é submetido a um \textit{merge-request} onde algum dos desenvolvedores do \textit{core} revisa para verificar se está de acordo com os padrões esperados, e aprova ou não, a inclusão do código na \textit{branch} principal do Noosfero.
 
-A comunidade Noosfero adota e recomenda práticas de desenvolvimento como o TDD, \textit{Test Driven Development} ou Desenvolvimento orientado a testes), combinado com o BDD \footnote{\url{https://cukes.info/}} (\textit{Behavior Driven Development}ou Desenvolvimento Guiado por Comportamento, que possibilita o desenvolviemnto de um código tenha uma maior coesão e um menor acoplamento.
+A comunidade Noosfero recomenda práticas de desenvolvimento como o TDD, \textit{Test Driven Development} ou Desenvolvimento orientado a testes), combinado com o BDD \footnote{\url{https://cukes.info/}} (\textit{Behavior Driven Development}ou Desenvolvimento Guiado por Comportamento, que auxiliar o desenvolvedor a criar testes e integrar regras de negócio com a linguagem de programação, mantendo o foco no comportamento do software \cite{north2006introducing}.
 
 Para realizar o controle de versão e gerenciamento do código fonte é utilizado o Git, uma ferramenta livre de versionamento distribuído de código fonte. O repositório oficial do Noosfero encontra-se no software livre Gitlab\footnote{\url{https://gitlab.com/noosfero/noosfero}} com um espelho no Github\footnote{\url{https://github.com/noosfero/noosfero}}. Na página de desenvolvimento da comunidade existe uma série de recomendações sobre como enviar patches para o Noosfero, desde como versionar seu patches, até como realizar a solicitação de inclusão do seu patch, ou \textit{merge-request}, na plataforma.
 
@@ -169,7 +169,7 @@ Por fim, as entidades mostradas na Figura \ref{domain_articles} representam os p
 
 \subsection{Plugins}
 
-Como um software está em constante evolução a arquitetura do Noosfero foi criada para ser altamente expansível [, fazendo-se o uso de \textit{plugins}. Essa arquitetura permite que em cada ambiente fique a critério do usuário quais os \textit{plugins} ou novas funcionalidades serão habilitadas, o que torna o sistema flexível e modular.
+Como um software está em constante evolução a arquitetura do Noosfero foi criada para ser altamente expansível, fazendo-se o uso de \textit{plugins}. Essa arquitetura permite que em cada ambiente fique a critério do usuário quais os \textit{plugins} ou novas funcionalidades serão habilitadas, o que torna o sistema flexível e modular.
 
 \begin{figure}[h]
     \centering
@@ -215,31 +215,205 @@ Sabendo das limitações apresentadas pela plataforma e a proposta de uso da Com
 \section{Desenvolvimento do NoosferAVA}
 \label{desen-noosferAVA}
 
-Nesse capítulo apresentaremos as funcionalidades desenvolvidas para contribuir
-para a adequação do Noosfero como uma rede de colaboração para universidades, os re-
-quisitos não-funcionais levantados para que esta possa suprir as necessidades de segurança
-e confiabilidade e o processo de colaboração com o Noosfero. O capítulo 6, na seção de
-trabalhos futuros, apresenta outras funcionalidades que foram levantadas por nós mas não
-foram desenvolvidas ao longo deste trabalho.
+Nesta seção apresentaremos as funcionalidades que serão desenvolvidas para contribuir para a adequação do Noosfero como um ambiente virtual de aprendizagem, para exercer a função de apoio aos AVA's adotados pelas universidades. Serão apresentados os requisitos funcionais levantados para que esta possa suprir as necessidades levantadas. 
 
-- requisitos
--- funcionalidades adaptadas/melhoras
--- novas funcionalidades
+% -Atualizar pro rails 3
+\subsection{Melhorias no \textit{plugin LdapUnb}}
+% -realizar melhorias - cadastro de matricula dos usuários já existentes
 
--Atualizar pro rails 3
+\subsubsection*{Histórias de usuário}
 
--Utilização do LDAP
-	-realizar melhorias
-		-cadastro de matricula dos usuários já existentes
-		-
+% história
+\begin{enumerate}
+\item \underline{Autenticação via LDAP}
 
--Evolução do workassigment
-	-permitir atribuição de notas para a atividade
-	-**timer (plugin de tolerância e tempo)
+\textbf{Como} um aluno da Universidade Brasília
 
--*Calendário de atividades
+\textbf{Gostaria de} me autenticar na rede através da minha matrícula e senha
+
+\textbf{Para} utilizar os mesmos dados de cadastro da UnB.
+
+\subsubsection*{Cenários de uso:}
+% cenário
+\begin{enumerate}
+\item \underline{Acesso sem matrícula cadastrada}
+
+\textbf{Dado} que sou aluno da UnB
+
+\textbf{E} possuo cadastro ativo na base de dados da UnB
+
+\textbf{E} possuo cadastro ativo na base de dados do Comunidade.UnB
+
+\textbf{Quando} eu acessar o portal
+
+\textbf{Como} um aluno da Universidade Brasília
+
+\textbf{Então} devo ser direcionado para uma página com o título "Cadastrar Matrícula"
+
+\textbf{E} devo ver os campos ``Matrícula'', ``Senha'' e
+``confirmação de senha'' em branco.
+
+\item \underline{Registro de matrícula de usuários existentes}
+
+\textbf{Dado} que sou aluno da UnB
+
+\textbf{E} me encontro na página de Cadastrar matrícula do Comunidade.UnB
+
+\textbf{Quando} eu preencher os campos
+"matrícula" com "100103979",\\
+e "senha"  com a senha da base dados da UnB,\\
+e "confirmação de senha"
+
+\textbf{E} clicar no botão ``Registrar''
+
+\textbf{Então} eu devo ser direcionado para meu perfil
+% cenários
+\end{enumerate}
+% histórias
+\end{enumerate}
+
+% -------------------- Evolução do Work Assignment ----------------
+\subsection{Evolução do \textit{plugin Work Assignment}}
+
+\subsubsection*{Histórias de usuário}
+
+% história
+\begin{enumerate}
+% ---------------------------------------------------------------------
+\item \underline{Definir tempo restante}
+
+\textbf{Como} um professor
+
+\textbf{Gostaria de} definir o tempo restante para cada atividade no Work Assignment
+
+\textbf{Para} gerenciar o envio de atividades pelos alunos em um determinado período.
+
+\subsubsection*{Cenários de uso:}
+\begin{enumerate}
+\item Definir tempo
+\item Modificar tempo
+\end{enumerate}
+
+% -----------------------------------------------------------------------
+\item \underline{Tempo restante de atividades}
+
+\textbf{Como} um aluno
+
+\textbf{Gostaria de} visualizar o tempo restante da atividade
+
+\textbf{Para} enviar um arquivo na data correta.
+
+\subsubsection*{Cenários de uso:}
+\begin{enumerate}
+\item Visualizar tempo
+\end{enumerate}
+
+% -----------------------------------------------------------------------
+
+\item \underline{Atribuir notas aos alunos}
+
+\textbf{Como} um professor
+
+\textbf{Gostaria de} atribuir notas as atividades enviadas pelos alunos
+
+\textbf{Para} avaliar o rendimento de cada um deles.
+
+\subsubsection*{Cenários de uso:}
+\begin{enumerate}
+\item Atribuir notas
+\item Alterar notas
+\end{enumerate}
+
+% -----------------------------------------------------------------------
+
+\item \underline{Publicar notas aos alunos}
+
+\textbf{Como} um professor
+
+\textbf{Gostaria de} publicar as notas atribuídas as atividades
+
+\textbf{Para} que os alunos possam visualizar suas respectivas avalizações
+
+\subsubsection*{Cenários de uso:}
+\begin{enumerate}
+\item Disponibilizar notas de uma determinada atividade
+\item Omitir notas de uma determinada atividade
+\end{enumerate}
+
+% -----------------------------------------------------------------------
+
+\item \underline{Professor gerencia notas}
+
+\textbf{Como} um professor
+
+\textbf{Gostaria de} gerenciar as notas dos integrantes da comunidade
+
+\textbf{Para} manter o controle sobre a pontuação de todos os alunos.
+
+\subsubsection*{Cenários de uso:}
+\begin{enumerate}
+\item Definir grupo de atividades
+\item Visualizar notas de todos os alunos de uma determinada atividade
+\item Visualizar notas de todos ao alunos de um grupo de atividades
+\end{enumerate}
+
+% -----------------------------------------------------------------------
+\item \underline{Aluno visualiza notas}
+
+\textbf{Como} um aluno
+
+\textbf{Gostaria de} visualizar minhas notas
+
+\textbf{Para} inteira-me sobre minha pontuação nas atividades.
+\subsubsection*{Cenários de uso:}
+\begin{enumerate}
+\item Visualizar notas disponíveis de todas as atividades
+\end{enumerate}
+
+% historia
+\end{enumerate}
+
+% ----------------Evoluir calendário de atividades-------------------
+\subsection{Evoluir calendário de atividades}
 	-Arquivos do work assigment
 
--Definir template de disciplina
+\subsubsection*{Histórias de usuário}
+\begin{enumerate}
+\item \underline{Visualizar atividades no calendário}
 
--Sistema de notas
+\textbf{Como} um usuário
+
+\textbf{Gostaria de} visualizar todas as atividades propostas pelo professor
+
+\textbf{Para} me inteirar sobre todas as atividades pendentes.
+
+\subsubsection*{Cenários de uso:}
+\begin{enumerate}
+\item Integrante visualiza atividades marcadas
+\item Visualizar detalhes das atividades
+
+\end{enumerate}
+\end{enumerate}
+
+% ------------------Template para disciplina----------------
+\subsection{Template para disciplina}
+
+\subsubsection*{Histórias de usuário}
+\begin{enumerate}
+\item \underline{Visualizar todas as funcionalidades}
+
+\textbf{Como} um usuário
+
+\textbf{Gostaria de} visualizar todas as opções disponíveis da minha disciplina
+
+\textbf{Para} interagir com os integrantes do meu curso.
+
+\subsubsection*{Cenários de uso:}
+\begin{enumerate}
+\item Visualizar calendário
+\item Visualizar fóruns
+\item Visualizar notas
+
+\end{enumerate}
+\end{enumerate}
+
