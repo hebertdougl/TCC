@@ -218,7 +218,7 @@ Sabendo das limitações apresentadas pela plataforma e a proposta de uso da Com
 Nesta seção apresentaremos as funcionalidades que serão desenvolvidas para contribuir para a adequação do Noosfero como um ambiente virtual de aprendizagem, para exercer a função de apoio aos AVA's adotados pelas universidades. Serão apresentados os requisitos funcionais levantados para que esta possa suprir as necessidades levantadas. 
 
 % -Atualizar pro rails 3
-\subsection{Melhorias no \textit{plugin LdapUnb}}
+\subsection{Evolução do \textit{plugin LdapUnb}}
 % -realizar melhorias - cadastro de matricula dos usuários já existentes
 
 \subsubsection*{Histórias de usuário}
@@ -234,39 +234,40 @@ Nesta seção apresentaremos as funcionalidades que serão desenvolvidas para co
 \textbf{Para} utilizar os mesmos dados de cadastro da UnB.
 
 \subsubsection*{Cenários de uso:}
+
 % cenário
 \begin{enumerate}
 \item \underline{Acesso sem matrícula cadastrada}
 
-\textbf{Dado} que sou aluno da UnB
+\textbf{[Dado]} que sou aluno da UnB
 
-\textbf{E} possuo cadastro ativo na base de dados da UnB
+\textbf{[E]} possuo cadastro ativo na base de dados da UnB
 
-\textbf{E} possuo cadastro ativo na base de dados do Comunidade.UnB
+\textbf{[E]} possuo cadastro ativo na base de dados do Comunidade.UnB
 
-\textbf{Quando} eu acessar o portal
+\textbf{[Quando]} eu acessar o portal
 
 \textbf{Como} um aluno da Universidade Brasília
 
-\textbf{Então} devo ser direcionado para uma página com o título "Cadastrar Matrícula"
+\textbf{[Então]} devo ser direcionado para uma página com o título ``Cadastrar Matrícula''
 
-\textbf{E} devo ver os campos ``Matrícula'', ``Senha'' e
+\textbf{[E]} devo ver os campos ``Matrícula'', ``Senha'' e
 ``confirmação de senha'' em branco.
 
 \item \underline{Registro de matrícula de usuários existentes}
 
-\textbf{Dado} que sou aluno da UnB
+\textbf{[Dado]} que sou aluno da UnB
 
-\textbf{E} me encontro na página de Cadastrar matrícula do Comunidade.UnB
+\textbf{[E]} me encontro na página de Cadastrar matrícula do Comunidade.UnB
 
-\textbf{Quando} eu preencher os campos
-"matrícula" com "100103979",\\
-e "senha"  com a senha da base dados da UnB,\\
-e "confirmação de senha"
+\textbf{[Quando]} eu preencher os campos \\
+``matrícula'' com ``100103979'',\\
+e ``senha''  com a senha da base dados da UnB,\\
+e ``confirmação de senha''
 
-\textbf{E} clicar no botão ``Registrar''
+\textbf{[E]} clicar no botão ``Registrar''
 
-\textbf{Então} eu devo ser direcionado para meu perfil
+\textbf{[Então]} eu devo ser direcionado para meu perfil
 % cenários
 \end{enumerate}
 % histórias
@@ -289,11 +290,51 @@ e "confirmação de senha"
 \textbf{Para} gerenciar o envio de atividades pelos alunos em um determinado período.
 
 \subsubsection*{Cenários de uso:}
-\begin{enumerate}
-\item Definir tempo
-\item Modificar tempo
-\end{enumerate}
 
+\begin{enumerate}
+\item \underline{Definir tempo}
+
+\textbf{[Dado]} que esteja logado como professor
+
+\textbf{[E]} selecione a o opção ``Gerenciar conteúdo''
+
+\textbf{[Quando]} eu clicar em trabalho a ser entregue
+
+\textbf{[Então]} devo visualizar a opção ``Ativar tempo de entrega''
+
+\textbf{[E]} informar a data e hora máxima para envio da atividade.
+
+\item \underline{Modificar tempo}
+
+\textbf{[Dado]} que esteja logado como professor
+
+\textbf{[E]} eu tenha atividades a ser entregue em aberto
+
+\textbf{[E]} eu esteja visualizando as informações da atividade
+
+\textbf{[Quando]} eu selecionar opção ``Editar''
+
+\textbf{[E]} visualizar a opção ``Tempo de entrega''
+
+\textbf{[Então]} deve ser permitido que eu altere o tempo definido
+
+\textbf{[E]} visualize o resultado da alteração após a confirmação.
+
+\item \underline{Permitir entrega de atividades após período}
+
+\textbf{[Dado]} que esteja logado como professor
+
+\textbf{[E]} selecione a o opção ``Gerenciar conteúdo''
+
+\textbf{[E]} vavegar até a página trabalho a ser entregue
+
+\textbf{[Quando]} selecionar a opção ``Ativar tempo de entrega''
+
+\textbf{[Então]} devo visualizar a opção ``Permitir entrega após o período''
+
+\textbf{[Para]} que eu possa selecioná-la.
+
+\end{enumerate}
 % -----------------------------------------------------------------------
 \item \underline{Tempo restante de atividades}
 
@@ -304,10 +345,91 @@ e "confirmação de senha"
 \textbf{Para} enviar um arquivo na data correta.
 
 \subsubsection*{Cenários de uso:}
+
 \begin{enumerate}
-\item Visualizar tempo
+\item \underline{Visualizar tempo}
+
+\textbf{[Dado]} que esteja logado como Aluno
+
+\textbf{[E]} eu esteja inscrito em um Curso
+
+\textbf{[E possua atividade em aberto]}
+
+\textbf{[Quando]} eu selecionar a opção de visualizar a atividade
+
+\textbf{[Então]} eu devo visualizar se a atividade está em aberto
+
+\textbf{[E]} qual o tempo restante para o envio da atividade.
+
 \end{enumerate}
 
+% -----------------------------------------------------------------------
+\item \underline{Professor gerencia notas}
+
+\textbf{Como} um professor
+
+\textbf{Gostaria de} gerenciar as notas dos integrantes da comunidade
+
+\textbf{Para} manter o controle sobre a pontuação de todos os alunos.
+
+\subsubsection*{Cenários de uso:}
+
+\begin{enumerate}
+
+\item \underline{Definir grupo de atividades}
+
+\textbf{[Dado]} que esteja logado como professor
+
+\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
+
+\textbf{[E]} selecionar a opção ``Gerenciar notas''
+
+\textbf{[E]} e eu selecionar o curso desejado
+
+\textbf{[Quando]} eu clicar em ``Cadastrar grupo de atividades''
+
+\textbf{[E]} eu preencho os campos \\
+``Nome do grupo'',\\
+e ``Lista de Atividades''\\
+\textbf{[E]} eu clico em ``Salvar''
+
+\textbf{[Então]} recebo uma mensagem de confirmação
+
+\textbf{[E]} visualizo todas os grupos de atividades criados.
+
+\item \underline{Visualizar notas de todos os alunos de uma determinada atividade}
+
+\textbf{[Dado]} que esteja logado como professor
+
+\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
+
+\textbf{[E]} selecionar a opção ``Gerenciar notas''
+
+\textbf{[E]} e eu selecionar o curso desejado
+
+\textbf{[Quando]} eu selecionar atividade
+
+\textbf{[E]} algum aluno tenha enviado a atividade
+
+\textbf{[Então]} devo visualizar todas as atvidades enviadas e suas respectivas notas.
+
+\item \underline{Visualizar notas de todos ao alunos de um grupo de atividades}
+
+\textbf{[Dado]} que esteja logado como professor
+
+\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
+
+\textbf{[E]} selecionar a opção ``Gerenciar notas''
+
+\textbf{[E]} e eu selecionar o curso desejado
+
+\textbf{[Quando]} eu clicar em ``Visualizar notas por grupo de atividades''
+
+\textbf{[E]} algum aluno tenha enviado a atividade
+
+\textbf{[Então]} devo visualizar todas as atvidades daquele grupo e suas respectivas notas.
+
+\end{enumerate}
 % -----------------------------------------------------------------------
 
 \item \underline{Atribuir notas aos alunos}
@@ -319,9 +441,35 @@ e "confirmação de senha"
 \textbf{Para} avaliar o rendimento de cada um deles.
 
 \subsubsection*{Cenários de uso:}
+
 \begin{enumerate}
-\item Atribuir notas
-\item Alterar notas
+\item \underline{Atribuir notas}
+
+\textbf{[Dado]} que esteja logado como professor
+
+\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
+
+\textbf{[Quando]} selecionar uma atividade na lista de atividades
+
+\textbf{[Então]} devo visualizar a opção atribuir nota
+
+\textbf{[E]} devo visualizar o campo ``nota'' para preenche-lo.
+
+
+\item \underline{Alterar notas}
+
+\textbf{[Dado]} que esteja logado como professor
+
+\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
+
+\textbf{[Quando]} selecionar uma atividade na lista de atividades
+
+\textbf{[E]} atividade já possua notas
+
+\textbf{[Então]} devo visualizar a opção alterar nota
+
+\textbf{[E]} devo visualizar o campo ``nota'' para preenche-lo.
+
 \end{enumerate}
 
 % -----------------------------------------------------------------------
@@ -335,26 +483,32 @@ e "confirmação de senha"
 \textbf{Para} que os alunos possam visualizar suas respectivas avalizações
 
 \subsubsection*{Cenários de uso:}
+
 \begin{enumerate}
 \item Disponibilizar notas de uma determinada atividade
+
+\textbf{[Dado]} que esteja logado como professor
+
+\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
+
+\textbf{[Quando]} selecionar uma atividade na lista de atividades
+
+\textbf{[Então]} devo visualizar a opção ``permitir visualização''
+
+\textbf{[E]} devo ter a opção de ativá-lo.
+
 \item Omitir notas de uma determinada atividade
-\end{enumerate}
 
-% -----------------------------------------------------------------------
+\textbf{[Dado]} que esteja logado como professor
 
-\item \underline{Professor gerencia notas}
+\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
 
-\textbf{Como} um professor
+\textbf{[Quando]} selecionar uma atividade na lista de atividades
 
-\textbf{Gostaria de} gerenciar as notas dos integrantes da comunidade
+\textbf{[Então]} devo visualizar a opção ``permitir visualização''
 
-\textbf{Para} manter o controle sobre a pontuação de todos os alunos.
+\textbf{[E]} devo ter a opção de desativá-lo.
 
-\subsubsection*{Cenários de uso:}
-\begin{enumerate}
-\item Definir grupo de atividades
-\item Visualizar notas de todos os alunos de uma determinada atividade
-\item Visualizar notas de todos ao alunos de um grupo de atividades
 \end{enumerate}
 
 % -----------------------------------------------------------------------
@@ -365,55 +519,48 @@ e "confirmação de senha"
 \textbf{Gostaria de} visualizar minhas notas
 
 \textbf{Para} inteira-me sobre minha pontuação nas atividades.
+
 \subsubsection*{Cenários de uso:}
 \begin{enumerate}
-\item Visualizar notas disponíveis de todas as atividades
-\end{enumerate}
 
+\item \underline{Visualizar cursos com notas disponíveis}
+
+\textbf{[Dado]} que estou logado como ``Hebert''
+
+\textbf{[E]} o plugin Work Assignment esteja ativo
+
+\textbf{[E]} participo de alguma comunidade que utilize o plugin de notas
+
+\textbf{[E]} existem notas de atividades disponíveis
+
+\textbf{[E]} o professor tenha permitido sua visualização
+
+\textbf{[Quando]} eu navegar até a página ``Minhas notas''
+
+\textbf{[Então]} tenho que ver todos as comunidades (cursos) com notas disponíveis.
+
+\item \underline{Detalhar notas de cada curso}
+
+\textbf{[Dado]} que estou logado como ``Hebert''
+
+\textbf{[E]} o plugin Work Assignment esteja ativo
+
+\textbf{[E]} participo de alguma comunidade que utilize o plugin de notas
+
+\textbf{[E]} existem notas de atividades disponíveis
+
+\textbf{[E]} o professor tenha permitido sua visualização
+
+\textbf{[E]} navegar até a página ``Minhas notas''
+
+\textbf{[E]} visualizar todos as comunidades (cursos) com notas disponíveis
+
+\textbf{[Quando]} eu selecionar a ``Visualizar detalhes'' de alguma comunidade
+
+\textbf{[Então]} tenho que ver todos os grupos de atividades
+
+\textbf{[E]} as notas disponibilizadas pelo professor.
+% cenários
+\end{enumerate}
 % historia
 \end{enumerate}
-
-% ----------------Evoluir calendário de atividades-------------------
-\subsection{Evoluir calendário de atividades}
-	-Arquivos do work assigment
-
-\subsubsection*{Histórias de usuário}
-\begin{enumerate}
-\item \underline{Visualizar atividades no calendário}
-
-\textbf{Como} um usuário
-
-\textbf{Gostaria de} visualizar todas as atividades propostas pelo professor
-
-\textbf{Para} me inteirar sobre todas as atividades pendentes.
-
-\subsubsection*{Cenários de uso:}
-\begin{enumerate}
-\item Integrante visualiza atividades marcadas
-\item Visualizar detalhes das atividades
-
-\end{enumerate}
-\end{enumerate}
-
-% ------------------Template para disciplina----------------
-\subsection{Template para disciplina}
-
-\subsubsection*{Histórias de usuário}
-\begin{enumerate}
-\item \underline{Visualizar todas as funcionalidades}
-
-\textbf{Como} um usuário
-
-\textbf{Gostaria de} visualizar todas as opções disponíveis da minha disciplina
-
-\textbf{Para} interagir com os integrantes do meu curso.
-
-\subsubsection*{Cenários de uso:}
-\begin{enumerate}
-\item Visualizar calendário
-\item Visualizar fóruns
-\item Visualizar notas
-
-\end{enumerate}
-\end{enumerate}
-

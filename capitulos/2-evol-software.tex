@@ -1,2 +1,32 @@
-\chapter{Evolução de software}
+\chapter{Manutenção e evolução de software}
 \label{evol-software}
+
+%Como surgiu a manutenção de software?
+%Qual o conceito IEE?
+%Diferenças entre a manutenção de softwares com propósitos distintos Pfleeger (2001)
+
+A ISO/IEC 12207 (\citeyear{iso12207}) define o processo de ciclo de vida de um software, para isso ela faz um agrupamento dos processos que são divididos em quatro classes: processos fundamentais, processo de apoio, processos organizacionais e processos de adaptação. O processo de manutenção de software está classificado como um dos processos fundamentais, que são aqueles necessários para que um o software seja implementado.
+
+A manutenção de software é definada como a modificação de um produto de software após sua entrega sendo utilizda para corrigir falhas, para melhorar o desempenho ou outros atributos, ou mesmo para adaptar o produto a um ambiente modificado de acordo com as necessidades do cliente \cite{ieee1219}.
+
+As normas citadas tratam a manutenção de um produto genérico de software, mas para \cite[p.~380]{pfleeger2004engenharia} a manutenção varia de acordo com os seu próposito de criação. A probabilidade de o sistema ser modificado varia de acordo com o vínculo de dependência dos requisitos com o sistema do mundo real, quanto mais dependentes forem os requisitos do mundo real maior será a probabilidade de o sistema vir a ser modificado.
+
+O primeiro grupo de sistemas são os que possuem os requisitos especificados e formalmente definidos, ou seja, os resultados esperados são bem conhecidos e a solução é estática e não se adapta facilmente a uma mudança no problema que o gerou. O segundo grupo consiste nos sistemas em que a solução é aproximada do mundo real, tem-se a solução completa apenas na teoria pois solucionar o problema em sua totalidade é impraticável ou impossível. A exemplo deste segundo grupo temos a implementação de um jogo de xadrez onde calcular todas os movimentos possíveis e suas consequências é impossível. O terceiro grupo é o único que leva incorpora a mudança na natureza do mundo real em si,  modificando-se a medida em que o mundo muda. Neste ultimo grupo a solução tem como base um modelo do processo abstrato envolvido, um exemplo é um sistema que prevê a estabilidade econômica de um país e utiliza como base o modelo de como a ecnonomia opera.
+
+
+\subsection{Tipos de manutenção}
+
+Analisando a literatura percebe-se que a manutenção de software está dividida em três grandes categorias, que podem ser visualizados tanto na norma da \cite{ieee1219} e em livros texto desde \cite{lientz1980software} à \cite{pfleeger2004engenharia}, as categorias são as seguintes:
+\begin{itemize}
+\item Manutenção corretiva é realizada para controlar funções cotidianos do sistema, corrigindo falhas e defeitos de funcionalidaes do programa.
+
+\item Manutenção adaptativa dizem respeito a implementação de modificações secundárias que têm como origem uma modificação em outra parte do sistema ou do meio externo.
+
+\item Manutenção perfectiva ou evolutiva consistem e realizar o acréscimo de novas funcionalidades ou mudanças para melhorar alguns aspectos do sistema, mesmo quando nenhuma dessas seja consequência de defeitos
+\end{itemize}
+
+No livro de \cite{pressman2011engenharia} e outros autores ainda é destacado mais um tipo de manutenção, a preventiva. Esta está ligada a uma reengenharia, aplicando conceitos de engenharia de software para tornar os softwares mais fáceis de serem corrigidos, adpatados e melhorados ao longo dos anos. Assim, de acordo com \cite{criscuolo2008qualidade} a manutenção preventiva garante que o software receba alterações de forma que os riscos de introdução de defeitos são minimizados, e diminuindo a complexidade de suas estruturas garantindo um certa segurança à manutenção.
+
+%Manutenção preventiva (reengenharia): modifica o software a fim de torná-los mais fáceis de serem corrigidos, adaptados e melhorados. 
+
+Para o \cite{ieee1219} além das três principais categorias citadas é considerada uma categoria a mais chamada de manutenção emergencial. Este tipo de manutenção é definida como uma manutenção corretiva que não foi programada ou planejada, mas deve ser executada para manter o sistema em funcionamento.
