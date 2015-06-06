@@ -1,6 +1,8 @@
-\chapter{Manutenção e evolução de software}
-\label{evol-software}
+\chapter{Evolução de software em métodos empiricos de desenvolvimento}
+\label{cap-evol-software}
 
+\section{Manutenção e evolução de software}
+\label{sect-manut-evol-soft}
 %Como surgiu a manutenção de software?
 %Qual o conceito IEE?
 %Diferenças entre a manutenção de softwares com propósitos distintos Pfleeger (2001)
@@ -15,6 +17,7 @@ O primeiro grupo de sistemas são os que possuem os requisitos especificados e f
 
 
 \subsection{Tipos de manutenção}
+\label{sub-tipo-manut}
 
 Analisando a literatura percebe-se que a manutenção de software está dividida em três grandes categorias, que podem ser visualizados tanto na norma da \cite{ieee1219} e em livros texto desde \cite{lientz1980software} à \cite{pfleeger2004engenharia}, as categorias são as seguintes:
 \begin{itemize}
@@ -22,7 +25,7 @@ Analisando a literatura percebe-se que a manutenção de software está dividida
 
 \item Manutenção adaptativa dizem respeito a implementação de modificações secundárias que têm como origem uma modificação em outra parte do sistema ou do meio externo.
 
-\item Manutenção perfectiva ou evolutiva consistem e realizar o acréscimo de novas funcionalidades ou mudanças para melhorar alguns aspectos do sistema, mesmo quando nenhuma dessas seja consequência de defeitos
+\item Manutenção perfectiva ou evolutiva consistem e realizar o acréscimo de novas funcionalidades ou mudanças para melhorar alguns aspectos do sistema, mesmo quando nenhuma dessas seja consequência de defeitos.
 \end{itemize}
 
 No livro de \cite{pressman2011engenharia} e outros autores ainda é destacado mais um tipo de manutenção, a preventiva. Esta está ligada a uma reengenharia, aplicando conceitos de engenharia de software para tornar os softwares mais fáceis de serem corrigidos, adpatados e melhorados ao longo dos anos. Assim, de acordo com \cite{criscuolo2008qualidade} a manutenção preventiva garante que o software receba alterações de forma que os riscos de introdução de defeitos são minimizados, e diminuindo a complexidade de suas estruturas garantindo um certa segurança à manutenção.
@@ -30,3 +33,94 @@ No livro de \cite{pressman2011engenharia} e outros autores ainda é destacado ma
 %Manutenção preventiva (reengenharia): modifica o software a fim de torná-los mais fáceis de serem corrigidos, adaptados e melhorados. 
 
 Para o \cite{ieee1219} além das três principais categorias citadas é considerada uma categoria a mais chamada de manutenção emergencial. Este tipo de manutenção é definida como uma manutenção corretiva que não foi programada ou planejada, mas deve ser executada para manter o sistema em funcionamento.
+% Manutenção e evolução (Conceito tradicional)
+% Manutenção evolução aplicados em Metodos empiricos
+\section{Manutenção e evolução aplicados em métodos empíricos}
+
+\subsection{Software Livre}
+\label{soft-livre}
+
+De acordo com \cite{meirelles2013} software expressa uma solução abstrata dos problemas computacionais, neste contexto é o componente que contém o conhecimento relacionado aos problemas a que a computação se aplica, contendo diversos aspectos que ultrapassam questões técnicas, a exemplo temos:
+\begin{itemize}
+\item O processo de desenvolvimento do software;
+\item Os mecanismos econômicos (gerenciais, competitivos, sociais, cognitivos etc.) que regem esse desenvolvimento e seu uso;
+\item O relacionamento entre desenvolvedores, fornecedores e usuários do software;
+\item Os aspectos éticos e legais relacionados ao software
+\end{itemize}
+
+O que define e diferencia o software livre de software proprietário vai do entendimento desses quatro pontos dentro do que é conhecido como \textit{ecossistema do software livre}~\cite{meirelles2013}.
+
+Software livre é definido pela Free Software Foundation como “uma questão de liberdade dos usuários para executar, copiar, distribuir, estudar, mudar e melhorar o software. Levando isto em consideração significa que os usuários do software possuem quatro liberdades essenciais \cite{stallman2002free}:
+
+\begin{itemize}
+\item A liberdade de executar o programa, para qualquer propósito (liberdade no. 0);
+\item A liberdade de estudar como o programa funciona, e adaptá-lo para as suas necessidades (liberdade no. 1). Aceso ao código-fonte é um pré-requisito para esta liberdade;
+\item A liberdade de redistribuir cópias de modo que você possa ajudar ao seu próximo (liberdade no. 2);
+\item A liberdade de aperfeiçoar o programa, e liberar os seus aperfeiçoamentos, de modo que toda a comunidade se beneficie (liberdade no. 3). Acesso ao código-fonte é um pré-requisito para esta liberdade.
+\end{itemize}
+
+Para que as liberdades um e três façam sentido, é necessário que o desenvolvedor ou pesquisador tenha acesso ao código-fonte do programa.  Portanto, acesso ao código-fonte é uma condição necessária ao software livre ~\cite{gnu2013}.
+
+Um programa é considerado um software livre se os usuários possuem todas as liberdades citadas. Dessa forma, você deve ser livre para redistribuir cópias, com ou sem modificações, de graça ou cobrando uma taxa pela distribuição, para qualquer lugar. Ser livre para fazer essas coisas significa (entre outras coisas) que você não tem que pedir ou pagar por permissão para fazê-las ~\cite{anaPaula2012}.
+
+O fato de que o código-fonte pode ser livremente compartilhado oferece vantagens ao software livre em comparação ao software proprietário. Umas delas é que podem simplificar o desenvolvimento de aplicações personalizadas já que não precisam ser programadas a partir do zero podem se basear em soluções já existentes.
+
+A outra vantagem resultante do compartilhamento do código refere-se à possível melhoria na qualidade, em particular frente aos problemas inerentes à sua complexidade \cite{catedralBazzar}.
+%
+Isso se deve ao maior número de desenvolvedores e usuários envolvidos com o software, permitindo maiores situações de uso e necessidades mais variadas, o que propicia a identificação de um número maior de \emph{bugs} e mais sugestões de melhoria, promovendo refatorações que geralmente levam a melhoria do código.
+
+O GNU quis dar aos utilizadores a liberdade, não só para ser popular. Contudo precisava usar termos de distribuição que impediriam software livre de ser transformado em software proprietário. O método usado foi chamado de \emph{copyleft}. \emph{Copyleft} é um método geral para fazer um software livre e exige que todas as versões modificadas e estendidas do programa sejam também. Ele utiliza lei de direitos autorais, mas veio para servir como oposto de sua finalidade usual: ao invés de um meio de privatizar o software, torna-se um meio de manter o software livre~\cite{stallman2009}.
+
+\subsection{Processo de desenvolvimento de Software Livre}
+\label{des-soft-livre}
+
+Para compreender o processo de desenvolvimento de software livre é necessário entender o que são métodos ágeis, um conjunto de metodologias baseada na prática para o desenvolvimento de software. Em 2001 a aliança ágil definiu o Manifesto ágil, que definem preferências e príncipios que se espera de qualquer método de desenvolvimento dessa categoria. O manifesto é baseado em quatro valores \cite{beck2001agile}:
+\begin{itemize}
+\item Indivíduos e interações são mais importantes que processos e ferramentas.
+\item Software em funcionamento é mais importante que documentação abrangente.
+\item Colaboração com o cliente (usuários) é mais importante que negociação de contratos.
+\item Responder às mudanças é mais importante que seguir um plano.
+\end{itemize}
+
+Na dissertação de \citeonline{corbucci2011metodos} ele evidencia que estes quatro valores demonstram a semelhança entre as práticas comuns utilizadas pelas comunidades de software livre e equipes ágeis. Além disso, ele destaca que muitas práticas disseminadas pelas metodologias ágeis são usadas no dia-a-dia dos desenvolvedores e equipes das comunidades de software livre:
+\begin{itemize}
+\item Código compartilhado (coletivo);
+\item Projeto simples;
+\item Repositório único de código;
+\item Integração contínua;
+\item Código e teste;
+\item Desenvolvimento dirigido por testes;
+\item Refatoração.
+\end{itemize}
+
+Entender esses aspectos no contexto de software livre torna-se relevante porque, ao contrário dos métodos tradicionais de desenvolviemnto, o ágeis são adaptativos ao invés de prescritivos e são orientados às pessoas ao invés dos processos. Analisar o processo de desenvolvimento de software livre do ponto de vista da Engenharia de Software e as possíveis sinergias com os métodos ágeis podem contribuir para um melhor rendimento dessa disposição na criação e colaboração em torno de projetos de software livre \cite{meirelles2013}.
+
+% Revisar esse paragrafo
+No processo de desenvolvimento de software livre, após a divulgação e lançamento da primeira versão do projeto, desse modo ele está pronto para uso à todos usuários interessados. Há casos em que esses usuários são desenvolvedores que irão colaborar com o projeto afim de evoluí-lo para suprir alguma necessidade pessoal e de interesse da comunidade. Destacando a colaboração no código-fonte, essas melhorias são enviadas aos mantenedores do projeto como \textit{patches}\footnote{arquivos que contém as modificações no código}, e que serão analisados pelos mantenedores e caso concordem com a mudança e implementação, irão aplicá-las ao repositório oficial do projeto. Portanto, mesmo que em projetos maiores outros aspectos sejam levados em consideração ou sigam processos mais burocrático de colaboração, a essência da colaboração técnica está no envio e análise de trechos de código-fonte \cite{meirelles2013}.
+
+Este processo de desenvolvimento deve ser fundamentado em conformidade com as disciplinas da Engenharia de Software, ....
+
+
+\subsection{No contexto de disciplinas/área da engenharia de software}
+% No contexto de disciplinas/área da engenharia de software
+%    -GCS
+% uso de controle versão
+
+No contexto de gerência e configuração de software grande parte dos projetos de software livre hoje utilizam alguma sistema de controle de versão. Este é visto como uma extensão natural do processo de desenvolvimento, e permite que se possa paralelizar o desenvolvimento de forma conveniente, principalmente se tratando de um conjunto muito grande de desenvolvedores \cite{reis2001caracterizaccao}. Com esse amplo número de desenvolvedores trabalhando de maneira colaborativa e distribuída normalmente faz-se uso de um sistema de controle de versão que controla seus itens de configuração fazendo uso de um repositório central, local de armazenamento de todas as versões dos arquivos.
+
+Estes sistemas de controle de versão permitem ao \textit{commiter} oficial realizar uma inspeção e revisão de todo código que é integrado ao repositório principal do projeto de forma não intrusiva no desenvolvimento realizado pelos contribuidores. \citeonline{reis2001caracterizaccao} atesta que a revisão acaba acontecendo quase automaticamente, já que as pessoas são forçadas pela distância a enviar modificações à outras para integração.
+
+%    -Testes(GERAL)
+O teste de software é um processo destinado a certificar-se de que o código desenvolvido é previsível e consistente, realizando apenas as ações para o qual foi projetado \cite{myers2011art}. Afim de tornar estes testes idependentes da intervenção humana, o teste automatizado é um prática de criar \textit{scripts} ou programas de computador que exercitam o sistema em teste, capturam os efeitos colaterais e fazem verificações, tudo automática e dinamicamente \cite{meszaros2007xunit}.
+
+% teste automatizado
+Segundo \citeonline{bernardo2011padroes} os testes automatizados agregam valor ao produto final porque afetam diretamente a qualidade dos sistemas de software, mesmo que os artefatos produzidos não sejam visíveis aos usuários.
+% integração contínua
+
+O testes automatizados permitem ... .A integração contínua tem objetivo integrar frequentemente o sistema e todas suas dependências para verificar que nenhuma modificação tenha danificado o sistema, sejam elas alterações no código-fonte, em configurações ou mesmo em dependências e outros fatores externos \cite{duvall2007continuous}. Dessa modo afim de garantir a integridade do código a integração contínua garante que todos os testes são executados a cada modificação da base de código garantindo \textit{Feedback} imediato, assegurando que a integração tenha ocorrido de forma satisfatória.
+
+\citeonline{corbucci2011metodos} afirma que a equipe utiliza os testes para descobrir eventuais defeitos o mais rapidamente possível já que descobri-los logo facilita e acelera a correção e diminui a probabilidade de pequenos problemas se transformarem em \textit{bugs}'ou comportamentos inesperados no futuro.
+% issue tracker
+% Certamente o que se observa nas listas de discussão é que grande parte das mensagens é repleta de justificativas técnicas para defender um ponto de vista.
+
+%    -Revisão
