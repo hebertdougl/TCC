@@ -178,15 +178,23 @@ Alguns professores adotaram o Comunidade.UnB como um ambiente de apoio ao Moodle
 Este é um exemplo de comunidade criada dentro do Comunidade.UnB, que possui características que se assemelham ao ambiente Moodle, como evidenciado na seção \ref{comparacao-ava}, carecendo de alguns funcionalidades importantes mas com a vantagem da possibilidade de acesso do público ao conteúdo, e a continuidade do conteúdo desenvolvido por outras pessoas que eventualmente se juntem ao longo do tempo. E vale lembrar que em uma publicação de conteúddo os níveis de privacidade podem ser alterados basicamente entre públicos e privados.
 
 Sabendo das limitações apresentadas pela plataforma e a proposta de uso da Comunidade.UnB por professores para a criação de disciplinas, é um fator que estimula o desenvolvimento de funcionalidades que levam à plataforma Noosfero de assemelhar-se a um ambiente virtual de aprendizagem. Desta maneira na seção \ref{desen-noosferAVA} busca-se a proposta de estudo desse trabalho no desenvolvimento de funcionalidade para minimizar as diferenças do Noosfero com os ambientes virtuais de aprendizegem.
-%
+
 \section{Desenvolvimento do NoosferAVA}
 \label{desen-noosferAVA}
 
 Nesta seção apresentaremos as funcionalidades que serão desenvolvidas para contribuir para a adequação do Noosfero como um ambiente virtual de aprendizagem, para exercer a função de apoio aos AVA's adotados pelas universidades. Serão apresentados os requisitos funcionais levantados para que esta possa suprir as necessidades levantadas. 
 
+Além das funcionalidades relatadas, julgou-se necessária a evolução do \textit{plugin Comunidade.UnB}, desenvolvido por \citeonline{bucher2013rede} com objetivo de integrar o Noosfero com o serviço de Lightweight Directory Access Protocol (LDAP). O LDAP é utilizado pela UnB para manter a base dados de todos os seus alunos e funcionários.
+
 % -Atualizar pro rails 3
-\subsection{Evolução do \textit{plugin LdapUnb}}
+\subsection{Evolução do \textit{plugin Comunidade.UnB}}
 % -realizar melhorias - cadastro de matricula dos usuários já existentes
+
+O objetivo do \textit{plugin} do Comunidade.Unb é que o usuário tenha acesso através dos mesmos dados utilizados para acessar outros serviços, como, por exemplo, o serviço de matrícula \footnote{Disponível em: \url{https://matriculaweb.unb.br}} para alunos ou o serviço de lançamento de notas para professores.
+
+A versão anterior do \textit{plugin} permitia que apenas os novos usuários realizassem o cadastro de suas matrículas, dessa maneira aqueles que já estavam cadastrados não tinham acesso ao portal. Devido as limitações de acesso definidas pelo \textit{plugin}, onde apenas usuários com matrícula cadastrada tem acesso ao sistema.
+
+Foi criada nova versão do \textit{plugin} que permite cadastrar a matrícula dos usuários que já possuem registro no Comunidade.UnB. Dessa maneira o \textit{plugin Comunidade.UnB} poderá ser ativado permitindo a autenticação apenas dos usuários cadastrados no LDAP da universidade.
 
 \subsubsection*{Histórias de usuário}
 
@@ -243,8 +251,13 @@ e ``confirmação de senha''
 % -------------------- Evolução do Work Assignment ----------------
 \subsection{Evolução do \textit{plugin Work Assignment}}
 
-\subsubsection*{Histórias de usuário}
+Nesta subseção serão apresentadas um primeiro levantamento das histórias correspondentes a evolução do \textit{plugin Work Assignment}. Até então o \textit{plugin} possui apenas a funcionalidade de permitir o envio de arquivos para o servidor em um determinado período de tempo.
 
+A proposta de evolução é a criação de um sistema de notas que permita ao professor atribuir notas as atividades enviadas e dessa maneira acompanhar a situação de cada aluno. Do ponto de vista do aluno o mesmo poderá visualizar todas as notas das atividades em cada disciplina, avaliando se o seu desempenho está satisfatório.
+
+Além disso é necessário uma evolução da funcionalidade que permite a definição do tempo restante para o envio, que atualmente é realizado de maneira manual não possibilitando o estabelecimento de intervalos de tempo.
+
+\subsubsection*{Histórias de usuário}
 % história
 \begin{enumerate}
 % ---------------------------------------------------------------------
@@ -452,7 +465,7 @@ e ``Lista de Atividades''\\
 \subsubsection*{Cenários de uso:}
 
 \begin{enumerate}
-\item Disponibilizar notas de uma determinada atividade
+\item \underline{Disponibilizar notas de uma determinada atividade}
 
 \textbf{[Dado]} que esteja logado como professor
 
@@ -464,7 +477,7 @@ e ``Lista de Atividades''\\
 
 \textbf{[E]} devo ter a opção de ativá-lo.
 
-\item Omitir notas de uma determinada atividade
+\item \underline{Omitir notas de uma determinada atividade}
 
 \textbf{[Dado]} que esteja logado como professor
 
