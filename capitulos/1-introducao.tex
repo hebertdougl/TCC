@@ -1,43 +1,55 @@
 \chapter{Introdução}
 \label{cap-introducao}
-%------------------------------------------------------------------------------%
-%\section{Tema}
-%Manutenção e evolução em software livre.
-Neste capítulo foram abordados os principais conceitos relacionados a este trabalho, mostrando o contexto e o tema que será explorado. É apresentado a justificativa e os problemas relacionados a este trabalho além dos objetivos esperados para a pesquisa. Ao final é evidenciado a organização geral do trabalho.
+
+Nas últimas décadas percebeu-se a grande difusão dos recursos computacionais e do acesso à \textit{Internet}, por conseguinte houve um aumento significativo na quantidade e diversidade de conteúdos e serviços à disposição dos usários. \citeonline{araujo2011apprecommender} menciona que um dos fatores para esse aumento é que indivíduos que anteriormente limitavam-se ao papel de consumidores de conteúdo, hoje colocam-se também na posição de produtores. Na Internet encontramos inúmeros exemplos de sucesso como \textit{blogs}, enciclopédias colaborativas como a Wikipedia, repositórios para compartilhamento de fotografia e vídeo, como Flickr e Youtube, redes sociais colaborativas, entre outros.
+
+\cite{castells2007era} afirma que tal fenômeno, comumente referenciado como \textit{Web} 2.0, ocorre porque a população acredita que pode influenciar outras pessoas atuando no mundo por meio da sua força de vontade e utilizando seus próprios meios. Isso explica o fato do crescimento no uso de redes sociais nos últimos anos, onde as pessoas querem produzir seus próprios conteúdos gerando discussões construtivas sobre determinado assunto.
+
+% FAlar de redes sociais
+
+O ambiente acadêmico atual faz uso de ferramentas virtuais de aprendizagem, soluções colaborativas e redes sociais para interação. Essas ferramentas auxiliam professores e alunos em suas atividades diárias, facilitam a rápida atualização de conteúdos, facilitam o acesso a públicos geograficamente dispersos, reduz custos logísticos e administrativos e desenvolvem capacidades de auto estudo e autoaprendizagem.
+
+Nesse contexto, deve-se buscar solução integrada, de fácil acesso, que agregue  as diversas funcionalidades necessárias a um ambiente virtual de aprendizagem.
 
 \section{Justificativa}
 
+A Universidade de Brasília (UnB) faz uso de ambiente virtual de aprendizagem, suportado pela ferramenta moodle, que permite a criação de cursos "on-line", páginas de disciplinas, grupos de trabalho e aprendizagem virtual. Este é um suporte tecnólogio até então utilizado pelos professores como suporte a condução de suas disciplinas. Baseado em métodos empíricos, verifica-se que nesse contexto os alunos o utiliza, apenas para consumirem conteúdos produzidos pelos professores.
 
-\section{Problema}
+Neste trabalho realizou-se um questionário afim de investigar se os alunos da Universidade de Brasília utilizam as redes sociais, como o \textit{Facebook}, para o compartilhamento de recursos e informações relacionados as disciplinas cursadas na Universidade. Verificou-se que em sua maioria os alunos utilizam as redes socias para tal fim, mesmo que os professores não recomendem o uso em suas disciplinas (Resultados no apêndice \ref{apen-quest-result}). Evidenciando a afirmação de \citeonline{davis2012social} que os alunos de graduação querem estar nas redes sociais e que aqueles que participam de forma mais ativa delas tendem a obter maior riqueza em suas relações sociais.
 
+Para atender esse novo contexto onde os usuários também querem produzir seus conteúdos e trabalharem de maneira colaborativa, a UnB também possui uma rede colaboração livre. Esta é denominada Comunidade.UnB , desenvolvida para que alunos, professores e servidores técnico-administrativos tenham um ambiente virtual de criação e compartilhamento de conhecimento colaborativo. Essa comunidade foi implementada com base na plataforma Noosfero, que também permite que dentro de cada rede, o usuário tenha o seu espaço, com total flexibilidade de personalização visual e gerenciamento de conteúdo.
 
-\subsection{Questão de Pesquisa}
+Neste contexto, este projeto visa criar instrumentos para que os alunos permaneçam nas redes sociais, mas no âmbito de assuntos acadêmicos, por meio da adição de funcionalidades no Comunidade.Unb, relativas a ambientes virtuais de aprendizagem. Para propor um hibridismo entre uma rede social colaborativa da UnB e um ambiente virtual de aprendizagem, dessa maneira há necessidade de evolução da plataforma Noosfero, que não dispõe de alguns recursos necessários para esses ambientes.
 
- 
 \section{Objetivos}
 
 \subsection{Objetivo Geral}
 
-% Transcrições das anotações para documento
-% TO DO
-"Quais recursos de AVA e como implementá-los em uma plataforma de rede social."
-Manutenção e evolução de software com o objetivo de evoluir uma plataforma de rede social para suportar recursos de AVA.
+% Manutenção e evolução de software com o objetivo de evoluir uma plataforma de rede social para suportar recursos de AVA.
+% "Quais recursos de AVA e como implementá-los em uma plataforma de rede social."Manutenção e evolução de software com o objetivo de evoluir uma plataforma de rede social para suportar recursos de AVA.
+Evoluir o Noosfero para permitir que ele contenha funcionalidades de um Ambiente Virtual de Aprendizagem.
 
 \subsection{Objetivos Específicos}
 
-% Transcrições das anotações para documento
-% TO DO
 \begin{itemize}
-\item Intersecções  e diferenças entre AVA e rede social
-\item Priorizar as funcionalidades de AVA q devem ser incorporadas em uma plataforma de rede social
+% \item Intersecções  e diferenças entre AVA e rede social
+% \item Priorizar as funcionalidades de AVA q devem ser incorporadas em uma plataforma de rede social
+\item Identificar as funcionalidades presentes em Ambientes Virtuais de Aprendizagem (AVA).
+\item Comparar as funcionalidades dos AVA com as disponíveis no Noosfero.
+\item Selecionar as funcionalidades dos AVA a serem implementadas no Noosfero.
+\item Implementar as funcionalidades selecionadas.
+\item Realizar testes das novas funcionalidades.
+\item Disponibilizar as funcionalidades para os usuários da Comunidade.UnB.
 \end{itemize}
 
 \section{Organização do Trabalho}
 
-Este trabalho está dividido dentro de 5 outros capítulos. 
+Nesta seção apresenta-se como este trabalho está organizado e o que será abordado em cada um quatro dos capítulos.
 
-No capítulo \ref{cap-referencial-teorico} será apresentado a definição e conceitos relacionados à redes sociais, além disso os conceitos sobre software livre e a descrição sobre a ISO/IEC 14764.
+O trabalho se inicia com o capítulo \ref{cap-evol-software}, no qual é abordado conceitos relacionados a manutenção e evolução de software nos métodos tradicionais e empíricos de \textit{software} além de descrições de práticas que serão utilizados no desenvolvimento deste projeto.
 
-No capítulo \ref{metodologia} serão apresentados as definições de como a pesquisa será realizada, além de um protocolo detalhado para realizar o levantamento dos dados para a pesquisa.
+No capítulo \ref{avas-redes-sociais} é discutido os conceitos de ambientes virtuais de aprendizagem, bem como o levantamento de suas principais funcionalidades. E por fim uma comparação de funcionalidades entre esses ambientes e o Noosfero, afim de veirificar quais delas a plataforma carece.
 
-Por fim, no capítulo \ref{cap-consideracoesFinais} serão apresentadas as considerações finais para esta primeira etapa da pesquisa.
+No capítulo \ref{evol-rede-social} será apresentado a arquitetura e funcionamento da plataforma Noosfero, utilizado pelo Comunidade.Unb. Além das propostas de melhoria e evolução deste trabalho para com a plataforma.
+
+E por fim no capítulo \ref{consideracoes-preliminares} serão apresentadas uma discussão sobre as funcionalidades até então implementadas, e o cronograma utilizado para a execução do projeto.
