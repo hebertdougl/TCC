@@ -1,6 +1,8 @@
 \chapter{Evoluindo uma plataforma de rede social}
 \label{evol-rede-social}
-%
+
+Neste capítulo é apresentado a plataforma Noosfero desde sua arquitetura até os processos de desenvolvimento da comunidade. Além disso é exibido o Comunidade.UnB, rede de colaboração livre, no qual são propostas evoluções para que se torne um ambiente híbrido utilizado por professores e alunos.
+
 \section{Noosfero}
 \label{noosfero}
 
@@ -46,10 +48,12 @@ A figura \ref{issue-tracker} evidencia o \textit{Issue Tracker} do Noosfero onde
     \label{issue-tracker}
 \end{figure}
 
+Priorizando a comunicação entre os desenvolvedores, a comunidade compartilha canais de comunicação pelo IRC (\textit{Internet Relay Chat}). Nestes os desenvolvedores podem compartilhar conhecimento e realizarem discussões técnicas sobre as implementações.
+
 A implementação é realizada pelo desenvolvedor que tem a responsabilidade de manter a qualidade do código produzido bem como realizar todos os testes relacionados à funcionalidade implementada. Uma vez que este primeiro passo esteja concluído o código é submetido a um \textit{merge-request} onde um dos desenvolvedores do \textit{core} efetua a revisão para verificar se está de acordo com os padrões esperados, e aprova ou não, a inclusão do código na \textit{branch} principal do Noosfero.
 
 % Retirar esse parágrafo
-A comunidade Noosfero recomenda práticas de desenvolvimento como o TDD, \textit{Test Driven Development} ou Desenvolvimento orientado a testes), combinado com o BDD \footnote{\url{https://cukes.info/}} (\textit{Behavior Driven Development}ou Desenvolvimento Guiado por Comportamento, que auxiliar o desenvolvedor a criar testes e integrar regras de negócio com a linguagem de programação, mantendo o foco no comportamento do software \cite{north2006introducing}.
+A comunidade Noosfero recomenda práticas de desenvolvimento como o TDD, \textit{Test Driven Development} ou Desenvolvimento orientado a testes), combinado com o BDD \footnote{\url{https://cukes.info/}} (\textit{Behavior Driven Development} ou Desenvolvimento Guiado por Comportamento, que auxiliar o desenvolvedor a criar testes e integrar regras de negócio com a linguagem de programação, mantendo o foco no comportamento do software \cite{north2006introducing}.
 
 Para realizar o controle de versão e gerenciamento do código fonte é utilizado o \textit{Git}, uma ferramenta livre de versionamento distribuído de código fonte. O repositório oficial do Noosfero encontra-se no software livre Gitlab\footnote{\url{https://gitlab.com/noosfero/noosfero}} com um espelho no Github\footnote{\url{https://github.com/noosfero/noosfero}}. Na página de desenvolvimento da comunidade existe uma série de recomendações sobre o envio de \textit{patches} para o Noosfero, incluindo como versionamentos e solicitações de inclusão de seu \textit{patch}, ou \textit{merge-request}.
 
@@ -183,6 +187,7 @@ As funcionalidades serão apresentadas utilizando o formato de histórias de usu
 
 % -Atualizar pro rails 3
 \subsection{Evolução do \textit{plugin Comunidade.UnB}}
+\label{plugin-comunidade}
 % -realizar melhorias - cadastro de matricula dos usuários já existentes
 
 O objetivo do \textit{plugin} do Comunidade.Unb é que o usuário tenha acesso através dos mesmos dados utilizados para acessar outros serviços, como, por exemplo, o serviço de matrícula \footnote{Disponível em: \url{https://matriculaweb.unb.br}} para alunos ou o serviço de lançamento de notas para professores.
@@ -252,293 +257,41 @@ A proposta de evolução é a criação de um sistema de notas que permita ao pr
 
 Além disso é necessário uma evolução da funcionalidade que permite a definição do tempo restante para o envio, que atualmente é realizado de maneira manual não possibilitando o estabelecimento de intervalos de tempo.
 
-\subsubsection*{Histórias de usuário}
-% história
-\begin{enumerate}
-% ---------------------------------------------------------------------
-\item \underline{Definir tempo restante}
+\input{capitulos/historia-pluginWorkAssignment}
 
-\textbf{Como} um professor
+O desenvolviemnto desta funcionalidade é importante, pois segundo \citeonline[p. 37]{unb-professor} as notas para os alunos auxilia assimilação progressiva de conhecimento, e sabe-se que permite um maior \textit{feedback} para o aluno pois nem sempre fica transparente o seu desempenho ao longo do semestre. Colaborando ainda no quesito em que os AVA devem constituir de um gerenciamento pedagógico, que permita acesso e trabalho sobre os seguintes arquivos e estatísticas para controlar a evolução do estudante durante o curso \cite{pereira2007ambientes}.
 
-\textbf{Gostaria de} definir o tempo restante para cada atividade no Work Assignment
+As funcionalidades apresentadas neste capítulo irá colaborar para fazer uso do Comunidade.UnB se tornar um ambiente híbrido entre um ambiente virtual de aprendizagem e uma rede social para a troca de conhecimento através das comunidades e perfis de usuários. Permitindo englobar departamentos, organizações e projetos específicos da Universidade de Brasília.
 
-\textbf{Para} gerenciar o envio de atividades pelos alunos em um determinado período.
+\subsection{Pesquisa com alunos}
+\label{pesquisa-alunos}
 
-\subsubsection*{Cenários de uso:}
+No desenvolvimento deste trabalho realizou-se uma pesquisa junto aos alunos da FGA sobre o uso de redes sociais em seu dia a dia e sobre o seu uso para apoio as disciplinas cursadas na universidade. Para isso foi criado um questionário com quatro questões de múltipla escolha e para os itens associou-se a uma escala Tipo \emph{Likert} de cinco pontos: (0) nunca; (1) raras vezes; (2) algumas vezes; (3) muitas vezes; (4) sempre (Instruções de preenchimento no Apêndice \ref{apen-inst}). Com esta escolha pode-se mapear todas as respostas seguindo a lógica em que há duas alternativas negativas, duas alternativas positivas e uma intermediária.
 
-\begin{enumerate}
-\item \underline{Definir tempo}
+Nesta seção, apresentamos as questões elaboradas (Apêndice \ref{apen-quest}) e as respostas coletadas através da ferramenta \textit{Google Forms}. O questionário foi aplicado na rede social \textit{Facebook} em grupos específicos da FGA, foram coletadas e ao todo noventa e quatro respostas voluntárias ao questionário. Abaixo segue as questões com as respectivas análises de seus resultados, que estão representados graficamente no Apêndice \ref{apen-quest-result}.
 
-\textbf{[Dado]} que esteja logado como professor
+\subsection*{Com que frequência você utiliza redes sociais?}
 
-\textbf{[E]} selecione a o opção ``Gerenciar conteúdo''
+A primeira pergunta tinha como objetivo levantar com que frequência os alunos utilizam as redes sociais. Na Figura \ref{pergunta1} nota-se que 98\% dos alunos que responderam ao questionário utilizam as redes sociais sempre ou frequentemente, o que evidencia o fato que atualmente os estudantes dessa geração estão inseridos neste contexto.
 
-\textbf{[Quando]} eu clicar em trabalho a ser entregue
+\subsection*{Você utiliza alguma rede social como ferramenta de apoio as disciplinas?}
 
-\textbf{[Então]} devo visualizar a opção ``Ativar tempo de entrega''
+O intuito da segunda pergunta foi verificar se os alunos utilizam alguma ferramenta de redes social como ferramenta de apoio as disciplinas. Na Figura \ref{pergunta2} verifica-se que apenas 16\% dos alunos às vezes e de outro ponto de vista 83\% dos alunos fazem uso da rede para tal. Demonstrando que mesmo a universidade utilizando AVA os alunos se apoiam em redes sociais para discutir e compartilhar conteúdos referentes as disciplinas cursadas.
 
-\textbf{[E]} informar a data e hora máxima para envio da atividade.
+\subsection*{Os professores incentivam o uso de redes sociais para suas disciplinas?}
+% 11\% Sempre
+% 19\% frequentemente
+% 52\% Ás vezes
+% 17\% Raramente
+% 1\% Nunca
 
-\item \underline{Modificar tempo}
+O objetivo desta pergunta foi verificar se mesmo que a universidade indique o uso de AVA se os professoes incentivam o uso das redes sociais em suas disciplinas. Na Figura \ref{pergunta3} percebe-se que pouco mais da metade dos alunos (52 \%) tem suas respostas em um ponto intermediário do questionário, mostrando que os professoes são bem imparciais quanto a isso. Apesar que do restante, tem-se mais respostas favoráveis do que contra.
 
-\textbf{[Dado]} que esteja logado como professor
+\subsection*{Mesmo que o professor não recomende o uso de redes sociais para discussão de conteúdos de suas disciplinas, você as utiliza?}
+% 30\% Sempre
+% 45\% frequentemente
+% 20\% Ás vezes
+% 4\% Raramente
+% 0\% Nunca
 
-\textbf{[E]} eu tenha atividades a ser entregue em aberto
-
-\textbf{[E]} eu esteja visualizando as informações da atividade
-
-\textbf{[Quando]} eu selecionar opção ``Editar''
-
-\textbf{[E]} visualizar a opção ``Tempo de entrega''
-
-\textbf{[Então]} deve ser permitido que eu altere o tempo definido
-
-\textbf{[E]} visualize o resultado da alteração após a confirmação.
-
-\item \underline{Permitir entrega de atividades após período}
-
-\textbf{[Dado]} que esteja logado como professor
-
-\textbf{[E]} selecione a o opção ``Gerenciar conteúdo''
-
-\textbf{[E]} vavegar até a página trabalho a ser entregue
-
-\textbf{[Quando]} selecionar a opção ``Ativar tempo de entrega''
-
-\textbf{[Então]} devo visualizar a opção ``Permitir entrega após o período''
-
-\textbf{[Para]} que eu possa selecioná-la.
-
-\end{enumerate}
-% -----------------------------------------------------------------------
-\item \underline{Tempo restante de atividades}
-
-\textbf{Como} um aluno
-
-\textbf{Gostaria de} visualizar o tempo restante da atividade
-
-\textbf{Para} enviar um arquivo na data correta.
-
-\subsubsection*{Cenários de uso:}
-
-\begin{enumerate}
-\item \underline{Visualizar tempo}
-
-\textbf{[Dado]} que esteja logado como Aluno
-
-\textbf{[E]} eu esteja inscrito em um Curso
-
-\textbf{[E possua atividade em aberto]}
-
-\textbf{[Quando]} eu selecionar a opção de visualizar a atividade
-
-\textbf{[Então]} eu devo visualizar se a atividade está em aberto
-
-\textbf{[E]} qual o tempo restante para o envio da atividade.
-
-\end{enumerate}
-
-% -----------------------------------------------------------------------
-\item \underline{Professor gerencia notas}
-
-\textbf{Como} um professor
-
-\textbf{Gostaria de} gerenciar as notas dos integrantes da comunidade
-
-\textbf{Para} manter o controle sobre a pontuação de todos os alunos.
-
-\subsubsection*{Cenários de uso:}
-
-\begin{enumerate}
-
-\item \underline{Definir grupo de atividades}
-
-\textbf{[Dado]} que esteja logado como professor
-
-\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
-
-\textbf{[E]} selecionar a opção ``Gerenciar notas''
-
-\textbf{[E]} e eu selecionar o curso desejado
-
-\textbf{[Quando]} eu clicar em ``Cadastrar grupo de atividades''
-
-\textbf{[E]} eu preencho os campos \\
-``Nome do grupo'',\\
-e ``Lista de Atividades''\\
-\textbf{[E]} eu clico em ``Salvar''
-
-\textbf{[Então]} recebo uma mensagem de confirmação
-
-\textbf{[E]} visualizo todas os grupos de atividades criados.
-
-\item \underline{Visualizar notas de todos os alunos de uma determinada atividade}
-
-\textbf{[Dado]} que esteja logado como professor
-
-\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
-
-\textbf{[E]} selecionar a opção ``Gerenciar notas''
-
-\textbf{[E]} e eu selecionar o curso desejado
-
-\textbf{[Quando]} eu selecionar atividade
-
-\textbf{[E]} algum aluno tenha enviado a atividade
-
-\textbf{[Então]} devo visualizar todas as atvidades enviadas e suas respectivas notas.
-
-\item \underline{Visualizar notas de todos ao alunos de um grupo de atividades}
-
-\textbf{[Dado]} que esteja logado como professor
-
-\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
-
-\textbf{[E]} selecionar a opção ``Gerenciar notas''
-
-\textbf{[E]} e eu selecionar o curso desejado
-
-\textbf{[Quando]} eu clicar em ``Visualizar notas por grupo de atividades''
-
-\textbf{[E]} algum aluno tenha enviado a atividade
-
-\textbf{[Então]} devo visualizar todas as atvidades daquele grupo e suas respectivas notas.
-
-\end{enumerate}
-% -----------------------------------------------------------------------
-
-\item \underline{Atribuir notas aos alunos}
-
-\textbf{Como} um professor
-
-\textbf{Gostaria de} atribuir notas as atividades enviadas pelos alunos
-
-\textbf{Para} avaliar o rendimento de cada um deles.
-
-\subsubsection*{Cenários de uso:}
-
-\begin{enumerate}
-\item \underline{Atribuir notas}
-
-\textbf{[Dado]} que esteja logado como professor
-
-\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
-
-\textbf{[Quando]} selecionar uma atividade na lista de atividades
-
-\textbf{[Então]} devo visualizar a opção atribuir nota
-
-\textbf{[E]} devo visualizar o campo ``nota'' para preenche-lo.
-
-
-\item \underline{Alterar notas}
-
-\textbf{[Dado]} que esteja logado como professor
-
-\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
-
-\textbf{[Quando]} selecionar uma atividade na lista de atividades
-
-\textbf{[E]} atividade já possua notas
-
-\textbf{[Então]} devo visualizar a opção alterar nota
-
-\textbf{[E]} devo visualizar o campo ``nota'' para preenche-lo.
-
-\end{enumerate}
-
-% -----------------------------------------------------------------------
-
-\item \underline{Publicar notas aos alunos}
-
-\textbf{Como} um professor
-
-\textbf{Gostaria de} publicar as notas atribuídas as atividades
-
-\textbf{Para} que os alunos possam visualizar suas respectivas avalizações
-
-\subsubsection*{Cenários de uso:}
-
-\begin{enumerate}
-\item \underline{Disponibilizar notas de uma determinada atividade}
-
-\textbf{[Dado]} que esteja logado como professor
-
-\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
-
-\textbf{[Quando]} selecionar uma atividade na lista de atividades
-
-\textbf{[Então]} devo visualizar a opção ``permitir visualização''
-
-\textbf{[E]} devo ter a opção de ativá-lo.
-
-\item \underline{Omitir notas de uma determinada atividade}
-
-\textbf{[Dado]} que esteja logado como professor
-
-\textbf{[E]} que a funcionalidade de notas eteja habilitada no plugin
-
-\textbf{[Quando]} selecionar uma atividade na lista de atividades
-
-\textbf{[Então]} devo visualizar a opção ``permitir visualização''
-
-\textbf{[E]} devo ter a opção de desativá-lo.
-
-\end{enumerate}
-
-% -----------------------------------------------------------------------
-\item \underline{Aluno visualiza notas}
-
-\textbf{Como} um aluno
-
-\textbf{Gostaria de} visualizar minhas notas
-
-\textbf{Para} inteira-me sobre minha pontuação nas atividades.
-
-\subsubsection*{Cenários de uso:}
-\begin{enumerate}
-
-\item \underline{Visualizar cursos com notas disponíveis}
-
-\textbf{[Dado]} que estou logado como ``Hebert''
-
-\textbf{[E]} o plugin Work Assignment esteja ativo
-
-\textbf{[E]} participo de alguma comunidade que utilize o plugin de notas
-
-\textbf{[E]} existem notas de atividades disponíveis
-
-\textbf{[E]} o professor tenha permitido sua visualização
-
-\textbf{[Quando]} eu navegar até a página ``Minhas notas''
-
-\textbf{[Então]} tenho que ver todos as comunidades (cursos) com notas disponíveis.
-
-\item \underline{Detalhar notas de cada curso}
-
-\textbf{[Dado]} que estou logado como ``Hebert''
-
-\textbf{[E]} o plugin Work Assignment esteja ativo
-
-\textbf{[E]} participo de alguma comunidade que utilize o plugin de notas
-
-\textbf{[E]} existem notas de atividades disponíveis
-
-\textbf{[E]} o professor tenha permitido sua visualização
-
-\textbf{[E]} navegar até a página ``Minhas notas''
-
-\textbf{[E]} visualizar todos as comunidades (cursos) com notas disponíveis
-
-\textbf{[Quando]} eu selecionar a ``Visualizar detalhes'' de alguma comunidade
-
-\textbf{[Então]} tenho que ver todos os grupos de atividades
-
-\textbf{[E]} as notas disponibilizadas pelo professor.
-% cenários
-\end{enumerate}
-% historia
-\end{enumerate}
-
-% Ter uma discussão pra fechar o capítulo
-% Inverter a ordem do LDAP
+Na quarta e última pergunta buscou-se investigar se os alunos utilizam as redes sociais como uma ferramenta de apoio as disciplinhas mesmo que os professores não recomende seu uso para tal. Dos que responderam 75\% não levam em consideração tais recomendações e fazem o uso, demonstrando que os alunos preferem estar nas redes sociais onde expõem suas opiniões a fim de promover o compartilhamento de conteúdo (Resultados na Figura \ref{pergunta4}).
