@@ -6,15 +6,15 @@ Neste capítulo é apresentado a plataforma Noosfero desde sua arquitetura até 
 \section{Noosfero}
 \label{noosfero}
 
-O Noosfero \footnote{Disponível em: \url{http://www.noosfero.org}} é uma plataforma livre para criação de redes sociais desenvolvida em 2007 pela Cooperativa de Tecnologias Livres - Colivre \footnote{\url{http://www.colivre.coop.br}}, sob a licença AGPL\footnote{Licença de software GNU Affero General Public License} V3, com a proposta de facilitar a criação de redes sociais personalizadas, livres e autônomas e a geração de conteúdo colaborativo.
+O Noosfero \footnote{Disponível em: \url{http://www.noosfero.org}} é uma plataforma livre para criação de redes sociais desenvolvida em 2007 pela Cooperativa de Tecnologias Livres - Colivre \footnote{Disponível em: \url{http://www.colivre.coop.br}}, sob a licença AGPL\footnote{Licença de software GNU} V3, com a proposta de facilitar a criação de redes sociais personalizadas, livres e autônomas e a geração de conteúdo colaborativo.
 
 A Colivre é uma cooperativa sediada em Salvador/BA e contribui com a difusão e o desenvolvimento de tecnologias livres. Atualmente os desenvolvedores da Colivre realizam a manutenção e evolução do Noosfero além de manter seu repositório. Ou seja, são responsáveis por revisar os códigos que são enviados pela comunidade e integrar ao código da plataforma.
 
-Além das funcionalidades de rede social, com foco na produção e compartilhamento de conteúdo, o Noosfero permite que dentro da rede cada usuário e comunidade tenha o seu espaço com total flexibilidade de personalização visual e gerenciamento de conteúdo. São exemplos de portais que utilizam o Noosfero: o Participa BR \footnote{\url{https://www.participa.br/}}, Stoa\footnote{\url{http://stoa.usp.br/}}, Portal da FGA\footnote{\url{http://fga.unb.br/}} e o novo Portal do Software público Brasileiro \footnote{\url{Disponível em: https://beta.softwarepublico.gov.br/}}(até então em fase \textit{beta}).
+Além das funcionalidades de rede social, com foco na produção e compartilhamento de conteúdo, o Noosfero permite que dentro da rede cada usuário e comunidade tenha o seu espaço com total flexibilidade de personalização visual e gerenciamento de conteúdo. São exemplos de portais que utilizam o Noosfero: o Participa BR \footnote{Disponível em: \url{https://www.participa.br/}}, Stoa\footnote{Disponível em: \url{http://stoa.usp.br/}}, Portal da FGA\footnote{Disponível em: \url{http://fga.unb.br/}} e o novo Portal do Software público Brasileiro \footnote{Disponível em: \url{https://beta.softwarepublico.gov.br/}}(até então em fase \textit{beta}).
 
-O Noosfero foi desenvolvido na linguagem de programação Ruby, atualmente na versão 2.2.0, e utiliza o \textit{framework} aplicações web \textit{Ruby on Rails} \footnote{\url{http://rubyonrails.org/}}, versão 3.2.21. E utiliza também padrões arquiteturais de software Model-View-Controller (MVC), e o padrão de plugins que serão apresentados na seção \ref{arquitetura}.
+O Noosfero foi desenvolvido na linguagem de programação Ruby, atualmente na versão 2.2.0, e utiliza o \textit{framework} aplicações web \textit{Ruby on Rails} \footnote{Disponível em: \url{http://rubyonrails.org/}}, versão 3.2.21. E utiliza também padrões arquiteturais de software Model-View-Controller (MVC), e o padrão de plugins que serão apresentados na seção \ref{arquitetura}.
 
-A escolha da linguagem \textit{Ruby} foi decisiva no Noosfero, pois possui uma sintaxe simples, que facilita a manutenibilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos, de acordo com \citeonline{meirelles2013}. A escolha do \textit{Rails} foi influenciada pelos seus conceitos básicos que auxiliam em sua produtividade: "Não Repita a Si Mesmo" (DRY-\textit{Don't Repeat Yourself}) e "convenção sobre configuração" (\textit{convention over configuration}) \cite{akita2006repensando}.
+A escolha da linguagem \textit{Ruby} foi decisiva no Noosfero, pois possui uma sintaxe simples, que facilita a manutenibilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos \cite{meirelles2013}. A escolha do \textit{Rails} foi influenciada pelos seus conceitos básicos que auxiliam em sua produtividade: ``Não Repita a Si Mesmo'' (DRY-\textit{Don't Repeat Yourself}) e ``convenção sobre configuração'' (\textit{Convention Over Configuration}) \cite{akita2006repensando}.
 
 Por questões de segurança o Noosfero utiliza apenas pacotes \textit{stable} do \textit{Debian}, incluindo do \textit{Ruby on Rails}, por serem reconhecidos por sua estabilidade e testados sob a ótica de segurança, antes de seu lançamento. Dessa forma uma vez que a vulnerabilidade é corrigida no Debian, não é preciso corrigir no Noosfero.
 
@@ -262,36 +262,3 @@ Além disso é necessário uma evolução da funcionalidade que permite a defini
 O desenvolviemnto desta funcionalidade é importante, pois segundo \citeonline[p. 37]{unb-professor} as notas para os alunos auxilia assimilação progressiva de conhecimento, e sabe-se que permite um maior \textit{feedback} para o aluno pois nem sempre fica transparente o seu desempenho ao longo do semestre. Colaborando ainda no quesito em que os AVA devem constituir de um gerenciamento pedagógico, que permita acesso e trabalho sobre os seguintes arquivos e estatísticas para controlar a evolução do estudante durante o curso \cite{pereira2007ambientes}.
 
 As funcionalidades apresentadas neste capítulo irá colaborar para fazer uso do Comunidade.UnB se tornar um ambiente híbrido entre um ambiente virtual de aprendizagem e uma rede social para a troca de conhecimento através das comunidades e perfis de usuários. Permitindo englobar departamentos, organizações e projetos específicos da Universidade de Brasília.
-
-\subsection{Pesquisa com alunos}
-\label{pesquisa-alunos}
-
-Afim de evidenciar a problematização e justificativa deste trabalho, realizou-se uma pesquisa junto aos alunos da FGA sobre o uso de redes sociais em seu dia a dia e sobre o seu uso para apoio as disciplinas cursadas na universidade. Para isso foi criado um questionário com quatro questões de múltipla escolha e para os itens associou-se a uma escala tipo \emph{Likert} de cinco pontos: Nunca; Raramente; Às vezes; (3) Frequentemente; Sempre (Instruções de preenchimento no Apêndice \ref{apen-inst}). Com esta escolha pode-se mapear todas as respostas seguindo a lógica em que há duas alternativas negativas, duas alternativas positivas e uma intermediária.
-
-Nesta seção, apresentamos as questões elaboradas (Apêndice \ref{apen-quest}) e as respostas coletadas através da ferramenta \textit{Google Forms}. O questionário foi aplicado na rede social \textit{Facebook} em grupos específicos da FGA, foram coletadas e ao todo noventa e quatro respostas voluntárias ao questionário. Abaixo segue as questões com as respectivas análises de seus resultados, que estão representados graficamente no Apêndice \ref{apen-quest-result}.
-
-\subsection*{Com que frequência você utiliza redes sociais?}
-
-A primeira pergunta tinha como objetivo levantar com que frequência os alunos utilizam as redes sociais. Na Figura \ref{pergunta1} nota-se que 98\% dos alunos que responderam ao questionário utilizam as redes sociais sempre ou frequentemente, o que evidencia o fato que atualmente os estudantes dessa geração estão inseridos neste contexto.
-
-\subsection*{Você utiliza alguma rede social como ferramenta de apoio as disciplinas?}
-
-O intuito da segunda pergunta foi verificar se os alunos utilizam alguma ferramenta de redes social como ferramenta de apoio as disciplinas. Na Figura \ref{pergunta2} verifica-se que apenas 16\% dos alunos às vezes utilizam e de outro ponto de vista 83\% dos alunos fazem uso da rede para tal. Demonstrando que mesmo a universidade utilizando AVA os alunos se apoiam em redes sociais para discutir e compartilhar conteúdos referentes as disciplinas cursadas.
-
-\subsection*{Os professores incentivam o uso de redes sociais para suas disciplinas?}
-% 11\% Sempre
-% 19\% frequentemente
-% 52\% Ás vezes
-% 17\% Raramente
-% 1\% Nunca
-
-O objetivo desta pergunta foi verificar se mesmo que a universidade indique o uso de AVA se os professoes incentivam o uso das redes sociais em suas disciplinas. Na Figura \ref{pergunta3} percebe-se que pouco mais da metade dos alunos (52 \%) tem suas respostas em um ponto intermediário do questionário, mostrando que os professoes são bem imparciais quanto a isso. Apesar que do restante, tem-se mais respostas favoráveis do que contra.
-
-\subsection*{Mesmo que o professor não recomende o uso de redes sociais para discussão de conteúdos de suas disciplinas, você as utiliza?}
-% 30\% Sempre
-% 45\% frequentemente
-% 20\% Ás vezes
-% 4\% Raramente
-% 0\% Nunca
-
-Na quarta e última pergunta buscou-se investigar se os alunos utilizam as redes sociais como uma ferramenta de apoio as disciplinhas mesmo que os professores não recomende seu uso para tal. Dos que responderam 75\% não levam em consideração tais recomendações e fazem o uso, demonstrando que os alunos preferem estar nas redes sociais onde expõem suas opiniões a fim de promover o compartilhamento de conteúdo (Resultados na Figura \ref{pergunta4}).

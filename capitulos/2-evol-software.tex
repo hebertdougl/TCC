@@ -1,24 +1,24 @@
 \chapter{Manutenção e evolução de software}
 \label{cap-evol-software}
 
-Neste capítulo será abordado a manutenção e evolução de software tanto do ponto de vista do métodos tradicionais quanto dos empíricos empregados na engenharia de software, além de evidenciar algumas práticas adotadas nas comunidades de \textit{software} livre e as práticas utilizadas.
+Neste capítulo será abordado a manutenção e evolução de software provendo uma comparação entre os métodos tradicionais e empíricos empregados na engenharia de software, evidenciando algumas práticas adotadas nas comunidades de \textit{software} livre, que serão utilizadas neste trabalho.
 
 \section{Manutenção e evolução de software nos métodos tradicionais}
 \label{sect-manut-evol-soft}
 
-A ISO/IEC 12207 (\citeyear{iso12207}) define o ciclo de vida de um software por meio de agrupamento de processos que são divididos em quatro classes:fundamentais, apoio, organizacionais e adaptação. O processo de manutenção de software está classificado nessa ISO como um dos processos fundamentais,ou seja necessários para que um o software seja implementado.
+A \citeonline{iso12207} 12207 define o ciclo de vida de um software por meio de agrupamento de processos que são divididos em quatro classes:fundamentais, apoio, organizacionais e adaptação. O processo de manutenção de software está classificado nessa ISO como um dos processos fundamentais,ou seja necessários para que um o software seja implementado.
 
 % Falar mais sobre processos fundamentais.
 
-O Instituo de Engenheiros Eletricistas e Eletrônicos \cite{ieee1219}, define manutenção de software como a modificação de um produto de software após sua entrega com vistas a corrigir falhas, melhorar o desempenho ou outros atributos, e adaptar o produto a um ambiente modificado de acordo com as necessidades do cliente.
+O Instituo de Engenheiros Eletricistas e Eletrônicos \citeonline{ieee1219}, define manutenção de software como a modificação de um produto de software após sua entrega com vistas a corrigir falhas, melhorar o desempenho ou outros atributos, e adaptar o produto a um ambiente modificado de acordo com as necessidades do cliente.
 
 As normas citadas tratam a manutenção de software como se o mesmo fosse um produto genérico. Para \citeonline[p.~380]{pfleeger2004engenharia} a manutenção varia de acordo com o propósito de criação do software. Ainda, segundo a Autora, a probabilidade de o sistema ser modificado varia de acordo com o vínculo de dependência dos requisitos com o sistema do mundo real, pois, quanto mais dependentes forem os requisitos do mundo real maior será a probabilidade do sistema ser modificado.
 
-Para determinar o tipo de manutenção a ser realizado,\citeonline{pfleeger2004engenharia} separa sistemas em três grupos. O primeiro grupo de sistemas é o que possui os requisitos especificados e formalmente definidos, ou seja, os resultados esperados são bem conhecidos e a solução é estática e não se adapta facilmente a uma mudança no problema que o gerou. O segundo grupo consiste dos sistemas, cujas soluções são aproximadas do mundo real, tem-se a solução completa apenas na teoria pois solucionar o problema em sua totalidade é impraticável ou impossível. O jogo de xadrez é um exemplo desse grupo, uma vez que é impossível calcular todas os movimentos possíveis e suas consequências em tempo hábil para a próxima jogada. O terceiro grupo incorpora a mudança na natureza do mundo real em si,  modificando-se a medida em que o mundo muda. Tem como base um modelo do processo abstrato envolvido. Exemplo: sistema que prevê a estabilidade econômica de um país e utiliza como base o modelo econômico em uso.
+Para determinar o tipo de manutenção a ser realizado, \citeonline{pfleeger2004engenharia} separa sistemas em três grupos. O primeiro grupo de sistemas é o que possui os requisitos especificados e formalmente definidos, ou seja, os resultados esperados são bem conhecidos e a solução é estática e não se adapta facilmente a uma mudança no problema que o gerou. O segundo grupo consiste dos sistemas, cujas soluções são aproximadas do mundo real, tem-se a solução completa apenas na teoria pois solucionar o problema em sua totalidade é impraticável ou impossível. O jogo de xadrez é um exemplo desse grupo, uma vez que é impossível calcular todas os movimentos possíveis e suas consequências em tempo hábil para a próxima jogada. O terceiro grupo incorpora a mudança na natureza do mundo real em si,  modificando-se a medida em que o mundo muda. Tem como base um modelo do processo abstrato envolvido. Exemplo: sistema que prevê a estabilidade econômica de um país e utiliza como base o modelo econômico em uso.
 
 % Verificar referencia IEE
 
-Analisando a literatura percebe-se que a manutenção de software está dividida em três grandes categorias, listadas a seguir, que podem ser visualizados tanto na norma da \cite{ieee1219} e em livros, desde \cite{lientz1980software} à \cite{pfleeger2004engenharia}, as categorias são as seguintes:
+Analisando a literatura percebe-se que a manutenção de software está dividida em três grandes categorias, listadas a seguir, que podem ser visualizados tanto na norma da \citeonline{ieee1219} e em livros, desde \citeonline{lientz1980software} à \citeonline{pfleeger2004engenharia}, as categorias são as seguintes:
 \begin{itemize}
 \item \textbf{Manutenção corretiva:} realizada para controlar funções cotidianos do sistema, corrigindo falhas e defeitos de funcionalidades do programa.
 
@@ -27,13 +27,13 @@ Analisando a literatura percebe-se que a manutenção de software está dividida
 \item \textbf{Manutenção perfectiva ou evolutiva:} objetivam realizar acréscimo de novas funcionalidades ou mudanças no \textit{software} independente da existência de defeitos.
 \end{itemize}
 
-\citeonline{pressman2011engenharia} e \citeonline{criscuolo2008qualidade} acrescentam a manutenção preventiva. Esta está ligada a uma reengenharia, aplicando conceitos de engenharia de software para tornar os softwares mais fáceis de serem corrigidos, adaptados e melhorados ao longo dos anos. Para \citeonline{criscuolo2008qualidade} a manutenção preventiva permite que o software receba alterações com objetivo de minimizar os riscos de defeitos e reduzir a complexidade de sua estrutura, garantindo um certa segurança à manutenção.
+\citeonline{pressman2011engenharia} e \citeonline{criscuolo2008qualidade} acrescentam a manutenção preventiva. Essa está ligada a uma reengenharia, aplicando conceitos de engenharia de software para tornar os softwares mais fáceis de serem corrigidos, adaptados e melhorados ao longo dos anos. Para \citeonline{criscuolo2008qualidade} a manutenção preventiva permite que o software receba alterações com objetivo de minimizar os riscos de defeitos e reduzir a complexidade de sua estrutura, garantindo um certa segurança à manutenção.
 
 %Manutenção preventiva (reengenharia): modifica o software a fim de torná-los mais fáceis de serem corrigidos, adaptados e melhorados. 
 
-Para o \citeonline{ieee1219} além das categorias citadas, há a manutenção "emergencial", definida pelo Instituo como uma manutenção corretiva que não foi programada ou planejada, mas que deve ser executada para manter o sistema em funcionamento.
+Para o \citeonline{ieee1219} além das categorias citadas, há a manutenção ``emergencial'', definida pelo IEEE como uma manutenção corretiva que não foi programada ou planejada, mas que deve ser executada para manter o sistema em funcionamento.
 
-Como as atividades do processo de desenvolvimento de software ainda são fortemente dependentes da participação e criatividade humana, impedem que a Engenharia de Software seja uma ciência exata. Diante disso torna-se necessário na Engenharia de Software utilizar métodos empíricos que auxiliam a comprovação e a confiabilidade de resultados científicos
+As atividades do processo de desenvolvimento de software ainda são dependentes da participação e criatividade humana, e o crescimento de métodos ágeis e software livre mostram que o código é um dos principais artefatos. Diante disso torna-se necessário na Engenharia de \textit{Software} utilizar métodos empíricos que apoiam o desenvolvimento de \textit{software} de acordo com sua natureza abstrata.
 
 \section{Manutenção e evolução de software em métodos empíricos de desenvolvimento}
 
@@ -44,7 +44,7 @@ Neste capítulo serão abordadas algumas metodologias e práticas no processo de
 \subsection{Software Livre}
 \label{soft-livre}
 
-De acordo com \cite{meirelles2013} software expressa uma solução abstrata dos problemas computacionais, neste contexto é o componente que contém o conhecimento relacionado aos problemas a que a computação se aplica, contendo diversos aspectos que ultrapassam questões técnicas, tais como:
+De acordo com \citeonline{meirelles2013} software expressa uma solução abstrata dos problemas computacionais, neste contexto é o componente que contém o conhecimento relacionado aos problemas a que a computação se aplica, contendo diversos aspectos que ultrapassam questões técnicas, tais como:
 \begin{itemize}
 \item o processo de desenvolvimento do software;
 \item os mecanismos econômicos que regem o desenvolvimento e o uso do software, a exemplo de gerenciais, competitivos, sociais, cognitivos etc.;
@@ -75,11 +75,10 @@ Isso se deve ao maior número de desenvolvedores e usuários envolvidos com o so
 
 O GNU teve a necessidade de utilizar termos de distribuição que impedissem a transformação de software livre em proprietário. O método usado foi chamado de \emph{Copyleft}. \emph{Copyleft} é um método geral para desenvolver um software livre e exige que todas as versões modificadas e estendidas do programa também sejam livres. Ele utiliza lei de direitos autorais, com finalidade diferente da usual: ao invés de um meio de privatizar o software, torna-se um meio de manter o software livre~\cite{stallman2009}.
 
-\subsection{Processo de desenvolvimento de Software Livre}
+\subsection{Relações entre métodos ágeis e processo de desenvolvimento de Software Livre}
 \label{des-soft-livre}
-% Explicar métodos ágeis
 
-Os métodos ágeis, que podem ser utilizados no processo de desenvolvimento de software livre, são um conjunto de metodologias baseada na prática de desenvolvimento de software. Em 2001 a aliança ágil definiu o Manifesto ágil, que definem preferências e príncipios que se espera de qualquer método de desenvolvimento dessa categoria. O manifesto é baseado em quatro valores \cite{beck2001agile}:
+Os métodos ágeis assim como processo de desenvolvimento de software livre, são métodos empíricos de software que provêm de um conjunto de metodologias baseada na prática de desenvolvimento de software. Em 2001 a aliança ágil definiu o Manifesto ágil, que definem preferências e príncipios que se espera de qualquer método de desenvolvimento dessa categoria. O manifesto é baseado em quatro valores \cite{beck2001agile}:
 \begin{itemize}
 \item Indivíduos e interações são mais importantes que processos e ferramentas.
 \item Software em funcionamento é mais importante que documentação abrangente.
@@ -102,11 +101,13 @@ Entender esses aspectos no contexto de software livre torna-se relevante porque,
 
 No processo de desenvolvimento de software livre, após a divulgação e lançamento da primeira versão do projeto, a solução está pronta para uso. Os usuários são desenvolvedores podem colaborar com o projeto afim de evoluí-lo para suprir necessidades pessoais ou de interesse da comunidade,são enviadas aos mantenedores do projeto como \textit{patches}\footnote{arquivos que contém as modificações no código}. Os mantenedores analisarão as propostas, e caso concordem com a mudança e implementação, irão aplicá-las ao repositório oficial do projeto. Portanto, mesmo que em projetos maiores outros aspectos sejam levados em consideração ou sigam processos mais burocráticos de colaboração, a essência da colaboração técnica está no envio e análise de trechos de código-fonte \cite{meirelles2013}.
 
+As comunidades de software livre são ``livres'' para escolher e adotar as práticas que mais se adaptam ao seu modelo, dessa maneira é relatado o processo de desenvolvimento do Noosfero, um exemplo de desenvolvimento de software livre evidenciado na seção \ref{proc-desenvol-comunidade} do capítulo \ref{evol-rede-social}.
+
 \subsubsection{Práticas baseadas em disciplinas da engenharia de software}
 
 % Justificar que apesar dos modelos tradiionais dizerem uma coisa, na prática no contexto de software livre utilizamos isso
 
-No contexto de gerência e configuração de software grande parte dos projetos de software livre atualmente utilizam algum sistema de controle de versão, visto como uma extensão natural do processo de desenvolvimento.Esse sistema, normalmente faz-se uso de um repositório central, onde são armazenadas todas as versões dos arquivos, e permite paralelizar o desenvolvimento de forma organizada, principalmente quando há um grande número de desenvolvedores \cite{reis2001caracterizaccao}. Permite ainda o \textit{commiter} oficial realizar inspeção e revisão de todo código que é integrado ao repositório principal do projeto de forma não intrusiva no desenvolvimento realizado pelos colaboradores. \citeonline{reis2001caracterizaccao} atestam que a revisão acaba acontecendo quase automaticamente, já que as pessoas são forçadas pela distância a enviar modificações a outras para a integração.
+No contexto de gerência e configuração de software grande parte dos projetos de software livre atualmente utilizam algum sistema de controle de versão, visto como uma extensão natural do processo de desenvolvimento. Esse sistema, normalmente faz-se uso de um repositório central, onde são armazenadas todas as versões dos arquivos, e permite paralelizar o desenvolvimento de forma organizada, principalmente quando há um grande número de desenvolvedores \cite{reis2001caracterizaccao}. Permite ainda o \textit{commiter} oficial realizar inspeção e revisão de todo código que é integrado ao repositório principal do projeto de forma não intrusiva no desenvolvimento realizado pelos colaboradores. \citeonline{reis2001caracterizaccao} atestam que a revisão acaba acontecendo quase automaticamente, já que as pessoas são forçadas pela distância a enviar modificações a outras para a integração.
 
 %    -Testes(GERAL)
 O teste de software é um processo destinado a certificar-se de que o código desenvolvido é previsível e consistente,e que realiza apenas as ações para o qual foi projetado \cite{myers2011art}. Teste automatizado é um prática de criar \textit{scripts} ou programas de computador que exercitam o sistema em teste, capturam os efeitos colaterais e fazem verificações, de forma automática e dinâmica \cite{meszaros2007xunit}.
@@ -123,3 +124,5 @@ A integração contínua tem por objetivo integrar o sistema e todas suas depend
 % Certamente o que se observa nas listas de discussão é que grande parte das mensagens é repleta de justificativas técnicas para defender um ponto de vista.
 
 %    -Revisão
+
+Baseado nas disciplinas de gerência e configuração e teste, fazendo uso de controle de versão, testes automatizados e integração contínua, é que evoluíremos a plataforma Noosfero com as funcionalidades selecionadas para melhor adaptar a plataforma com recursos de AVA. Para isso será abordado no próximo capítulo (\ref{avas-redes-sociais}) os recursos utilizados nos AVA comparando-os com o Noosfero.
