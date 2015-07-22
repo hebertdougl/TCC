@@ -1,30 +1,34 @@
 \chapter{Considerações preliminares}
 \label{consideracoes-preliminares}
 
-Nesta primeira etapa do trabalho foram elaboradas algumas melhorias fundamentais para a evolução do Comunidade.UnB. Dentre elas destaca-se a atualização da plataforma Noosfero, que ainda se encontrava em \textit{Rails} 2 e não dispunha de suporte pela comunidade, em um novo ambiente de homologação disponibilizado pelo CPD. Da mesma forma o tema teve que ser evoluído porque não dava mais suporte a nova versão da plataforma.
+Nesta primeira etapa do trabalho, foram elaboradas algumas melhorias para a evolução do Comunidade.UnB. Dentre elas, a atualização do Noosfero da Comunidade.UnB \footnote{Não possui DNS associado mas pode ser acessado pelo endereço \url{http://164.41.9.37/}}, que ainda se encontrava em \textit{Rails} 2 no Debian 6 e não dispunha de suporte pela comunidade. Da mesma forma, o tema teve que ser evoluído para ficar compatível com a nova versão da plataforma.
 
-Como evidenciado na seção \ref{plugin-comunidade} realizou-se a evolução do \textit{plugin} Comunidade.UnB, permitindo que os usuários já cadastrados acessem desde que tenham cadastro no LDAP da UnB. Esta funcionalidade ainda não está habilitada mas pode ser visualizada no repositório \footnote{Repositório: \url{https://gitlab.com/unb-gama/noosfero} Branch: ldap\_unb\_plugin\_rails3 } do Noosfero para o Portal UnB Gama.
+% Colocar nota de rodapé com o link
+% em um novo ambiente de homologação disponibilizado pelo CDTC
 
-Após o desenvolvimento desta funcionalidade surgiu a discussão sobre a possibilidade de autenticação dos usuários no Comunidade.UnB com os mesmos dados utilizados em redes sociais como o \textit{Facebook} ou \textit{Google+}. Esta é uma idéia bastante pertinente já que grande parte dos alunos utilizam estas redes para construção de relações sociais, além disso as utilizam como apoio as disciplinas da universidade. Como pode ser visto no apêndice \ref{apen-quest-result}, que contém o resultado do questionário aplicado aos alunos.
+Como evidenciado na Seção \ref{plugin-comunidade}, realizou-se a evolução do \textit{plugin} Comunidade.UnB, permitindo que os usuários já cadastrados acessem desde que tenham cadastro no LDAP da UnB. Essa funcionalidade ainda não está habilitada mas pode ser visualizada no repositório \footnote{Repositório: \url{https://gitlab.com/unb-gama/noosfero} Branch: ldap\_unb\_plugin\_rails3 } do Noosfero para o Portal UnB Gama.
 
-Partindo desse pressuposto pretende-se investigar a viabilidade do uso desse modelo de autenticação onde acredita-se que irá atrair mais usuários ao Comunidade.UnB, devido a facilidade de cadastro. Essea funcionalidade já está disponível em alguns \textit{websites} que utilizam a plataforma Noosfero, facilitando sua possível implantação.
+% Após o desenvolvimento desta funcionalidade, surgiu a discussão sobre a possibilidade de autenticação dos usuários no Comunidade.UnB com os mesmos dados utilizados em redes sociais como o \textit{Facebook} ou \textit{Google+}. Esta é uma idéia bastante pertinente já que grande parte dos alunos utilizam estas redes para construção de relações sociais, além disso as utilizam como apoio as disciplinas da universidade. Como pode ser visto no apêndice \ref{apen-quest-result}, que contém o resultado do questionário aplicado aos alunos.
 
-Com as demais funcionalidades a serem implementadas dizem respeito a evolução do \textit{plugin Work Assignment}, que permitirá aos professores utilizarem o Comunidade.UnB como um ambiente virtual de aprendizagem. Dessa maneira espera-se que o Comunidade.UnB transforme-se em um ambiente híbrido para os alunos e professores compartilharem o conhecimento de maneira construtiva e evolutiva.
+% Partindo desse pressuposto, pretende-se investigar a viabilidade do uso desse modelo de autenticação onde acredita-se que irá atrair mais usuários ao Comunidade.UnB, devido a facilidade de cadastro. Essa funcionalidade já está disponível em alguns \textit{websites} que utilizam a plataforma Noosfero, facilitando sua possível implantação.
+
+Como as demais funcionalidades a serem implementadas dizem respeito a evolução do \textit{plugin Work Assignment}, que permitirá aos professores utilizarem o Comunidade.UnB como um ambiente virtual de aprendizagem. Dessa maneira espera-se que o Comunidade.UnB transforme-se em um ambiente híbrido para os alunos e professores compartilharem o conhecimento de maneira construtiva e evolutiva.
 
 \section{Pesquisa com alunos}
 \label{pesquisa-alunos}
 
-Afim de evidenciar a problematização e justificativa deste trabalho, realizou-se uma pesquisa junto aos alunos da FGA sobre o uso de redes sociais em seu dia a dia e sobre o seu uso para apoio as disciplinas cursadas na universidade. Para isso foi criado um questionário com quatro questões de múltipla escolha e para os itens associou-se a uma escala tipo \emph{Likert} de cinco pontos: Nunca; Raramente; Às vezes; Frequentemente; Sempre (Instruções de preenchimento no Apêndice \ref{apen-inst}). Com esta escolha pode-se mapear todas as respostas seguindo a lógica em que há duas alternativas negativas, duas alternativas positivas e uma intermediária.
+% Colocar em primeira pessoa do plural   - procurar por "-se"
+Para melhor prosseguirmos com este trabalho, realizamos uma pesquisa junto aos alunos da FGA sobre o uso de redes sociais em seu dia a dia e sobre o seu uso para apoio as disciplinas cursadas na universidade. Para isso, foi criado um questionário com quatro questões de múltipla escolha, e para os itens associou-se a uma escala tipo \emph{Likert} de cinco pontos: Nunca; Raramente; Às vezes; Frequentemente; Sempre (Instruções de preenchimento no Apêndice \ref{apen-inst}). Com este tipo de escala, pode-se mapear todas as respostas seguindo a lógica em que há duas alternativas negativas, duas alternativas positivas e uma intermediária.
 
-Nesta seção, apresentamos as questões elaboradas (Apêndice \ref{apen-quest}) e as respostas coletadas através da ferramenta \textit{Google Forms}. O questionário foi aplicado na rede social \textit{Facebook} em grupos específicos da FGA, foram coletadas e ao todo noventa e quatro respostas voluntárias ao questionário. Abaixo segue as questões com as respectivas análises de seus resultados, que estão representados graficamente no Apêndice \ref{apen-quest-result}.
+Nesta seção, apresentamos as questões elaboradas (Apêndice \ref{apen-quest}) e as respostas coletadas através da ferramenta \textit{Google Forms}. O questionário foi aplicado na rede social \textit{Facebook}, em grupos específicos da FGA. Foram coletadas, ao todo noventa e quatro respostas voluntárias ao questionário. Abaixo segue as questões com as respectivas análises de seus resultados, que estão representados graficamente no Apêndice \ref{apen-quest-result}.
 
 \subsection*{Com que frequência você utiliza redes sociais?}
 
-A primeira pergunta tinha como objetivo levantar com que frequência os alunos utilizam as redes sociais. Na Figura \ref{pergunta1} nota-se que 98\% dos alunos que responderam ao questionário utilizam as redes sociais sempre ou frequentemente, o que evidencia o fato que atualmente os estudantes dessa geração estão inseridos neste contexto.
+A primeira pergunta tinha como objetivo levantar com que frequência os alunos utilizam as redes sociais. Na Figura \ref{pergunta1}, nota-se que 98\% dos alunos que responderam ao questionário utilizam as redes sociais sempre ou frequentemente, o que evidencia o fato que atualmente os estudantes dessa geração estão inseridos neste contexto.
 
 \subsection*{Você utiliza alguma rede social como ferramenta de apoio as disciplinas?}
 
-O intuito da segunda pergunta foi verificar se os alunos utilizam alguma ferramenta de redes social como ferramenta de apoio as disciplinas. Na Figura \ref{pergunta2} verifica-se que apenas 16\% dos alunos às vezes utilizam e de outro ponto de vista 83\% dos alunos fazem uso da rede para tal. Demonstrando que mesmo a universidade utilizando AVA os alunos se apoiam em redes sociais para discutir e compartilhar conteúdos referentes as disciplinas cursadas.
+O intuito da segunda pergunta foi verificar se os alunos utilizam alguma ferramenta de redes social como ferramenta de apoio as disciplinas. Na Figura \ref{pergunta2}, verifica-se que apenas 16\% dos alunos às vezes utilizam e de outro ponto de vista 83\% dos alunos fazem uso da rede para tal. Demonstrando que mesmo a universidade utilizando AVA os alunos se apoiam em redes sociais para discutir e compartilhar conteúdos referentes as disciplinas cursadas.
 
 \subsection*{Os professores incentivam o uso de redes sociais para suas disciplinas?}
 % 11\% Sempre
@@ -33,7 +37,7 @@ O intuito da segunda pergunta foi verificar se os alunos utilizam alguma ferrame
 % 17\% Raramente
 % 1\% Nunca
 
-O objetivo desta pergunta foi verificar se mesmo que a universidade indique o uso de AVA se os professoes incentivam o uso das redes sociais em suas disciplinas. Na Figura \ref{pergunta3} percebe-se que pouco mais da metade dos alunos (52 \%) tem suas respostas em um ponto intermediário do questionário, mostrando que os professoes são bem imparciais quanto a isso. Apesar que do restante, tem-se mais respostas favoráveis do que contra.
+O objetivo desta pergunta foi verificar se mesmo que a universidade indique o uso de AVA se os professoes incentivam o uso das redes sociais em suas disciplinas. Na Figura \ref{pergunta3}, percebe-se que pouco mais da metade dos alunos (52 \%) tem suas respostas em um ponto intermediário do questionário, mostrando que os professoes são bem imparciais quanto a isso. Apesar que do restante, tem-se mais respostas favoráveis do que contra.
 
 \subsection*{Mesmo que o professor não recomende o uso de redes sociais para discussão de conteúdos de suas disciplinas, você as utiliza?}
 % 30\% Sempre
@@ -44,38 +48,37 @@ O objetivo desta pergunta foi verificar se mesmo que a universidade indique o us
 
 Na quarta e última pergunta buscou-se investigar se os alunos utilizam as redes sociais como uma ferramenta de apoio as disciplinhas mesmo que os professores não recomende seu uso para tal. Dos que responderam 75\% não levam em consideração tais recomendações e fazem o uso, demonstrando que os alunos preferem estar nas redes sociais onde expõem suas opiniões a fim de promover o compartilhamento de conteúdo (Resultados na Figura \ref{pergunta4}).
 
+Esta pesquisa exploratória mostra que mesmo com a existência de AVA os alunos a utilizam as redes sociais, que não foram criadas com esse objetivo, para a discussão de assuntos relacionados ao ambiente acadêmico.
+
 \section{Cronograma}
 
 O cronograma para o trabalho realizado neste TCC é apresentado na Tabela \ref{cronograma}. As atividades planejadas são:
 
 % Cronograma
 \begin{enumerate}
-\item Verificar uso autenticação por redes sociais
-\item Disponibilizar novo método de autenticação aos usuários
-\item Desenvolver histórias
-\begin{enumerate}
-\item Definir tempo restante
+% \item Verificar uso autenticação por redes sociais
+\item Ativar autenticação via LDAP UnB;
+\item US - Definir tempo restante;
     % Definir tempo
     % Modificar tempo
     % Permitir a entrega de atividades após o período
-\item Tempo restante de atividades
+\item US - Tempo restante de atividades;
     % visualizar tempo
-\item Atribuir notas aos alunos
+\item US - Atribuir notas aos alunos;
     % Atribuir notas
     % Alterar notas
-\item Professor gerencia notas
+\item US - Professor gerencia notas;
     % Definir grupo de atividades
     % Visualizar notas de todos os alunos de uma determinada atividade
     % Visualizar notas de todos ao alunos de um grupo de atividades
-\item Publicar notas aos alunos
+\item US - Publicar notas aos alunos;
     % Disponibilizar notas de uma determinada atividade
     % Omitir notas de uma determinada atividade
-\item Aluno visualiza notas
+\item US - Aluno visualiza notas;
     % Visualizar cursos com notas disponíveis
     % Detalhar notas de cada curso
-\end{enumerate}
-\item Disponibilização de novas funcionalidades no Comunidade.UnB.
-\item Escrita do trabalho de conclusão de curso 2
+\item Disponibilização de novas funcionalidades no Comunidade.UnB;
+\item Escrita do trabalho de conclusão de curso 2.
 \end{enumerate}
 
 \begin{table}[h]
@@ -91,31 +94,28 @@ O cronograma para o trabalho realizado neste TCC é apresentado na Tabela \ref{c
         1   & • & • &   &   &   &   \\
 
         \hline
-        2   & • & • &   &   &   &   \\
+        2   &  • & • &   &   &   &   \\
 
         \hline
-        3. a)   &   & •  & • &   &   &   \\
+        3   &   & • &   &   &   &   \\
 
         \hline
-        3. b)   &   & • & • &   &   &   \\
+        4   &   &   & • & • &   &   \\
 
         \hline
-        3. c)   &   &   & • & • &   &   \\
+        5   &   &   & • & • &   &   \\
 
         \hline
-        3. d)   &   &   & • & • &   &   \\
+        6   &   &   &   & • & • &   \\
 
         \hline
-        3. e)   &   &   &   & • & • &   \\
+        7   &   &   &   &   & • &   \\
 
         \hline
-        3. f)   &   &   &   & • & • &   \\
+        8   &   &   &   & • & • & • \\
 
         \hline
-        4   &   &   &   & • & • & • \\
-
-        \hline
-        5   &   &   & • & • & • & • \\
+        9   &   & •  & • & • & • & • \\
 
         \hline
     \end{tabular}
@@ -124,10 +124,20 @@ O cronograma para o trabalho realizado neste TCC é apresentado na Tabela \ref{c
     \label{cronograma}
 \end{table}
 
-Como estratégia para o desenvolvimento desse trabalho é realizar a divisão de atividades ou histórias em pares, que são unidas de acordo com o conteúdo e contexto no qual estão envolvidas. Levando em consideração as práticas utilizadas no LAPPIS será realizado \textit{sprints} com duração de quinze dias cada.
+O Laboratório de Produção, Pesquisa e Inovação em Software (LAPPIS) da FGA é um ambiente para  alunos e professores trabalhem de forma colaborativa na produção de software. Esse utiliza práticas ágeis e vários de seus integrantes colaboram com o Noosfero, sendo utilizado para o desenvolvimento do trabalho.
 
-O TCC 2 será iniciado com uma investigação de como será o novo método de autenticação dos usuários no Comunidade.UnB, dessa maneira planejou-se realizar esse levantamento e disponibilização nos primeiros dois meses para possibilitar que mais usuários interajam com a pesquisa.
+Levando em consideração as práticas ágeis utilizadas no LAPPIS serão realizadas \textit{sprints} com duração de quinze dias. Para cada \textit{sprint} é proposto o desenvolvimento de uma história de usuário. Após a finalização do desenvolvimento e testes, as histórias são submetidas aos integrantes do LAPPIS, que vão realizar uma avaliação do desenvolvimento. Feita a revisão, as melhorias e correções propostas por estes membros serão trabalhadas em uma \textit{sprint}, onde serão trabalhadas duas histórias simultaneamente, que se relacionam em nível de implementação, a fim de atingir as propostas da revisão. Em outras palavras, após a execução de duas \textit{sprints} a terceira é destinada a correção.
 
-Para cada par de atividades é estimado uma duração de três a quatro \textit{sprints}, onde é levado em consideração que após os testes a história é revisada e deve passar pelas modificações solicitadas. Desse modo as histórias de usuário foram divididas em três pares: tempo, gerir notas e a apresentação.
+% que são unidas de acordo com o conteúdo e contexto no qual estão envolvidas. Levando em consideração as práticas ágeis utilizadas no LAPPIS serão realizadas \textit{sprints} com duração de quinze dias cada.
 
-A disponibilização aos usuários é facilitada, devido aos testes e revisões realizadas por integrantes do LAPPIS que também colaboram com o Noosfero. Em agosto ja serão obtidos os primeiros resultados com a autenticação, a partir disso é realizada em paralelo com a implementação, a evolução desse trabalho escrito para dar origem a parte escrita do TCC 2.
+% Como estratégia para o desenvolvimento desse trabalho é realizar a divisão deatividades ou histórias em pares, que são unidas de acordo com o conteúdo e contexto no qual estão envolvidas. Levando em consideração as práticas utilizadas no LAPPIS será realizado sprints com duração de quinze dias cada.
+
+% O TCC 2 será iniciado com uma investigação de como será o novo método de autenticação dos usuários no Comunidade.UnB, dessa maneira planejou-se realizar esse levantamento e disponibilização nos primeiros dois meses para possibilitar que mais usuários interajam com a pesquisa.
+
+% Para cada par de atividades de desenvolvimento estima-se uma duração de duas a três \textit{sprints}, sendo que as duas primeiras serão utilizadas para o desenvolvimento e a última para a correção após as revisão realizadas por integrantes do LAPPIS, que também colaboram com o Noosfero.
+
+% A disponibilização aos usuários é facilitada, devido aos testes e revisões realizadas por integrantes do LAPPIS, que também colaboram com o Noosfero. Em agosto, já serão obtidos os primeiros resultados com a autenticação.
+
+% Para cada atividade de desenvolviemento
+
+% Refazer cronograma.
