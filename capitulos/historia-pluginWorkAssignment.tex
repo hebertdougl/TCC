@@ -283,5 +283,106 @@ e ``Lista de Atividades''\\
 \textbf{[E]} as notas disponibilizadas pelo professor.
 % cenários
 \end{enumerate}
+
+\item \underline{Bloco de notas recentes}
+
+\textbf{Como} um aluno
+
+\textbf{Gostaria de} visualizar minhas cinco últimas notas
+
+\textbf{Para} facilitar a visualização do meu desempenho no curso.
+
+\subsubsection*{Cenários de uso:}
+
+\begin{enumerate}
+
+\item \underline{Adicionar bloco}
+
+\textbf{[Dado]} que esteja logado como aluno
+
+\textbf{[Quando]} eu navegar até meu painel de controle
+
+\textbf{[E]} eu selecionar a opção ``Editar Blocos Laterais''
+
+\textbf{[E]} eu clicar na opção ``Adicionar bloco''
+
+\textbf{[Então]} devo visualizar a opção ``Notas Recentes''
+
+\textbf{[E]} devo ter a opção de adicioná-lo.
+
+\item \underline{Visualizar cinco notas recentes}
+
+\textbf{[Dado]} que esteja logado como aluno
+
+\textbf{[E]} esteja com o bloco de notas recentes adicionado
+
+\textbf{[E]} o professor tenha publicado alguma nota
+
+\textbf{[Então]} devo visualizar o bloco com minhas cinco últimas notas
+
+\textbf{[E]} o nome de cada atividade.
+
+\end{enumerate}
+
+\item \underline{Bloco para visualização dos módulos}
+
+\textbf{Como} um professor
+
+\textbf{Gostaria de} visualizar um bloco com todos os módulos disponíveis no meu curso
+
+\textbf{Para} facilitar a visualização da organização do curso criado.
+
+\subsubsection*{Cenários de uso:}
+
+\begin{enumerate}
+
+\item \underline{Adicionar bloco}
+
+\textbf{[Dado]} que esteja logado como professor
+
+\textbf{[E]} e seja administrador da comunidade
+
+\textbf{[Quando]} eu navegar até painel de controle da comunidade
+
+\textbf{[E]} eu selecionar a opção ``Editar Blocos Laterais''
+
+\textbf{[E]} eu clicar na opção ``Adicionar bloco''
+
+\textbf{[Então]} devo visualizar a opção ``Lista de Grupos de trabalhos a serem enviados''
+
+\textbf{[E]} devo ter a opção de adicioná-lo.
+
+\item \underline{Editar numero de atividades listadas no bloco}
+
+\textbf{[Dado]} que esteja logado como professor
+
+\textbf{[E]} e seja administrador da comunidade
+
+\textbf{[Quando]} eu navegar até painel de controle da comunidade
+
+\textbf{[E]} eu selecionar a opção ``Editar Blocos Laterais''
+
+\textbf{[E]} eu clicar na opção ``Editar bloco''
+
+\textbf{[Então]} devo visualizar a opção ``Limite de trabalhos enviados''
+
+\textbf{[E]} permitir escolher o número de itens a serem visualizados.
+
+\item \underline{Visualizar módulos}
+
+\textbf{[Dado]} que esteja logado como aluno
+
+\textbf{[E]} seja membro da comunidade
+
+\textbf{[E]} a comunidade possua grupos de atividades a serem enviadas
+
+\textbf{[E]} possua trabalhos a serem enviados
+
+\textbf{[Então]} devo visualizar o bloco todos os módulos disponíveis
+
+\textbf{[E]} as atividades relacionadas a cada um deles.
+
+\end{enumerate}
+
 % historia
 \end{enumerate}
