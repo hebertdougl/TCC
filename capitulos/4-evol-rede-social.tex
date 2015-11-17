@@ -253,3 +253,228 @@ Além disso, é necessário uma evolução da funcionalidade que permite a defin
 No contexto da UnB, o desenvolvimento dessa funcionalidade é importante, pois segundo o documento da instituição \citeonline[p. 37]{unb-professor}, as notas para os alunos auxilia assimilação progressiva de conhecimento, e sabe-se que permite um maior \textit{feedback} para o aluno, pois nem sempre fica transparente o seu desempenho ao longo do semestre.
 
 Em resumo, as funcionalidades apresentadas neste capítulo irão colaborar para uso do Comunidade.UnB, tornando-o uma plataforma híbrida entre um ambiente virtual de aprendizagem e uma rede social, para a troca de conhecimento através das comunidades e perfis de usuários. Assim, permitindo englobar departamentos, organizações e projetos específicos da Universidade de Brasília.
+
+
+\chapter{O Desenvolvimento}
+\label{consideracoes-preliminares}
+
+A partir dos requisitos levantados e levando em consideração as práticas ágeis utilizadas no LAPPIS foram realizadas \textit{sprints} com duração de quinze dias. Em cada uma dessas foram desenvolvidas histórias de acordo com a pontuação e demanda de atividades na equipe do Portal, visto que o desenvolvimento foi realizado de maneira colaborativa.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.4]
+      {figuras/issue121.eps}
+    \caption{Issue 121: Gerenciamento de tempo para work\_assignment}
+    \label{fig:issue-121}
+\end{figure}
+
+A primeira \textit{sprint} de desenvolvimento das histórias de usuário, foi iniciada em Julho junto com a equipe do Portal FGA. Seguindo as práticas de desenvolvimento da comunidade Noosfero, criou-se uma \textit{Issue} para evidenciar aos desenvolvedores o ínicio da implementação de uma nova funcionalidade. A \textit{Issue} criada foi a de número 121\footnote{Disponível em: \url{https://gitlab.com/noosfero/noosfero/issues/121}} que  é evidenciada na Figura \ref{fig:issue-121}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.7]
+      {figuras/work-open.eps}
+    \caption{Visualização de envio dentro do perído determinado.}
+    \label{fig:work-open}
+\end{figure}
+
+Nessa sprint foi desenvolvida a história de usuário permite ao administrador definir e modificar um tempo limite para envio dos trabalhos no \textit{plugin work assignment}. No contexto do \textit{plugin} o administrador pode criar um novo tipo de conteúdo ``Trabalho a ser entregue'', nesta opção deve informar qual é o tempo limite para que o envio de arquivos. Em seguida, buscando a melhor forma de visualização para os usuários foram criados alertas que informam o tempo definido para aquela atividade e o tempo ainda restante para o término do envio, como pode ser vizualizado na figura \ref{fig:work-open}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.7]
+      {figuras/work-expired.eps}
+    \caption{Visualização após a data de envio ter expirado.}
+    \label{fig:work-expired}
+\end{figure}
+
+Seguindo a mesma linha raciocínio, o usuário será informado se o período de envio já expirou e quanto tempo já se passou após a data limite. Na figura \ref{fig:work-expired} é possível visualizar tal funcionalidade implementada.
+
+Na segunda sprint, foi densenvolvido a alguns critérios de aceitação da primeira história que até então não haviam sido resolvidos. Implementou-se o critério que possibilita ao professor permitir aos alunos que enviem suas atividades após o prazo definido. Além de implementar a história que trata o modo de visualização do tempo ainda restante para envio das atividades.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.7]
+      {figuras/work-allowed.eps}
+    \caption{Visualização de envio após período.}
+    \label{fig:work-allowed}
+\end{figure}
+
+Em uma discussão com os membros do Lappis foi abordada a melhor maneira para que o usuário visualize a atividade e saiba de imediato em qual situação ela se encontra. Para isso foi utilizado um esquema de cores que fica como plano de fundo do tempo ainda restante. Assim sendo, foram utilizadas três cores: o verde para representar que a atividade está em aberto (Figura \ref{fig:work-open}), o vermelho para indicar que está fechada (Figura \ref{fig:work-expired}) e o laranja para informar que apesar do tempo ter expirado o envio ainda é permitido (Figura \ref{fig:work-allowed}).
+
+É importante ressaltar que na implementação dessa história tem-se um exemplo prático de utilização dos \textit{hotspots} da arquitetura do Noosfero. No código \ref{cod:hotspot}, faz-se uso do \textit{hotspot} denominado como \textit{content\_remove\_upload} que é utilizado para validar quando a opção de upload de arquivos deve estar habilitada. Este código está contido no plugin e através dos métodos dispatch é invocado pela classe responsável por gerenciar os plugins.
+
+\begin{lstlisting}[language=Ruby, caption={Código de implementação do \textit{hotspot}}, label=cod:hotspot]
+  def content_remove_upload(content)
+    if content.kind_of?(WorkAssignmentPlugin::WorkAssignment)
+      !content.profile.members.include?(context.send(:user)) || (content.expired? && !content.ignore_time)
+    end
+  end
+\end{lstlisting}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.42]
+      {figuras/merge-request710.eps}
+    \caption{Merge Request: Gerenciamento de tempo para work\_assignment}
+    \label{fig:merge-710}
+\end{figure}
+
+A implementação foi revisada por um dos integrantes do Lappis que sugeriu algumas melhorias pontuais, que foram resolvidas durante a revisão. Posteriormente foi realizado o \textit{Merge Request} para a integração do código a \textit{branch \textbf{master}} do Noosfero. Criou-se o Merge Request de número 710\footnote{Disponível em: \url{https://gitlab.com/noosfero/noosfero/merge_requests/710}} (Figura \ref{fig:merge-710}) que ficou em aberto para a revisão dos commiters oficiais da Comunidade. Após alguns dias o mesmo foi revisado pelos desenvolvedores do core do Noosfero, que ainda não alterou o \textit{status} para fechado, mas aprovou a funcionalidade e indicou que se integra ao Noosfero na versão 1\.4.
+
+Nesse processo de desenvolvimento fica evidente a aplicação das práticas adotadas pela comunidade de software livre Noosfero. Foi executado o processo desde a criação de uma \textit{Issue}, passando por todo o processo de desenvolvimento adotando práticas ágeis, até o encerramento desse ciclo com a criação do \textit{Merge request}. Vale lembrar que mesmo após a revisão e integração ao \textit{core} o código ainda se encontra em constante evolução.
+
+Foi iniciada a terceira sprint que engloba a história de ``Atribuir e alterar notas dos arquivos enviados''. No início da implementação verificou-se que esta funcionalidade já havia sido mapeada por integrante do Noosfero na Issue 119 \footnote{Disponível em: \url{https://gitlab.com/noosfero/noosfero/issues/119}}, o que favoreceu o desenvolvimento, pois as idéias poderiam ser discutidas evidenciando que o desenvolvimento na comunidade é feito de maneira colaborativa.
+
+No início de seu desenvolvimento foram discutidas questões técnicas e arquiteturais de como seria a implementação. A principal discussão era como seria a realizada a pontuação, por versões ou por pasta, e como seria estabelecida a nota final do aluno. Foi definido que todas as versões de arquivos enviados poderiam ser pontuados pelos administradores da comunidade e que em uma próxima sprint teriam que ser estabelecidos critérios para julgar qual a nota final do aluno.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.6]
+      {figuras/assign-grade.eps}
+    \caption{Tela para atribuição e alteração da notas.}
+    \label{fig:assign-grade}
+\end{figure}
+
+Para isso foram criados dois atributos (grade\_version, valuation\_date) na classe \textit{UploadFile}, que armazenam a nota da versão enviada e a data da avaliação, assim uma vez que a nota é alterada a data de avaliação é modificada. Na Figura \ref{fig:assign-grade} temos a tela criada para permitir ao administrador atribuir e alterar a nota de cada arquivo enviado.
+
+Na quarta \textit{sprint} foi estabelecido uma forma de implementação que proporciona ao administrador definir qual o critério utilizado para a nota final de cada atividade. Foram determinados três critérios:
+\begin{enumerate}
+\item Maior nota: é exibida como nota final a maior nota de todas as versões pontuadas.
+\item Mais Recente: é exibida como nota final a última versão pontuada.
+\item Nota opcional: no momento da avalição de cada versão o administrador define qual é a nota final
+\end{enumerate}
+
+Como na arquitetura do \textit{plugin work assignmnet} cada pessoa tem sua pasta com todas as versões de seus arquivos, foi criado na classe \textit{Folder} um método (\textit{final\_grade()}) que verifica qual será nota final de acordo com o critério estabelecido e a associa ao arquivo enviado através do atributo (\textit{grade\_submission\_id}). Esta solução possibilita que uma nota final seja definida mesmo que o professor altere o critério de avaliação.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.75]
+      {figuras/evaluation-management.eps}
+    \caption{Tela para o gerenciamento de avaliações.}
+    \label{fig:evaluation-management}
+\end{figure}
+
+Ainda nessa \textit{sprint} foi implementada a funcionalidade que permite ao administrador publicar notas aos alunos, como pode ser visualizado na Figura \ref{fig:evaluation-management}. Dessa maneira para cada ``Trabalho a ser enviado'' o administrador pode escolher se deseja ou não publicar as notas para os alunos, que permite ao mesmo realizar todas as avaliações antes de publicá-las.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.6]
+      {figuras/work-assignment-final.eps}
+    \caption{Tela para criação de um \textit{work assignment}.}
+    \label{fig:work-assignment-final}
+\end{figure}
+
+As funcionalidades desenvolvidas até a quarta \textit{sprint}, englobam requisitos importantes de um AVA, como visto na Seção \ref{ava}. Na Figura \ref{fig:work-assignment-final} é possível verificar como está a página de criação de um novo ``Work Assignment'' após as evoluções realizadas. Dentro desse conteúdo é solicitado ao usuário informações básicas sobre o trabalho, o período que a atividade ficará em aberto e se é possível o envio após a data limite. Na mesma tela temos o gerenciamento das avaliações que permite ativar o modo de avaliação e publicar as notas de acordo com o critério de avaliação.
+
+% Sprint 3
+
+% \item US - Atribuir notas aos alunos;
+%     % Atribuir notas
+%     % Alterar notas
+% Sprint 4
+%     % Definir critério da nota final
+% \item US - Publicar notas aos alunos;
+%     % Disponibilizar notas de uma determinada atividade
+%     % Omitir notas de uma determinada atividade
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.6]
+      {figuras/visualiza-notas.eps}
+    \caption{Visualização das notas de trabalhos enviados.}
+    \label{fig:visualiza-notas}
+\end{figure}
+
+Apesar da implementação das funcionalidades desenvolvidas, até então não era possível a visualização das notas pelo aluno. Assim sendo, na quinta \textit{sprint} foi implementado alguns critérios de aceitação da história de visualização das notas, mostrando apenas as notas na tela de visualização da tarefa enviada. A nível de implementação foi criada uma coluna que é exibida apenas quando a função de envio de notas está habilitada, conforme pode ser verificado na Figura \ref{fig:visualiza-notas}.
+
+Na mesma \textit{sprint} foi implementada a história que permite ao professor definir módulos que agrupem as atividades a serem enviadas, a idéia central é permitir ao administrador modularizar essas atividades. Para isso foi criado uma nova classe \textit{WorkAssignmentPlugin::WorkAssignmentGroup}, que representa um grupo de atividades e tem como funcionalidade básica definir um período para o mesmo.
+
+Com essa nova implementação o administrador da comunidade pode criar módulos ou grupos com data de início e fim, e dentro deles colocar todas as atividades a serem enviadas naquele período. Isto facilita ao professor a organização do curso e permite uma melhor visualização dos alunos.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.6]
+      {figuras/work-assignment-group.eps}
+    \caption{Tela para criação de grupos de trabalhos a serem enviados.}
+    \label{fig:work-assignment-group}
+\end{figure}
+
+O administrador agora pode entrar no painel de controle da comunidade e adicionar um novo tipo de conteúdo denominado como ``Grupo de Trabalhos a serem enviados''. Dentro desse conteúdo o usuário deve informar o título, período, uma prévia do que será aquele módulo e sua descrição detalhada, conforme pode ser visualizado na Figura \ref{fig:work-assignment-group}
+
+% Sprint 5
+% \item US - Aluno visualiza notas;
+%     % Visualizar cursos com notas disponíveis
+% \item US - Professor gerencia notas;
+%     % Definir grupo de atividades
+
+
+% Sprint 6
+% Visualizar notas de todos os alunos de uma determinada atividade
+%     % Visualizar notas de todos ao alunos de um grupo de atividades
+
+Na sexta \textit{sprint} foi implementada um forma de visualização das notas de maneira centralizada. A idéia principal é disponibilizar ao usuário todas atividades, agrupadas pelo seus módulos, de todas as comunidades no qual ele é um membro.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+      {figuras/work-assignment-group-list.eps}
+    \caption{Tela para visualização das atividades de forma centralizada.}
+    \label{fig:group-list}
+\end{figure}
+
+No painel de controle de cada usuário foi criado uma nova funcionalidade chamada de ``Meus Cursos'' que ao ser clicada redireciona o usuário a uma lista de todas as comunidades no qual é membro e utilizam que possuem algum tipo de conteúdo relacionado ao grupo de atividades. Conforme evidenciado na Figura \ref{fig:group-list}, é exibido todas as atidades em seus respectivos grupos.
+
+Durante a implementação dessa história houve uma padronização das \textit{views} utilizadas para visualização das atividades. Dessa maneira, a lista utiliza a mesma lógica de cores proposta anteriormente.
+
+Na sétima \textit{sprint} deu-se prosseguimento com a evolução das telas de visualização, sempre buscando discutir a melhor forma de visualização com os membros da comunidade que trabalham no Lappis. Por conseguinte surgiu a sugestão da implementação de blocos que beneficiaria o usuário quanto ao \textit{feedback} sobre suas notas.
+
+Portanto na mesma \textit{sprint} foi implementada a história para criação de um bloco que exibe ao usuário as cinco notas mais recentes, permitindo ao usuário flexibilidade quanto ao posicionamento e exibição do mesmo.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+      {figuras/blocos.eps}
+    \caption{Blocos para visualização das atividades.}
+    \label{fig:blocos}
+\end{figure}
+
+Para oitava \textit{sprint} foi sugerido a criação de um bloco para visualização de todos grupos e suas respectivas atividades. Por padrão são exibidas apenas três atividades por grupo, mas é permitido ao administrador da comunidade escolher quantas deseja. Nessa mesma \textit{sprint} foram realizados os testes para ambos os blocos, afim de verificar e validar a solução. Na figura \ref{fig:blocos} evidencia-se a criação dos blocos em funcionamento.
+
+% Sprint 7
+% \item US - Bloco de notas recentes
+% -- Adicionar bloco}
+% -- Visualizar cinco notas recentes
+
+% Sprint 8
+%     \item US - Bloco para visualização dos módulos
+%      -- Adicionar bloco}
+%      -- Editar numero de atividades listadas no bloco
+
+
+% \item Ativar autenticação via LDAP UnB;
+
+\section{Arquitetura do Plugin Work Assignment}
+
+
+Sabendo que o Noosfero está em constante evolução o \textit{plugin work assignment} passará por melhorias durante sua vida útil. Sabendo disso é importante entender sua arquitetura após as implementações realizadas, afim de compreender como quais as classes compõe sua estrutura e como se relacionam.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.3]
+      {figuras/diagramaUMLCompletoColor.eps}
+    \caption{Diagrama de classes do \textit{Plugin Work Assignment}}
+    \label{fig:arquitetura-work}
+\end{figure}
+
+A Figura \ref{fig:arquitetura-work} evidencia as principais classes utilizadas pelo \textit{plugin}, no qual as que estão em amarelo (tom escuro) foram criadas, as em laranja foram apenas modificadas e por fim as em amarelo (tom claro) não sofreram modificações durante este processo de evolução.
+
+Foi criado mais uma especialização da classe \textit{Folder} denominada como \textit{WorkAssignmentGroup}, que possibilita ao administrador criar pastas que representam grupos de atividades quem tem data de início e fim.
+
+Para entender o funcionamento quando um usuário cria um Grupo de Atividades é possível inserir qualquer tipo de \textit{Article} dentro dessa pasta, dessa maneira é possível criar um Trabalho a ser enviado (\textit{WorkAssignment}. A partir disso os membros da comunidade podem enviar seus arquivos como resposta a atividade, e quando esse envio é realizado o \textit{plugin} cria uma pasta (\textit{Folder}) para cada usuário e a associa ao arquivo enviado (\textit{UploadFile}). Na solução foi levado em consideração que todos os arquivos enviados por uma única pessoa poderiam ser pontuados e deixando de forma opcional qual seria o critério para a nota final.
+
+As classes \textit{WorkAssignmentListBlock} e \textit{GroupListBlock} são uma especialização de \textit{Block} responsáveis por disponibilizar ao usuário a opção de blocos que exibem as notas recentes e listam todos os grupos de uma comunidade, respectivamente.
+
+Entendendo esse funcionamento verifica-se que a arquitetura tornou o \textit{plugin} flexível ao ponto que todas essas classe principais (\textit{WorkAssignmentGroup, WorkAssignment, UploadFile, Folder}) podem ser criadas independente umas das outras. A dependência está relacionada aos blocos que são dispensáveis caso não exista trabalhos a serem enviados ou grupos de atividades.
+
+% Teams Work_assignment https://gitlab.com/noosfero/noosfero/issues/134
