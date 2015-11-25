@@ -181,6 +181,8 @@ As funcionalidades podem ser visualizadas no Apêndice \ref{apen-historia-usuari
 % ----------------------------------------------------------------
 \section{O processo de desenvolvimento}
 
+O desenvolvimento foi realizado no Laboratório de Produção, Pesquisa e Inovação em Software (LAPPIS) da FGA que é um ambiente para  alunos e professores trabalharem de forma colaborativa na produção de software. No laboratório são adotadas práticas ágeis onde vários de seus integrantes colaboram com o Noosfero.
+
 A partir dos requisitos levantados e levando em consideração as práticas ágeis utilizadas no LAPPIS foram realizadas \textit{sprints} com duração de quinze dias. Em cada uma dessas foram desenvolvidas histórias de acordo com a pontuação e demanda de atividades na equipe do Portal, visto que o desenvolvimento foi realizado de maneira colaborativa.
 
 \begin{figure}[h]
@@ -241,7 +243,9 @@ Na sétima \textit{sprint} foi implementada a história (\ref{us07}) ``Blocos de
 
 Para oitava \textit{sprint} foi sugerido a criação de um bloco para visualização de todos grupos e suas respectivas atividades. Esta funcionalidade está listada na \ref{us08} (``Bloco para visualização dos módulos'') e foi implementada em paralelo com os testes da história anterior.
 
-Finalizada a execução dessas \textit{sprints}, da mesma forma que a primeira issue foi realizado o \textit{Merge Request} para a integração do código a \textit{branch \textbf{master}} do Noosfero. Criou-se o Merge Request de número XXX\footnote{Disponível em: \url{https://gitlab.com/noosfero/noosfero/merge_requests/XXX}} (Figura \ref{fig:merge-XXX}) que ficou em aberto para a revisão dos commiters oficiais da Comunidade.
+Finalizada a execução dessas \textit{sprints}, assim como realizado na primeira issue foi realizado o \textit{Merge Request} para a integração do código a \textit{branch \textbf{master}} do Noosfero. Criou-se o Merge Request de número XXX\footnote{Disponível em: \url{https://gitlab.com/noosfero/noosfero/merge_requests/XXX}} (Figura \ref{fig:merge-XXX}) que ficou em aberto para a revisão dos \textit{commiters} oficiais da Comunidade.
+
+Na nona e última \textit{sprint} foi criado um ambiente de homologação para o Comunidade.UnB afim de testar as novas funcionalidades e a autenticação com o LDAP. Para validar o novo mecanismo de autenticação o CPD da FGA forneceu acesso a base de dados do seu servidor LDAP, a mesma utilizada para o controle de acesso a rede \textit{wireless} do campus, e durante os testes no servidor de homologação a funcionalidade teve o comportamento esperado.
 
 Nesse processo de desenvolvimento fica evidente a aplicação das práticas adotadas pela comunidade de software livre Noosfero. Foi executado o processo desde a criação de uma \textit{Issue}, passando por todo o processo de desenvolvimento adotando práticas ágeis, até o encerramento desse ciclo com a criação do \textit{Merge request}. Vale lembrar que mesmo após a revisão e integração ao \textit{core} o código ainda se encontra em constante evolução.
 
@@ -421,4 +425,20 @@ O objetivo do \textit{plugin} do Comunidade.Unb é que o usuário tenha acesso a
 
 A versão anterior do \textit{plugin} permitia que apenas os novos usuários realizassem o cadastro de suas matrículas, dessa maneira aqueles que já estavam cadastrados não tinham acesso ao portal. Devido às limitações de acesso definidas pelo \textit{plugin}, onde apenas usuários com matrícula cadastrada tem acesso ao sistema.
 
-Foi criada nova versão do \textit{plugin} que permite cadastrar a matrícula dos usuários que já possuem registro no Comunidade.UnB. Dessa maneira, o \textit{plugin Comunidade.UnB} poderá ser ativado permitindo a autenticação apenas dos usuários cadastrados no LDAP da universidade. A história de usuário (\ref{us09}) com seus respectivos cenários de uso, encontram-se disponíveis no Apêndice \ref{apen-historia-usuario}.
+Foi criada nova versão do \textit{plugin} que permite cadastrar a matrícula dos usuários que já possuem registro no Comunidade.UnB. Dessa maneira, o \textit{plugin Comunidade.UnB} é ativado permitindo a autenticação apenas dos usuários cadastrados no LDAP da universidade. Esta base de dados contempla alunos, professores, servidores técnico-administrativos que queiram utilizar a rede. A história de usuário (\ref{us09}) com seus respectivos cenários de uso, encontram-se disponíveis no Apêndice \ref{apen-historia-usuario}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]
+      {figuras/associate-matricula.eps}
+    \caption{Tela para assoicar matricula ao usuário.}
+    \label{fig:associate-matricula}
+\end{figure}
+
+Com a nova funcionaliadade após o usuário realizar o Login, ele é redirecionado para uma tela que solicita a matrícula e senhas, a utilizada para logar no Portal e a do LDAP, conforme a Figura \ref{fig:associate-matricula}. O sistema verifica os dados na base de dados LDAP e caso seja confirmado, cadastra matrícula e altera a senha do usuário.
+
+Foi retirado a funcionalidade de alteração e recuperação de senha uma vez que queremos manter a compatibilidade entre a rede Comunidade.UnB e os demais serviços. Desta forma, caso o usuário deseje trocar sua senha, o mesmo deve procurar o CPD e solicitar a alteração.
+
+Com o objetivo de utilizar este \textit{plugin} em um ambiente de produção é necessário solicitar acesso ao LDAP de alunos do matricula web, visto que o da FGA segue um mesmo padrão de senha para todos os usuários, dessa forma todos ficariam com suas contas vulneráveis à acessos indevidos.
+
+Como visto o \textit{plugin} traz para o Comunidade.UnB maior controle sobre seus usuários, centralizando o acesso para o escopo da Universidade.

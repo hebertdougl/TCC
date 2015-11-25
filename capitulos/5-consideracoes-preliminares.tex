@@ -1,5 +1,5 @@
-\chapter{Considerações preliminares}
-\label{consideracoes-preliminares}
+\chapter{Conclusão}
+\label{conclusao}
 
 Nesta primeira etapa do trabalho, foram elaboradas algumas melhorias para a evolução do Comunidade.UnB. Dentre elas, a atualização do Noosfero da Comunidade.UnB \footnote{Não possui DNS associado mas pode ser acessado pelo endereço \url{http://164.41.9.37/}}, que ainda se encontrava em \textit{Rails} 2 no Debian 6 e não dispunha de suporte pela comunidade. Da mesma forma, o tema teve que ser evoluído para ficar compatível com a nova versão da plataforma.
 
@@ -42,80 +42,53 @@ Na quarta e última pergunta buscou-se investigar se os alunos utilizam as redes
 
 Esta pesquisa exploratória mostra que mesmo com a existência de AVA os alunos a utilizam as redes sociais, que não foram criadas com esse objetivo, para a discussão de assuntos relacionados ao ambiente acadêmico.
 
-\section{Cronograma}
+\section{Limitações}
 
-O cronograma para o trabalho realizado neste TCC é apresentado na Tabela \ref{cronograma}. As atividades planejadas são:
+Ao longo deste trabalho foi realizado a evolução do \textit{plugin} Comunidade UnB que tem como objetivo prover a autenticação via LDAP. Apesar dos testes terem sido realizados no ambiente de homologação torna-se inviável colocá-lo em produção, porque a base de dados LDAP fornecida pelo CPD da FGA é a mesma utilizada para o acesso a rede \textit{wireless} e segue um mesmo padrão de senhas para todos alunos. Caso seja colocado em produção todos usuários ficariam com sérios problemas de segurança dado que não é possível alterar sua senha. Como solução deve ser solicitado acesso a base de dados única da Universidade de Brasília, que contém todos os alunos que utilizam o sistema de matrícula, visto que os testes comprovam que o \textit{plugin} está preparado para isso.
 
-% Cronograma
+\section{Trabalhos Futuros}
+
+Nesta seção é tratado a perspectiva de continuidade na evolução da plataforma Noosfero no contexto abordado neste trabalho, dessa maneira foi feito um levantamento das principais histórias de usuário para inspirar os próximos colaboradores.
+
+\subsection{Evoluir calendário de atividades}
+
+O Noosfero dispõe de um calendário para permitir a visualização dos eventos de maneira organizada. Assim sendo é proposto melhorias para que o usuário visualize todas as atividades criadas pelo professor de acordo com a data de entrega.
+
+\subsubsection*{Histórias de usuário}
 \begin{enumerate}
-% \item Verificar uso autenticação por redes sociais
-\item Ativar autenticação via LDAP UnB;
-\item US - Definir tempo restante;
-    % Definir tempo
-    % Modificar tempo
-    % Permitir a entrega de atividades após o período
-\item US - Tempo restante de atividades;
-    % visualizar tempo
-\item US - Atribuir notas aos alunos;
-    % Atribuir notas
-    % Alterar notas
-\item US - Professor gerencia notas;
-    % Definir grupo de atividades
-    % Visualizar notas de todos os alunos de uma determinada atividade
-    % Visualizar notas de todos ao alunos de um grupo de atividades
-\item US - Publicar notas aos alunos;
-    % Disponibilizar notas de uma determinada atividade
-    % Omitir notas de uma determinada atividade
-\item US - Aluno visualiza notas;
-    % Visualizar cursos com notas disponíveis
-    % Detalhar notas de cada curso
-\item Disponibilização de novas funcionalidades no Comunidade.UnB;
-\item Escrita do trabalho de conclusão de curso 2.
+\item \underline{Visualizar atividades no calendário}
+
+\textbf{Como} um usuário
+
+\textbf{Gostaria de} visualizar todas as atividades propostas pelo professor
+
+\textbf{Para} me inteirar sobre todas as atividades pendentes.
+
+\subsubsection*{Cenários de uso:}
+  \begin{enumerate}
+  \item Integrante visualiza atividades marcadas
+  \item Visualizar detalhes das atividades
+  \end{enumerate}
 \end{enumerate}
 
-\begin{table}[h]
-    \centering
+\begin{enumerate}
+\item \underline{Notificações por email}
 
-    \begin{tabular}{|c|c|c|c|c|c|c|}
-        \hline
-        \textbf{Atividades} & \textbf{Jul 2015} & \textbf{Ago 2015} & \textbf{Set 2015}
-        & \textbf{Out 2015} & \textbf{Nov 2015} & \textbf{Dez 2015} \\
-        \hline\hline
+\textbf{Como} um usuário
 
-        \hline
-        1   & • & • &   &   &   &   \\
+\textbf{Gostaria de} receber notificações no meu email
 
-        \hline
-        2   &  • & • &   &   &   &   \\
+\textbf{Para} ser alertado sobre as atividades.
 
-        \hline
-        3   &   & • &   &   &   &   \\
+\subsubsection*{Cenários de uso:}
+  \begin{enumerate}
+  \item Permitir que o usuário defina se deseja ser notificado via email
+  \item Permitir notificações quando tempo de atividade vai expirar
+  \item Notificar via email quando nova atividade for criada
+  \end{enumerate}
+\end{enumerate}
 
-        \hline
-        4   &   &   & • & • &   &   \\
 
-        \hline
-        5   &   &   & • & • &   &   \\
-
-        \hline
-        6   &   &   &   & • & • &   \\
-
-        \hline
-        7   &   &   &   &   & • &   \\
-
-        \hline
-        8   &   &   &   & • & • & • \\
-
-        \hline
-        9   &   & •  & • & • & • & • \\
-
-        \hline
-    \end{tabular}
-
-    \caption{Cronograma de atividades para TCC2}
-    \label{cronograma}
-\end{table}
-
-O Laboratório de Produção, Pesquisa e Inovação em Software (LAPPIS) da FGA é um ambiente para  alunos e professores trabalhem de forma colaborativa na produção de software. Esse utiliza práticas ágeis e vários de seus integrantes colaboram com o Noosfero, sendo utilizado para o desenvolvimento do trabalho.
-
-Levando em consideração as práticas ágeis utilizadas no LAPPIS serão realizadas \textit{sprints} com duração de quinze dias. Para cada \textit{sprint} é proposto o desenvolvimento de uma história de usuário. Após a finalização do desenvolvimento e testes, as histórias são submetidas aos integrantes do LAPPIS, que vão realizar uma avaliação do desenvolvimento. Feita a revisão, as melhorias e correções propostas por estes membros serão trabalhadas em uma \textit{sprint}, onde serão trabalhadas duas histórias simultaneamente, que se relacionam em nível de implementação, a fim de atingir as propostas da revisão. Em outras palavras, após a execução de duas \textit{sprints} a terceira é destinada a correção.
+% Exportar CSV
+% Criar média ponderada de acordo com módulos
+% Fazer calculos de média
