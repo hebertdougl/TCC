@@ -1,50 +1,20 @@
 \chapter{Conclusão}
 \label{conclusao}
 
-Nesta primeira etapa do trabalho, foram elaboradas algumas melhorias para a evolução do Comunidade.UnB. Dentre elas, a atualização do Noosfero da Comunidade.UnB \footnote{Não possui DNS associado mas pode ser acessado pelo endereço \url{http://164.41.9.37/}}, que ainda se encontrava em \textit{Rails} 2 no Debian 6 e não dispunha de suporte pela comunidade. Da mesma forma, o tema teve que ser evoluído para ficar compatível com a nova versão da plataforma.
+No decorrer deste trabalho de conclusão de curso, foram realizadas atividades que englobam as principais áreas de conhecimento da Engenharia de Software, desde o levantamento de requisitos à implementação e implantação das funcionalidades desenvolvidas. Houve contribuições no contexto da manutenção e evolução de uma plataforma real de software livre, onde foi priorizado a evolução do conhecimento de forma colaborativa com os membros do laboratório avançado de pesquisa e produção de software.
 
-Como evidenciado na Seção \ref{plugin-comunidade}, realizou-se a evolução do \textit{plugin} Comunidade.UnB, permitindo que os usuários já cadastrados acessem desde que tenham cadastro no LDAP da UnB. Essa funcionalidade ainda não está habilitada mas pode ser visualizada no repositório \footnote{Repositório: \url{https://gitlab.com/unb-gama/noosfero} Branch: ldap\_unb\_plugin\_rails3 } do Noosfero para o Portal UnB Gama.
+O desenvolvimento proporcionou a participação em um processo distribuído e colaborativo de desenvolvimento de software, dado que o desenvolvimento foi realizado em conjunto com uma comunidade de software livre com equipes espalhadas pelo país.
 
-Como as demais funcionalidades a serem implementadas dizem respeito a evolução do \textit{plugin Work Assignment}, que permitirá aos professores utilizarem o Comunidade.UnB como um ambiente virtual de aprendizagem. Dessa maneira espera-se que o Comunidade.UnB transforme-se em um ambiente híbrido para os alunos e professores compartilharem o conhecimento de maneira construtiva e evolutiva.
+No trabalho foram identificadas e detalhadas as principais funcionalidades de um ambiente virtual de aprendizagem comparando-as com as disponíveis no Noosfero. Dessa maneira foram selecionadas as mais importantes para os usuários, implementadas e integradas a rede Comunidade.UnB. 
 
-\section{Pesquisa com alunos}
-\label{pesquisa-alunos}
+A rede colaborativa Comunidade.UnB foi atualizada para uma versão mais recente que provém de novas funcionalidades e melhores níveis de segurança, além de habilitar o protocolo de segurança SSL para manter a integridade das informações dos usuários. Com evolução dos \textit{plugins} a autenticação, em ambiente de testes, é realizada de acordo com a base de dados LDAP e agrega ao professor funcionalidades que proporcionam melhor controle das atividades disponibilizadas e a atribuição de notas.
 
-Para melhor prosseguirmos com este trabalho, realizamos uma pesquisa junto aos alunos da FGA sobre o uso de redes sociais em seu dia a dia e sobre o seu uso para apoio as disciplinas cursadas na universidade. Para isso, foi criado um questionário com quatro questões de múltipla escolha, e para os itens associou-se a uma escala tipo \emph{Likert} de cinco pontos: Nunca; Raramente; Às vezes; Frequentemente; Sempre (Instruções de preenchimento no Apêndice \ref{apen-inst}). Com este tipo de escala, pode-se mapear todas as respostas seguindo a lógica em que há duas alternativas negativas, duas alternativas positivas e uma intermediária.
-
-Nesta seção, apresentamos as questões elaboradas (Apêndice \ref{apen-quest}) e as respostas coletadas através da ferramenta \textit{Google Forms}. O questionário foi aplicado na rede social \textit{Facebook}, em grupos específicos da FGA. Foram coletadas, ao todo noventa e quatro respostas voluntárias ao questionário. Abaixo segue as questões com as respectivas análises de seus resultados, que estão representados graficamente no Apêndice \ref{apen-quest-result}.
-
-\subsection*{Com que frequência você utiliza redes sociais?}
-
-A primeira pergunta tinha como objetivo levantar com que frequência os alunos utilizam as redes sociais. Na Figura \ref{pergunta1}, nota-se que 98\% dos alunos que responderam ao questionário utilizam as redes sociais sempre ou frequentemente, o que evidencia o fato que atualmente os estudantes dessa geração estão inseridos neste contexto.
-
-\subsection*{Você utiliza alguma rede social como ferramenta de apoio as disciplinas?}
-
-O intuito da segunda pergunta foi verificar se os alunos utilizam alguma ferramenta de redes social como ferramenta de apoio as disciplinas. Na Figura \ref{pergunta2}, verifica-se que apenas 16\% dos alunos às vezes utilizam e de outro ponto de vista 83\% dos alunos fazem uso da rede para tal. Demonstrando que mesmo a universidade utilizando AVA os alunos se apoiam em redes sociais para discutir e compartilhar conteúdos referentes as disciplinas cursadas.
-
-\subsection*{Os professores incentivam o uso de redes sociais para suas disciplinas?}
-% 11\% Sempre
-% 19\% frequentemente
-% 52\% Ás vezes
-% 17\% Raramente
-% 1\% Nunca
-
-O objetivo desta pergunta foi verificar se mesmo que a universidade indique o uso de AVA se os professoes incentivam o uso das redes sociais em suas disciplinas. Na Figura \ref{pergunta3}, percebe-se que pouco mais da metade dos alunos (52 \%) tem suas respostas em um ponto intermediário do questionário, mostrando que os professoes são bem imparciais quanto a isso. Apesar que do restante, tem-se mais respostas favoráveis do que contra.
-
-\subsection*{Mesmo que o professor não recomende o uso de redes sociais para discussão de conteúdos de suas disciplinas, você as utiliza?}
-% 30\% Sempre
-% 45\% frequentemente
-% 20\% Ás vezes
-% 4\% Raramente
-% 0\% Nunca
-
-Na quarta e última pergunta buscou-se investigar se os alunos utilizam as redes sociais como uma ferramenta de apoio as disciplinhas mesmo que os professores não recomende seu uso para tal. Dos que responderam 75\% não levam em consideração tais recomendações e fazem o uso, demonstrando que os alunos preferem estar nas redes sociais onde expõem suas opiniões a fim de promover o compartilhamento de conteúdo (Resultados na Figura \ref{pergunta4}).
-
-Esta pesquisa exploratória mostra que mesmo com a existência de AVA os alunos a utilizam as redes sociais, que não foram criadas com esse objetivo, para a discussão de assuntos relacionados ao ambiente acadêmico.
+Portanto a Rede Comunidade.UnB está atualizada com a última versão de pacotes do Noosfero, 
+Dessa maneira espera-se que o Comunidade.UnB transforme-se em um ambiente híbrido para os alunos e professores compartilharem o conhecimento de maneira construtiva e evolutiva.
 
 \section{Limitações}
 
-Ao longo deste trabalho foi realizado a evolução do \textit{plugin} Comunidade UnB que tem como objetivo prover a autenticação via LDAP. Apesar dos testes terem sido realizados no ambiente de homologação torna-se inviável colocá-lo em produção, porque a base de dados LDAP fornecida pelo CPD da FGA é a mesma utilizada para o acesso a rede \textit{wireless} e segue um mesmo padrão de senhas para todos alunos. Caso seja colocado em produção todos usuários ficariam com sérios problemas de segurança dado que não é possível alterar sua senha. Como solução deve ser solicitado acesso a base de dados única da Universidade de Brasília, que contém todos os alunos que utilizam o sistema de matrícula, visto que os testes comprovam que o \textit{plugin} está preparado para isso.
+Ao longo deste trabalho foi realizado a evolução do \textit{plugin} Comunidade UnB que tem como objetivo prover a autenticação via LDAP. Apesar dos testes terem sido realizados no ambiente de homologação torna-se inviável colocá-lo em produção, porque a base de dados LDAP fornecida pelo CPD da FGA é a mesma utilizada para o acesso a rede \textit{wireless} e segue um mesmo padrão de senhas para todos alunos. Caso seja colocado em produção, todos usuários ficariam com problemas de segurança dado que não é possível alterar a senha na base LDAP. Como solução deve ser solicitado acesso a base de dados única da Universidade de Brasília, que contém todos os alunos que utilizam o sistema de matrícula, visto que os testes comprovam que o \textit{plugin} está preparado para isso.
 
 \section{Trabalhos Futuros}
 
@@ -71,6 +41,8 @@ O Noosfero dispõe de um calendário para permitir a visualização dos eventos 
   \end{enumerate}
 \end{enumerate}
 
+\subsection{Mecanismos de notificações}
+
 \begin{enumerate}
 \item \underline{Notificações por email}
 
@@ -88,7 +60,22 @@ O Noosfero dispõe de um calendário para permitir a visualização dos eventos 
   \end{enumerate}
 \end{enumerate}
 
+\subsection{Ferramentas para notas}
 
-% Exportar CSV
-% Criar média ponderada de acordo com módulos
-% Fazer calculos de média
+\begin{enumerate}
+\item \underline{Notificações por email}
+
+\textbf{Como} um professor
+
+\textbf{Gostaria de} ponderar as notas dos módulos da disciplina
+
+\textbf{Para} definir a menção dos alunos.
+
+\subsubsection*{Cenários de uso:}
+  \begin{enumerate}
+  \item Definir quais os módulos fazem parte da média do aluno
+  \item Selecionar quais as atividades fazem parte da avaliação
+  \item Criar média ponderada para as atividades
+  \item Exportar médias em formato CSV
+  \end{enumerate}
+\end{enumerate}

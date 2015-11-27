@@ -1,166 +1,301 @@
-\chapter{Metodologia}
+\chapter{Estudo preliminar}
 \label{metodologia}
-%-Quais são os sujeitos da pesquisa?
-%-Instrumentos e equipamentos que serão utilizados para os procedimentos?
-%-Quais são os procedimentos de coleta de dados?
 
-Uma pesquisa científica pode ser entendida como a realização concreta de uma investigação planejada e desenvolvida de acordo com as normas consagradas pela metodologia científica. Metodologia científica entendida como um conjunto de etapas ordenadamente dispostas que você deve vencer nas investigação de um fenômeno, é utilizada para determinação das formas que serão utilizadas para reunir os dados necessários para o desenvolvimento de um trabalho científico. Inclui a escolha do tema, o planejamento da investigação, o desenvolvimento metodológico, a coleta e a tabulação de dados, a análise dos resultados, a elaboração das conclusões e a divulgação dos resultados \cite{moresi2003metodologia}.
+Nesse capítulo é apresentada uma comparação entre o Noosfero e os AVA, assim como a proposta de estudo desse trabalho para a minimização das diferenças entre o Noosfero e os ambientes virtuais de aprendizagem. É evidenciado a pesquisa que forneceu embasamento para direcionar o processo de desenvolvimento, inclusive a descrição das funcionalidades propostas e seus respectivos cenários de uso.
 
-\section{Classificação da pesquisa}
-\label{class-da-pesquisa}
-A classificação dessa pesquisa foi realizada de acordo com o trabalho realizado \citeonline{moresi2003metodologia} como pode ser visualizada abaixo:
+\section{Comparação entre Noosfero e ambientes virtuais de aprendizagem}
+\label{comparacao-ava}
 
-Quanto a \textbf{natureza} é uma pesquisa básica pois visa apenas um estudo aprofundado pelo tema sem uma aplicação prática prevista.
+Como o objetivo do trabalho é a evolução de plataforma de redes sociais para um ambiente virtual de aprendizagem, a pesquisa realizada fundamenta-se no levantamento das principais funcionalidades que os AVA atuais utilizam, para verificar quais a plataforma o Noosfero ainda não possui. Desse modo surgiu a necessidade do levantamento das principais ferramentas AVA utilizadas atualmente pelas universidades e instituições de ensino, para proporcionar o mapeamento destas funcionalidades.
+%
+Os AVA selecionados para comparação são \textbf{BlackBoard}, \textbf{Sakai}, \textit{Modular Object-Oriented Dynamic Learning Environment} (\textbf{Moodle \footnote{Disponível em: \textit{ \url{https://moodle.org/}}}}) e \textit{TelEduc}.
 
-Quanto a \textbf{forma de abordagem do problema} é uma pesquisa quantitativa pois o método de pesquisa utilizado busca atingir os resultados, baseado em uma análise de várias comunidades de software livre.
+O BlackBoard~\footnote{Disponível em: \url{http://www.blackboard.com/}}, é um dos maiores ambientes virtuais de aprendizagem utilizados atualmente por um, total de 72\% das TOP 200 melhores universidades do mundo \cite{blackboard}. Para utilização desta plataforma é necessário a aquisição de licenças por parte da instituição que pretende implementá-la. A plataforma tem total suporte da empresa que a mantém e não permite a modificação de sua estrutura interna pelos seus utilzadores. Os ajustes e melhorias de funcionalidades são realizados através do mapeamento dos comentários e sugestões dos usuários.
 
-Quanto aos \textbf{fins} a pesquisa será exploratória já que é uma área onde há pouco conhecimento sistematizado. A pesquisa exploratória tem como objetivo proporcionar maior familiaridade com o problema, com vistas a torná-lo mais explícito ou a construir hipóteses. A grande maioria dessas pesquisas envolve: (a)levantamento bibliográfico; (b) entrevistas com pessoas que tiveram experiências práticas com o problema pesquisado; e (c) análise de exemplos que estimulem a compreensão \cite{gil2002}.
+O Moodle, é um software livre criado em 2001 pelo educador cientista computacional Martin Dougiamas. É desenvolvido na linguagem de programação PHP e desta maneira pode ser instalado em qualquer sistema operacional que tenha suporte à linguagem. Para o seu uso podem ser utilizadas várias bases de dados com suporte a ODBC\footnote{Padrão para acesso a sistemas gerenciadores de bancos de dados}, tais como MySQL, PostgreSQL e Oracle.
 
-Quanto aos \textbf{meios} é uma pesquisa bibliográfica, pois compreendeu o estudo sistematizado a partir de conhecimentos disponibilizados em artigos, livros, periódicos, jornais, acervos de dados eletrônicos, entre outros. E é também um \emph{survey} para obtenção dos dados ou informações sobre caracterísitcas das comunidades de software livre.
+O projeto Sakai\footnote{Disponível em: https://sakaiproject.org/ } ou a comunidade Sakai desenvolve e distribui o software livre Sakai como ambiente virtual de aprendizagem para colaboração e ensino para educadores, por educadores. A plataforma foi desenvolvido em linguagem Java e pode ser executado em várias plataformas diferentes como Linux, Unix, Windows e MAC. Suporta banco de dados MySQL e Oracle. As instituições que utilizam esta plataforma são abrangentes e estão listadas no site da comunidade \footnote{Disponível em: https://www.sakaiproject.org/community}.
 
-\section{Fases e atividades da pesquisa}
-\label{atv-da-pesquisa}
-A pesquisas está dividida em cinco fases, e para cada uma dessas foram definidas as atividades que devem ser desenvolvidas para atingir o objetivo de cada uma delas. A divisão pode ser visualizada na tabela \ref{tab:fas-atv-pesq}.
+O \textbf{TelEduc}\footnote{Disponível em: \url{http://www.teleduc.org.br/}} é um ambiente virtual de aprendizagem, cujo desenvolvimento iniciou em 1997, a partir de uma dissertação de mestrado de Alessandra de Dutra e Cerceau do Instituto de Computação da Universidade Estadual de Campinas\footnote{IC/UNICAMP. Disponível em: \url{http://www.ic.unicamp.br/}}. Foi objeto de pesquisa e desenvolvimento de um projeto coordenado pela Profa Dra Heloísa Vieira da Rocha\footnote{\url{http://lattes.cnpq.br/6985892121344767}} até 2012. Desde então, o projeto vem sendo evoluído para implementar ajustes e novas funcionalidades segundo \cite{rocha2002ambiente}, visando implementar necessidades relatadas por seus Usuários. O projeto é mantido pelo Núcleo de Informática Aplicada à Educação \footnote{NIED/UNICAMP. Disponível em:\url{http://www.nied.unicamp.br/}} da UNICAMP.
 
-\begin{table}[H]
-\center
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Fases} & \textbf{Atividades} \\ \hline
-\multirow{4}{*}{Planejamento} 
-		& 1- Definir tema \\
-		& 2- Definir problema \\
-		& 3- Definir justificativa \\
-		& 4- Definir objetivos \\ \hline
-\multirow{2}{*}{Revisão teórica}
-		& 1- Definir os assuntos que deverão ser aborados \\
-		& 2- Realizar referencial teórico\\ \hline
-\multirow{2}{*}{Análise metodológica}
-		& 1- Definir qual método será utilizado \\
-		& 2- Elaborar protocolo para o método \\ \hline
-\multirow{6}{*}{Execução} 
-		& 1- Refinar questionário \\
-		& 2- Colocar questionário na ferramenta\\
-		& 3- Selecionar comunidaes de software livre \\
-		& 4- Aplicar questionários \\
-		& 5- Coletar os dados na ferramenta \\
-		& 6- Analisar os dados obtidos \\ \hline
-\multirow{2}{*}{Finalização} 
-		& 1- Documentar todos os resultados obtidos \\
-		& 2- Elaborar conclusão \\ \hline
-\end{tabular}
-\caption{Fases e atividades da pesquisa}
-\label{tab:fas-atv-pesq}
-\end{table}
+O TelEduc é um software livre desenvolvido na linguagem de programação PHP \footnote{Disponível em: \url{http://php.net/}} e JavaScript com banco de dados o MySQL \footnote{Disponível em: \url{https://www.mysql.com/}} para ambientes Linux. Em seu lançamento tornou-se um dos softwares mais utilizados para apoiar a educação à distância nas mais diversas áreas. Seus principais usuários são as universidades públicas e privadas, que utilizam a ferramenta para atividades educacionais, disponibilizando materiais, dando suporte a comunicação e interação entre os participantes.
 
+Foram criadas tabelas comparativas (Tabelas \ref{tab:conteudo-atribuicao}, \ref{tab:curso}, \ref{tab:ferramentas}, \ref{tab:teste}, \ref{tab:permissoes-principal}) entre as ferramentas selecionadas e a plataforma Noosfero, desse modo fica mais evidente identificar quais funcionalidades a plataforma Noosfero carece. E vale ressaltar que não é objetivo deste trabalho esclarecer ou afirmar qual é a melhor ferramenta, mas verificar as principais funcionalidades dos AVA que são utilizados e aceitos pelas universidades.
 
+As funcionalidades incluídas nas tabelas foram obtidas da literatura apresentada na seção \ref{ava}, e em uso aos ambientes onlines de demonstração, contando ainda, com o auxílio de mecanismos de ajuda fornecidos pelas ferramentas. Assim sendo, as funcionalidades selecionadas foram divididas em oito categorias:
+\begin{itemize}
+\item \textbf{Conteúdo:} relacionadas à criação e manutenção de conteúdos publicados pelos usuários.
+\item \textbf{Atribuição:} permitem que os usários carreguem arquivos do seu computador local para a plataforma.
+\item \textbf{Ferramentas:} mecanismos de apoio ao gerenciamento do conteúdo e ambiente;
+\item \textbf{Teste/Quiz:} permitem a realização de avaliações e acompanhamento de resultados dos alunos;
+\item \textbf{Comunicação:} possibilitam a comunicação síncrona e assíncrona entre os participantes de um curso;
+\item \textbf{Curso:} fundamentais para organização dos cursos;
+\item \textbf{Permissão e papéis:} utilizadas para gerenciar o ambiente, definindo papéis e autorizações de acesso ao ambiente;
+\item \textbf{Página principal:} são as principais funcionalidades evidenciadas na página inicial de cada usuário.
+\end{itemize}
 
-\subsection{Descrição das atividades}
-\label{descr-atv}
-Realizou-se a descrição de todas as atividades envolvidas no plano de pesquisa, as atividades da fase de \textbf{Planejamento} podem ser visualizadas na tabela \ref{tab:fas-atv-plan}.
-\begin{table}[H]
-\center
-\begin{tabular}{|l|p{8cm}|}
-\hline
-\textbf{Atividade} & \textbf{Descrição} \\ \hline
-Definir tema & O tema para a pesquisa é definido de acordo com as preferências do pesquisador.\\ \hline
-Definir problema & É escolhido um problema relacionado ao tema abordado.\\ \hline
-Definir justificativa & São especificados as justificativas pela escolha do tema proposto. \\ \hline
-Definir objetivos & São definido objetivos para que o problema e as questões de pesquisa possam ser alcançadas.\\ \hline
-\end{tabular}
-\caption{Descrição atividades da fase de planejamento}
-\label{tab:fas-atv-plan}
-\end{table}
+Das categorias listadas na Tabela \ref{tab:conteudo-atribuicao}, podemos destacar que o Noosfero carece do SCORM \footnote{Um modelo de referência seja, conjunto unificado de especificações para a disponibilização de conteúdos e serviços de e-learning \cite{de2006objetos}.} e IMS-Content-Package \footnote{Padrão que permite exportar o conteúdo de um sistema de gerenciamento de conteúdo de aprendizagem ou repositório digital.} que são funcionalidades importantes para os AVA, pois permitem a importação de conteúdos de outras ferramentas proporcionando flexibilidade para o usuário.
 
-As atividades da fase de \textbf{Revisão teórica} podem ser visualizadas na tabela \ref{tab:fas-atv-rev}.
+Verifica-se que o Noosfero possui funcionalidades básicas de comunicação, mas não possibilita a comunicação síncrona (Bate-papo). Possui ainda, fórums que normalmente são utilizados para a divulgação de notícias e dúvidas, entretanto, não permite a assinatura de tópicos para o recebimento de notificações.
+
+Como o Noosfero não é um ambiente virtual de aprendizagem, é possível verificar na Tabela \ref{tab:teste} que ele não possibilita a criação de questões para obter a resposta de usuários. Também não conta com a funcionalidade que permita ao professor atribuir as notas e acompanhar a situação de cada aluno. O Noosfero possui um \textit{plugin} denominado \textit{Work Assignment} que permite aos usuários enviarem arquivos para o servidor mas não possibilita que o moderador estabeleça uma pontuação para os mesmos.
+
+\begin{landscape}
 
 \begin{table}[H]
-\center
-\begin{tabular}{|l|p{8cm}|}
-\hline
-\textbf{Atividade} & \textbf{Descrição} \\ \hline
-Definir os assuntos que deverão ser abordados & Definir quais são os assuntos que devem ser levantadas afim de se atingir os objetivos do trabalho.\\ \hline
-Realizar referencial teórico & Elaborar e documentar todo o embasamento teórico necessário para a execução da pesquisa. \\ \hline
-\end{tabular}
-\caption{Descrição atividades da fase de revisão teórica}
-\label{tab:fas-atv-rev}
+	\centering
+	\begin{tiny}
+	\begin{tabular}{C{4cm}C{3.2cm}C{3.2cm}C{3.2cm}C{3.2cm}C{3.2cm}}
+	\toprule
+	\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\
+	\midrule
+	\multicolumn{6}{c}{\textbf{Conteúdo}}\\
+	\midrule
+	Diretórios/Pastas & Sim & Sim & Sim & Sim & Sim \\
+	Criar/Extrair arquivos de pastas & Sim & Sim & Sim & Sim & Sim \\
+	Editor HTML & Sim & Sim & Sim & Sim & Sim \\
+	Filtro de vários idiomas & Não & Sim & \textbf{Não} & \textbf{Não} & Sim \\
+	Audio & Sim {\tiny (incorporado no plugin do QuickTime)} & Sim & \textbf{Não} & Sim &  \\
+	Vídeo & Sim & Sim & \textbf{Não} & Sim & Sim \\
+	SCORM & Sim & Sim & \textbf{Não} & Sim & \textbf{Não} \\
+	IMS-Content-Package & Sim & Sim &  &  & \textbf{Não} \\
+	\midrule
+	\multicolumn{6}{c}{\textbf{Atribuição}}\\
+	\midrule
+	Upload de um arquivo & Sim & Sim & Sim & Sim & Sim \\
+	Upload de vários arquivos & Sim & Sim & \textbf{Não} & Sim & Sim \\
+	Texto online & Sim(quiz) & Sim & Sim & Sim & Sim \\
+	\midrule
+	\multicolumn{6}{c}{\textbf{Comunicação}}\\
+	\midrule
+	Enviar e-mail & Sim & Sim & Sim& Sim   & Sim    \\
+	Enviar mensagens& Sim & Sim & Sim& Sim   & Sim {\tiny(mural)}\\
+	Bate papo& Sim & Sim & Sim& Sim   & \textbf{Não}    \\
+	Fórum de discussão& Sim & Sim & Sim& Sim   & Sim    \\
+	Alterar tipo de fórum & Sim & Sim & Sim& Sim   & Sim \\
+	Fórum:   & Sim & Sim & Sim& Sim   & Sim    \\
+	-postagem anônima & Sim & \textbf{Não} & \textbf{Não}& \textbf{Não}   & \textbf{Não}    \\
+	-anexar um arquivo& Sim & Sim & \textbf{Não}& Sim   & \textbf{Não}    \\
+	-os participantes podem criar tópicos   & Sim & Sim & \textbf{Não}& Sim   & Sim    \\
+	-inscrever-se em um fórum  & Sim & Sim & \textbf{Não}& Sim   & \textbf{Não}    \\
+	-assinar tópicos& Sim & \textbf{Não} & \textbf{Não}& Sim   & \textbf{Não}     \\
+	-moderar fórum& Sim & \textbf{Não}  & Sim& Sim   & \textbf{Não}     \\
+	Pesquisar fóruns& Sim & Sim & Sim& Sim   & Sim {\tiny (busca geral)} \\
+	 & & & & & \\
+	\bottomrule
+	\end{tabular}
+	\end{tiny}
+	\caption{Tabela de comparação categorias: Conteúdo e Atribuição}
+	\label{tab:conteudo-atribuicao}
 \end{table}
-
-As atividades da fase de \textbf{Análise metodológica} podem ser visualizadas na tabela \ref{tab:fas-atv-plan}.
 
 \begin{table}[H]
-\center
-\begin{tabular}{|l|p{8cm}|}
-\hline
-\textbf{Atividade} & \textbf{Descrição} \\ \hline
-		Definir qual método será utilizado & Definir qual o método de pesquisa que será utilizado para atingir os objetivos propostos. \\ \hline
-		Elaborar protocolo para o método & Desenvolver um protocolo que será utilizado para guiar e auxiliar na condução da pesquisa. \\ \hline
-\end{tabular}
-\caption{Descrição atividades da fase de análise metodológica.}
-\label{tab:fas-atv-ana-met}
+	\centering
+	\begin{tiny}
+	\begin{tabular}{C{4cm}C{3.2cm}C{3.2cm}C{3.2cm}C{3.2cm}C{3.2cm}}
+	\toprule
+	\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\
+	\midrule
+	\multicolumn{6}{c}{\textbf{Curso}}\\
+	\midrule
+	Criar cursos  & Sim & Sim & Sim  & Sim   & Sim    \\
+	Criar novos papéis& Sim & Sim & \textbf{Não} & \textbf{Não}    & Sim \\
+	Ferramentas de grupos & Sim & Sim & Sim& Sim   & Sim \\
+	Relatórios do curso   & Sim & Sim & Sim& Sim   & \textbf{Não}  \\
+	Sistema de alerta & Sim & \textbf{Não}  & \textbf{Não} & \textbf{Não}    & \textbf{Não}  \\
+	Personalização ou configuração (nome, duração, inscrição, idioma) & Sim & Sim & Sim& Sim   & Sim    \\
+	Formato de curso(fórum, formato dos tópicos, semanal)& \textbf{Não}  & Sim & \textbf{Não} &  & \textbf{Não}     \\
+	Gerenciar campo menu  & Sim & Sim {\tiny O menu é personalizado de acordo com conteúdo o curso} & \textbf{Não} & Sim   & Sim    \\
+	Customizar estilo de curso & Sim {\tiny (menu, tema)} & Sim {\tiny(tema) }& \textbf{Não} &  & Sim\\
+	Estrutura de pastas   & Sim & Sim & \textbf{Não} & Sim   & Sim    \\
+	Gerenciar ferramentas & Sim & Sim & Sim& Sim   & Sim    \\
+	Backup do curso / exportação & Sim & Sim & \textbf{Não} & Sim   & Sim\\
+	Importar curso& Sim & Sim & \textbf{Não} & \textbf{Não}    & \textbf{Não}  \\
+	Restaurar curso & Sim & Sim & \textbf{Não} & \textbf{Não}    & \textbf{Não}     \\
+	Importar conteúdo/características de outros cursos   & Sim & Sim & Sim & Sim   & Sim    \\
+	Gerenciador de arquivos    & Sim & Sim & \textbf{Não} & Sim   & Sim \\
+	\bottomrule
+	\end{tabular}
+	\end{tiny}
+	\caption{Tabela de comparação categoria Curso}
+	\label{tab:curso}
 \end{table}
-
-As atividades da fase de \textbf{Execução} podem ser visualizadas na tabela \ref{tab:fas-atv-exec}.
 
 \begin{table}[H]
-\center
-\begin{tabular}{|l|p{8cm}|}
-\hline
-\textbf{Atividade} & \textbf{Descrição} \\ \hline
-		Refinar questionário & O questionário será submetido a uma análise por especialistas e modificado de acordo com as observações.\\ \hline
-		Colocar questionário na ferramenta & Incluir todas as questões levantadas em uma ferramenta de auxilio.\\ \hline
-		Selecionar comunidades de software livre & Realizar uma busca de todas as comunidades de software livre que atendem aos critérios levantados. \\ \hline
-		Aplicar questionários & Disponibilizar o questionário com suas instruções de uso para todas as comunidades selecionadas \\ \hline
-		Coletar os dados na ferramenta & Realizar a coleta de todos os dados levantadas pela ferramento em uso. \\ \hline
-		Analisar os dados obtidos & Realizar a análise de todos os dados coletados. \\ \hline
-\end{tabular}
-\caption{Descrição atividades da fase de execução}
-\label{tab:fas-atv-exec}
+	\centering
+	\begin{tiny}
+	\begin{tabular}{C{4cm}C{3.2cm}C{3.2cm}C{3.2cm}C{3.2cm}C{3.2cm}}
+	\toprule
+	\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\
+	\midrule
+	\multicolumn{6}{c}{\textbf{Ferramentas}}\\
+	\midrule
+	Glossário & Sim {\tiny (Editável pelo instrutor)} & Sim {\tiny (Os participantes também podem adicionar entradas) + bloco para glossário} & \textbf{Não}  & Sim & \textbf{Não} \\
+	RSS Feeds & \textbf{Não}  & Sim {\tiny (Banco de dados, Fórum, Glossário)} & \textbf{Não}  & Sim & \textbf{Não}  \\
+	Blogs & Sim & Sim & Sim & Sim & Sim \\
+	Lista de contatos & Sim & Sim & Sim & \textbf{Não}  & Sim {\tiny (lista de participantes)}\\
+	Calendário (Curso) & Sim & Sim & Sim & Sim & {\tiny Apenas de eventos} \\
+	Permissões de acesso & Sim {\tiny (programada, dependendo de grau, dependendo do nível total do curso, depende do acesso a conteúdo definido, definir suas próprias regras)} & Sim \tiny{(programada, dependendo de grau, dependendo do nível total do curso, depende do acesso a conteúdo definidos / atividades)} & Sim & Sim & Sim \\
+	Verificação de plágio & Sim {\tiny (integrado)} & \textbf{Não}  {\tiny (Não integrado, mas existem APIs)} & \textbf{Não}  & \textbf{Não}  & \textbf{Não}  \\
+	Busca de arquivos (curso) & Sim {\tiny (adicionando um bloco correspondente)} & \textbf{Não}  & Sim & Sim & Sim \\
+	Jornal & Sim & \textbf{Não}  & \textbf{Não}  &  & \textbf{Não}  \\
+	Atividade concluída & Sim & Sim & Sim & Sim & Sim {\tiny (\textbf{Não}  totalmente implementado)} \\
+	Ferramentas de voz & \textbf{Não}  (é necessário a ferramenta Wimba instalada) & \textbf{Não}  & \textbf{Não}  & Sim & \textbf{Não}  \\
+	Permite o uso de módulos e plugins & Sim & Sim & \textbf{Não}  & Sim {\tiny (permite a seleção de ferramentas} & Sim \\ 
+	\bottomrule
+	\end{tabular}
+	\end{tiny}
+	\caption{Tabela de comparação categoria Ferramentas}
+	\label{tab:ferramentas}
 \end{table}
-
-As atividades da fase de \textbf{Finalização} podem ser visualizadas na tabela \ref{tab:fas-atv-fin}.
 
 \begin{table}[H]
-\center
-\begin{tabular}{|l|p{8cm}|}
-\hline
-\textbf{Atividade} & \textbf{Descrição} \\ \hline
-		Documentar todos os resultados obtidos & Evidenciar e documentar todos os resultados obtidos durante a coleta de dados. \\ \hline
-		Elaborar conclusão & Após a análise realizar a conclusão da pesquisa realizada. \\ \hline
-\end{tabular}
-\caption{Descrição atividades da fase de finalização}
-\label{tab:fas-atv-fin}
+	\centering
+	\begin{tiny}
+	\begin{tabular}{C{4cm}C{3.2cm}C{3.2cm}C{3.2cm}C{3.2cm}C{3.2cm}}
+	\toprule
+	\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\
+	\midrule
+	\multicolumn{6}{c}{\textbf{Teste/Quiz}}\\
+	\midrule
+	Banco de questões & Sim & Sim & Sim & Sim & \textbf{Não}  \\
+	Exportar resultados & Sim & Sim & Sim & \textbf{Não}  & \textbf{Não}  \\
+	Exportar respostas & Sim & \textbf{Não}  & \textbf{Não}  & Sim & \textbf{Não}  \\
+	\textit{\textbf{Tipo de questões}} &  &  &  &  &  \\
+	resposta com arquivo & Sim & Sim & \textbf{Não}  & Sim & Sim \\
+	resposta por escala & Sim & Sim {\tiny (múltipla escolha)} & \textbf{Não}  & \textbf{Não}  & \textbf{Não}  \\
+	preencher espaço vazio & Sim & Sim {\tiny (difícil de lidar)} & \textbf{Não}  & Sim & \textbf{Não}  \\
+	múltipla escolha & Sim & Sim & Sim & Sim & \textbf{Não}  \\
+	resposta múltipla & Sim & Sim & Sim & Sim & Sim {\tiny(permite o envio de várias versões de um arquivo)} \\
+	Verdadeiro/Falso & Sim & Sim & Sim & Sim & \textbf{Não}  \\
+	Calculos & Sim & Sim & \textbf{Não}  & Sim & \textbf{Não}  \\
+	Resposta dissertativa & Sim & Sim & Sim & Sim & Sim {\tiny (com a creiação de um artigo)} \\
+	Calculo numérico & Sim & Sim & \textbf{Não}  & Sim & \textbf{Não}  \\
+	\bottomrule
+	\end{tabular}
+	\end{tiny}
+	\caption{Tabela de comparação categoria Teste/Quiz}
+	\label{tab:teste}
 \end{table}
-
-\section{Estudo de Caso}
-
-\section{Cronograma}
-\label{cronograma}
-
-O cronograma apresentado na tabela \ref{tab:cronograma} contempla todas as atividades restantes para a conclusão da pesquisa.
 
 \begin{table}[H]
-\center
-\begin{tabular}{|l|p{8cm}|}
-\hline
-\textbf{Mês} & \textbf{Atividades} \\ \hline
-\multirow{2}{*}{Dezembro} 
-		& Refinar questionário \\ 
-		& Colocar questionário na ferramenta\\ \hline
-\multirow{2}{*}{Janeiro}
-		& Selecionar comunidades de software livre \\
-		& Aplicar questionários \\ \hline
-\multirow{1}{*}{Fevereiro}
-		& Aplicar questionários \\ \hline
-\multirow{2}{*}{Março}
-		& Coletar os dados na ferramenta \\
-		& Analisar os dados obtidos \\ \hline
-\multirow{2}{*}{Abril} 
-		& Analisar os dados obtidos \\
-		& Documentar todos os resultados obtidos \\ \hline
-\multirow{1}{*}{Maio}    		
-		&Elaborar conclusão \\ \hline
-\end{tabular}
-\caption{Cronograma para execução da pesquisa}
-\label{tab:cronograma}
+	\centering
+	\begin{tiny}
+	\begin{tabular}{C{4cm}C{3.2cm}C{3.2cm}C{3.2cm}C{3.2cm}C{3.2cm}}
+	\toprule
+	\textbf{Funcionalidades\textbackslash Sistema} & \textbf{BlackBoard 9.1} & \textbf{Moodle} & \textbf{TelEduc} & \textbf{Sakai} & \textbf{Noosfero}\\
+	\midrule
+	\multicolumn{6}{c}{\textbf{Permissões e papéis}}\\
+	\midrule
+	Papéis pré-definidos & Sim {\tiny (instrutor, assistente de ensino, construtor curso, nivelador, estudante, convidado;)} & Sim {\tiny (Administrador do site, gerente, criador do curso, professor editor, professor, estudante, convidado, usuário;)} & Sim {\tiny (coordenadores, formadores, alunos, visitantes, colaboradores;)} & Sim {\tiny (instrutores, assistente de professor, estudante;)} & Sim {\tiny (Administrador do sistema, moderador, membro, administrador de perfil;)} \\
+	Editar papéis existentes & Sim & Sim & \textbf{Não}  & \textbf{Não}  & Sim {\tiny(apenas com permissão)} \\
+	Criar novos papéis & Sim & Sim & \textbf{Não}  & \textbf{Não}  & Sim \\
+	\midrule
+	\multicolumn{6}{c}{\textbf{Página principal}}\\
+	\midrule
+	RSS Feeds & \textbf{Não}  & Sim & \textbf{Não}  & Sim & \textbf{Não}  \\
+	Avisos/ Novos fóruns & Sim & Sim & Sim & Sim & \textbf{Não}  \\
+	Lista de afazeres/ Próximos eventos & Sim & Sim & Sim {\tiny(Agenda)} & Sim & Sim {\tiny(Calendário)} \\
+	Mensagens & \textbf{Não}  & Sim & Sim & Sim & Sim \\
+	Boletim/ Resultados de questionários & Sim & Sim & Sim & Sim & \textbf{Não}  \\
+	Usuários online & Sim & Sim & Sim & Sim {\tiny(chat)} & \textbf{Não}  \\
+	Meu calendário & Sim & Sim & Sim & Sim & Sim \\
+	Baixar o conteúdo completo do curso & \textbf{Não}  & \textbf{Não}  & Sim {\tiny(todos os arquivos)} & Sim & \textbf{Não}  \\
+	Informação pessoal/ Perfil de usuários & Sim & Sim & Sim & Sim & Sim \\
+	Cancelar a inscrição de um curso & Sim & Sim & \textbf{Não}  & Sim & Sim \\
+	Software livre - GPL license & \textbf{Não}  & Sim & Sim & Sim & Sim \\
+	Extensão a plataformas móveis & Sim & \textbf{Não}  & \textbf{Não}  & \textbf{Não}  & \textbf{Não}  \\ 
+	\bottomrule
+	\end{tabular}
+	\end{tiny}
+	\caption{Tabela de comparação categorias: Permissões e papéis, página principal}
+	\label{tab:permissoes-principal}
 \end{table}
+
+\end{landscape}
+
+Os AVA mencionados possuem papéis de usuários pré-estabelecidos (Tabela \ref{tab:permissoes-principal}), apesar do Noosfero possuir estes papéis preestabelecidos possui a vantagem de criação de papéis customizados, onde o administrador define quais as permissões para cada um deles.
+
+O Noosfero carece de uma melhor estruturação dos conteúdos para o gerenciamento de um curso. Conforme evidenciado na Tabela \ref{tab:curso}, a plataforma não permite tratar os conteúdos na forma de cursos e tampouco a personalização de seus formatos (formato dos tópicos, duração). Além disso a ferramenta de calendário disponível mostra apenas as datas dos eventos criados, não disponibilizando aos alunos todas as atividades e duração do curso de forma limpa e organizada.
+
+Quando analisados os itens da categoria de página principal (Tabela \ref{tab:permissoes-principal}) é verificado que o Noosfero necessita de um template próprio para cursos que reúne as informações principais dos alunos. Algumas dessas informações necessitam apenas de uma melhor disposição pela interface, como calendário e mensagens. Já outras exigem implementação como um sistema de avisos, usuários online e boletim.
+
+Analisando todas as Tabelas elaboradas fica evidente que é essencial ao Noosfero um mecanismo para atribuição de notas e melhor controle sob o envio de tarefas. Esses são os pontos principais que regem um ambiente virtual de aprendizagem além das funcionalidades relatadas.
+
+\section{Pesquisa com alunos}
+\label{pesquisa-alunos}
+
+Para melhor prosseguirmos com este trabalho, realizamos uma pesquisa junto aos alunos da FGA sobre o uso de redes sociais em seu dia a dia e sobre o seu uso para apoio as disciplinas cursadas na universidade. Para isso, foi criado um questionário com quatro questões de múltipla escolha, e para os itens associou-se a uma escala tipo \emph{Likert} de cinco pontos: Nunca; Raramente; Às vezes; Frequentemente; Sempre (Instruções de preenchimento no Apêndice \ref{apen-inst}). Com este tipo de escala, pode-se mapear todas as respostas seguindo a lógica em que há duas alternativas negativas, duas alternativas positivas e uma intermediária.
+
+Nesta seção, apresentamos as questões elaboradas (Apêndice \ref{apen-quest}) e as respostas coletadas através da ferramenta \textit{Google Forms}. O questionário foi aplicado na rede social \textit{Facebook}, em grupos específicos da FGA. Foram coletadas, ao todo noventa e quatro respostas voluntárias ao questionário. Abaixo segue as questões com as respectivas análises de seus resultados, que estão representados graficamente no Apêndice \ref{apen-quest-result}.
+
+\subsection*{Com que frequência você utiliza redes sociais?}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=1]
+      {figuras/pergunta1p.eps}
+    \caption{Resultados do questionário para a pergunta \ref{pergunta1}}
+    \label{fig:pergunta1}
+\end{figure}
+
+A primeira pergunta tinha como objetivo levantar com que frequência os alunos utilizam as redes sociais. Na Figura \ref{fig:pergunta1}, nota-se que 98\% dos alunos que responderam ao questionário utilizam as redes sociais sempre ou frequentemente, o que evidencia o fato que atualmente os estudantes dessa geração estão inseridos neste contexto.
+
+\subsection*{Você utiliza alguma rede social como ferramenta de apoio as disciplinas?}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=1]
+      {figuras/pergunta2p.eps}
+    \caption{Resultados do questionário para a pergunta \ref{pergunta2}}
+    \label{fig:pergunta2}
+\end{figure}
+
+O intuito da segunda pergunta foi verificar se os alunos utilizam alguma ferramenta de redes social como ferramenta de apoio as disciplinas. Na Figura \ref{fig:pergunta2}, verifica-se que apenas 16\% dos alunos às vezes utilizam e de outro ponto de vista 83\% dos alunos fazem uso da rede para tal. Demonstrando que mesmo a universidade utilizando AVA os alunos se apoiam em redes sociais para discutir e compartilhar conteúdos referentes as disciplinas cursadas.
+
+\subsection*{Os professores incentivam o uso de redes sociais para suas disciplinas?}
+% 11\% Sempre
+% 19\% frequentemente
+% 52\% Ás vezes
+% 17\% Raramente
+% 1\% Nunca
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=1]
+      {figuras/pergunta3p.eps}
+    \caption{Resultados do questionário para a pergunta \ref{pergunta3}}
+    \label{fig:pergunta3}
+\end{figure}
+
+O objetivo desta pergunta foi verificar se mesmo que a universidade indique o uso de AVA se os professoes incentivam o uso das redes sociais em suas disciplinas. Na Figura \ref{fig:pergunta3}, percebe-se que pouco mais da metade dos alunos (52 \%) tem suas respostas em um ponto intermediário do questionário, mostrando que os professoes são bem imparciais quanto a isso. Apesar que do restante, tem-se mais respostas favoráveis do que contra.
+
+\subsection*{Mesmo que o professor não recomende o uso de redes sociais para discussão de conteúdos de suas disciplinas, você as utiliza?}
+% 30\% Sempre
+% 45\% frequentemente
+% 20\% Ás vezes
+% 4\% Raramente
+% 0\% Nunca
+\begin{figure}[h]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=1]
+      {figuras/pergunta4p.eps}
+    \caption{Resultados do questionário para a pergunta \ref{pergunta4}}
+    \label{fig:pergunta4}
+\end{figure}
+
+Na quarta e última pergunta buscou-se investigar se os alunos utilizam as redes sociais como uma ferramenta de apoio as disciplinhas mesmo que os professores não recomende seu uso para tal. Dos que responderam 75\% não levam em consideração tais recomendações e fazem o uso, demonstrando que os alunos preferem estar nas redes sociais onde expõem suas opiniões a fim de promover o compartilhamento de conteúdo (Resultados na Figura \ref{fig:pergunta4}).
+
+Esta pesquisa exploratória mostra que mesmo com a existência de AVA os alunos utilizam as redes sociais, que não foram criadas com esse objetivo, para a discussão de assuntos relacionados ao ambiente acadêmico. Fundamentado nesses resultados e na comparação desses ambientes com o Noosfero, foram elaboradas funcionalidades para minimizar a diferença encontrada.
+
+\section{Histórias de usuário}
+\label{historia-usuario}
+
+Nesta seção apresentaremos as funcionalidades desenvolvidas para contribuir para a adequação do Noosfero a um ambiente virtual de aprendizagem, para exercer a função de apoio aos AVA adotados pela Universidade. Serão apresentados os requisitos funcionais levantados para que esta possa suprir as necessidades levantadas.
+
+A principais funcionalidades estão relacionadas ao \textit{plugin WorkAssignmnet}, além disso, julgou-se necessária a evolução do \textit{plugin Comunidade.UnB}. Este foi iniciado por \citeonline{bucher2013rede}, com objetivo de integrar o Noosfero com o serviço de Lightweight Directory Access Protocol (LDAP). Uma base LDAP é utilizada pela UnB para manter os dados de todos os seus alunos e funcionários.
+
+As funcionalidades são apresentadas utilizando o utilizando o formato de histórias de usuários \footnote{Em inglês \textit{User Stories}(US)}, de acordo com as práticas ágeis. Além disso, os critérios de aceitação estão expostos no formato de cenários de uso, utilizando BDD.
+
+\input{capitulos/historias}
+
+Neste capitulo foi apresentado as funcionalidades de um AVA em comparação com o Noosfero, bem como uma pesquisa realizada com os alunos para direcionar o desenvolvimento do trabalho. Este estudo é importante, uma vez que considerando esta análise, foi apresentado Seção \ref{historia-usuario} as funcionalidades que foram implementadas no desenvolvimento prático deste trabalho.
