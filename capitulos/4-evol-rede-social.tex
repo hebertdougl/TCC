@@ -10,9 +10,7 @@ O Noosfero \footnote{Disponível em: \url{http://www.noosfero.org}} é uma plata
 
 Além das funcionalidades de rede social, com foco na produção e compartilhamento de conteúdo, o Noosfero permite que dentro da rede cada usuário e comunidade tenha o seu espaço com total flexibilidade de personalização visual e gerenciamento de conteúdo. São exemplos de portais que utilizam o Noosfero: o Participa BR \footnote{Disponível em: \url{https://www.participa.br/}}, Stoa\footnote{Disponível em: \url{http://stoa.usp.br/}}, Portal da FGA\footnote{Disponível em: \url{http://fga.unb.br/}} e o novo Portal do Software público Brasileiro \footnote{Disponível em: \url{https://portal.softwarepublico.gov.br/}}.
 
-O Noosfero foi desenvolvido na linguagem de programação Ruby, atualmente na versão 2.2.0, e utiliza o \textit{framework} aplicações web \textit{Ruby on Rails} \footnote{Disponível em: \url{http://rubyonrails.org/}}, versão 3.2.21. E utiliza também padrões arquiteturais de software Model-View-Controller (MVC), e o padrão de plugins que serão apresentados na seção \ref{arquitetura}.
-
-A escolha da linguagem \textit{Ruby} foi decisiva no Noosfero, pois possui uma sintaxe simples, que facilita a manutenibilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos \cite{meirelles2013}. A escolha do \textit{Rails} foi influenciada pelos seus conceitos básicos que auxiliam em sua produtividade: ``Não Repita a Si Mesmo'' (DRY-\textit{Don't Repeat Yourself}) e ``convenção sobre configuração'' (\textit{Convention Over Configuration}) \cite{akita2006repensando}. Além disso , por questões de segurança, o Noosfero é homologado para a versão \textit{stable} do \textit{Debian}, acompanhando a versão do \textit{Ruby} e do \textit{Rails} dessa distro.
+O Noosfero foi desenvolvido na linguagem \textit{Ruby}, na verão 2.2.0, pois possui uma sintaxe simples, que facilita a manutenibilidade do sistema, característica importante em projetos de software livre que tendem a atrair colaboradores externos \cite{meirelles2013}. Também utiliza o \textit{framework} aplicações web \textit{Ruby on Rails} \footnote{Disponível em: \url{http://rubyonrails.org/}}, versão 4. E utiliza também padrões arquiteturais de software Model-View-Controller (MVC), e o padrão de plugins que serão apresentados na seção \ref{arquitetura}. Além disso , por questões de segurança, o Noosfero é homologado para a versão \textit{stable} do \textit{Debian}, acompanhando a versão do \textit{Ruby} e do \textit{Rails} dessa distro.
 
 \subsection{Práticas de desenvolvimento da comunidade Noosfero}
 \label{proc-desenvol-comunidade}
@@ -90,7 +88,7 @@ Para \citeonline[p. 160]{larman2002utilizando}, um modelo de domínio é a repre
     \centering
     \includegraphics[keepaspectratio=true,scale=0.65]
       {figuras/domain_main.eps}
-    \caption{Relações entre entidades de domínio ambiente, domínio e perfis. Extraído de: \cite{bucher2013rede}}
+    \caption[Relações entre entidades de domínio ambiente, domínio e perfis]{Relações entre entidades de domínio ambiente, domínio e perfis. Extraído de: \cite{bucher2013rede}}
     \label{domain_main}
 \end{figure}
 
@@ -100,7 +98,7 @@ O Noosfero é uma plataforma que tem suporte a vários ambientes de rede social 
     \centering
     \includegraphics[keepaspectratio=true,scale=0.6]
       {figuras/domain_profiles.eps}
-    \caption{Entidades de domínio: tipos de perfis. Extraído de: \cite{bucher2013rede}}
+    \caption[Entidades de domínio: tipos de perfis]{Entidades de domínio: tipos de perfis. Extraído de: \cite{bucher2013rede}}
     \label{domain_profiles}
 \end{figure}
 
@@ -112,7 +110,7 @@ Por questões de design do código da aplicação foi criada uma entidade \textb
     \centering
     \includegraphics[keepaspectratio=true,scale=0.55]
       {figuras/domain_articles.eps}
-    \caption{Entidades de domínio: tipos de artigos. Extraído de: \cite{bucher2013rede}}
+    \caption[Entidades de domínio: tipos de artigos]{Entidades de domínio: tipos de artigos. Extraído de: \cite{bucher2013rede}}
     \label{domain_articles}
 \end{figure}
 

@@ -26,7 +26,8 @@ EDITAVEIS_FILES = $(addprefix $(EDITAVEIS_DIR)/, $(EDITAVEIS_SOURCES))
 CHAPTERS_DIR = capitulos
 
 CHAPTERS_SOURCES = 1-introducao.tex 2-evol-software.tex 3-avas-redes-sociais.tex \
-					4-evol-rede-social.tex 5-consideracoes-preliminares.tex
+					4-evol-rede-social.tex 5-estudo-preliminar.tex 6-desenvolvimento.tex \
+					7-conclusao.tex
 
 CHAPTERS_FILES = $(addprefix $(CHAPTERS_DIR)/, $(CHAPTERS_SOURCES))
 
@@ -57,6 +58,7 @@ clean:
 	rm -f *.lof *.lot *.bbl *.blg *.brf *.toc *.idx
 	rm -f tcc.pdf TCC_HEBERT.pdf
 	rm -f *.synctex.gz
+	rm -f figuras/*converted-to.pdf
 	
 dist: clean
 	tar vczf tcc-fga-latex-$(VERSION).tar.gz *
